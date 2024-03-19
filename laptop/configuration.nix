@@ -11,6 +11,7 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.substituters = [ "https://distrocache.husjon.xyz/nixos" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
