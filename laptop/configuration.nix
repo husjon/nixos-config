@@ -27,12 +27,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "no";
-    xkbVariant = "nodeadkeys";
-  };
-
   # Configure console keymap
   console.keyMap = "no";
 
@@ -41,6 +35,17 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "husjon";
+      };
+      default_session = initial_session;
+    };
   };
 
   # Allow unfree packages
@@ -52,6 +57,10 @@
     vim
   ];
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
