@@ -35,7 +35,11 @@
   users.users.husjon = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      firefox
+      alacritty
+      htop
+    ];
   };
 
   services.greetd = {
