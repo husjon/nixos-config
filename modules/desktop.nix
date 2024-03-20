@@ -1,6 +1,17 @@
 { pkgs, inputs, ... }:
 
 {
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.husjon = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      alacritty
+      firefox
+      htop
+    ];
+  };
+
   services.greetd = {
     enable = true;
     settings = rec {

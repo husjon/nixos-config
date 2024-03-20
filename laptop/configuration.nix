@@ -31,17 +31,6 @@
   # Configure console keymap
   console.keyMap = "no";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.husjon = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      alacritty
-      htop
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
