@@ -14,8 +14,8 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./laptop/hardware-configuration.nix
-            ./laptop/configuration.nix
+            ./hosts/laptop/hardware-configuration.nix
+            ./hosts/laptop/configuration.nix
             ./modules/desktop.nix
           ];
         };
@@ -24,8 +24,8 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            # ./workstation/hardware-configuration.nix
-            ./workstation/configuration.nix
+            # ./hosts/workstation/hardware-configuration.nix
+            ./hosts/workstation/configuration.nix
             ./modules/desktop.nix
           ];
         };
