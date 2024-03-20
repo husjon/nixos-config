@@ -19,6 +19,16 @@
             ./modules/desktop.nix
           ];
         };
+
+        workstation = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            # ./workstation/hardware-configuration.nix
+            ./workstation/configuration.nix
+            ./modules/desktop.nix
+          ];
+        };
       };
     };
 }
