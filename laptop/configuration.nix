@@ -42,17 +42,6 @@
     ];
   };
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "husjon";
-      };
-      default_session = initial_session;
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -61,11 +50,6 @@
   environment.systemPackages = with pkgs; [
     vim
   ];
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

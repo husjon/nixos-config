@@ -3,21 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+
+    hyprlock.url = "github:hyprwm/hyprlock/main";
+    hypridle.url = "github:hyprwm/hypridle/main";
   };
 
-  outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
-    in {
+  outputs = inputs@{ self, nixpkgs, ... }: {
       nixosConfigurations = {
-        laptop = lib.nixosSystem {
-          inherit system;
-          modules = [ ./laptop/hardware-configuration.nix ./laptop/configuration.nix ];
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./laptop/hardware-configuration.nix
+            ./laptop/configuration.nix
+            ./modules/desktop.nix
+          ];
         };
       };
     };
