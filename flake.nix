@@ -25,6 +25,7 @@
           modules = [
             ./hosts/workstation/configuration.nix
             ./modules/desktop.nix
+            ./modules/steam.nix
           ];
         };
       };
