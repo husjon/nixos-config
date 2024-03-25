@@ -11,6 +11,11 @@
       firefox
       git
       htop
+
+      inputs.hypridle.packages."${pkgs.system}".hypridle
+      inputs.hyprlock.packages."${pkgs.system}".hyprlock
+      hyprpaper
+
       lxde.lxsession
 
       obsidian
@@ -65,10 +70,4 @@
     enable = true;
     xwayland.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    inputs.hypridle.packages."${pkgs.system}".hypridle
-    inputs.hyprlock.packages."${pkgs.system}".hyprlock
-  ];
-
 }
