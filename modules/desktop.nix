@@ -16,7 +16,9 @@
       inputs.hyprlock.packages."${pkgs.system}".hyprlock
       hyprpaper
 
+      libnotify
       lxde.lxsession
+      mako
 
       obsidian
       rofi-wayland
