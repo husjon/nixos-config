@@ -9,6 +9,7 @@
       alacritty
       discord
       firefox
+      git
       htop
       lxde.lxsession
 
