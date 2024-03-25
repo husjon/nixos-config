@@ -11,6 +11,7 @@
       htop
       lxde.lxsession
 
+      obsidian
       rofi-wayland
       vscode
       waybar
@@ -19,6 +20,10 @@
       xdg-utils
     ];
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"  # for Obsidian
+  ];
 
   fonts.packages = [
     pkgs.nerdfonts
