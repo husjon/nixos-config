@@ -7,6 +7,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       alacritty
+      discord
       firefox
       htop
       lxde.lxsession
