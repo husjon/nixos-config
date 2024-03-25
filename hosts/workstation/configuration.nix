@@ -13,6 +13,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = [ "https://distrocache.husjon.xyz/nixos" ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
