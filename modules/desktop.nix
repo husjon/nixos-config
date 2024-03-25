@@ -15,6 +15,8 @@
       vscode
       waybar
 
+      xdg-user-dirs
+      xdg-utils
     ];
   };
 
