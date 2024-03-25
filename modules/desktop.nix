@@ -22,6 +22,12 @@
       };
   };
 
+  services.syncthing = {
+    enable = true;
+    user = "husjon";
+    openDefaultPorts = true;
+  };
+
   services.greetd = {
     enable = true;
     settings = rec {
