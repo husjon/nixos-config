@@ -9,7 +9,10 @@
       alacritty
       firefox
       htop
+      lxde.lxsession
+
       rofi-wayland
+      vscode
       waybar
 
     ];
@@ -18,6 +21,9 @@
   fonts.packages = [
     pkgs.nerdfonts
   ];
+
+  programs.seahorse.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
