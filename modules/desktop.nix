@@ -9,8 +9,15 @@
       alacritty
       firefox
       htop
+      rofi-wayland
+      waybar
+
     ];
   };
+
+  fonts.packages = [
+    pkgs.nerdfonts
+  ];
 
   security.rtkit.enable = true;
   services.pipewire = {
