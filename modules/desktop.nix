@@ -24,6 +24,7 @@
       rofi-wayland
       vscode
       waybar
+      wl-clipboard
 
       xdg-user-dirs
       xdg-utils
