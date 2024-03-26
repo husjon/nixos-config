@@ -22,6 +22,7 @@
 
       obsidian
       rofi-wayland
+      spotify
       vscode
       waybar
       wl-clipboard
