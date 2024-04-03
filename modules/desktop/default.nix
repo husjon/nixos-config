@@ -8,7 +8,7 @@
     packages = with pkgs; [
       alacritty
       discord
-      firefox
+      brave
       git
       htop
 
