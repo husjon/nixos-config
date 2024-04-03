@@ -19,8 +19,10 @@
       mako
 
       obsidian
+      playerctl
       rofi-wayland
       spotify
+      trash-cli
       vscode
       waybar
       wl-clipboard
