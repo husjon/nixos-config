@@ -49,6 +49,8 @@
     enable = true;
     user = "husjon";
     openDefaultPorts = true;
+    dataDir = "/home/husjon";
+    configDir = "/home/husjon/.config/syncthing";
   };
   services.tailscale.enable = true;
 
