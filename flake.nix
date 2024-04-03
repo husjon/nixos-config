@@ -15,7 +15,10 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
-            ./modules/desktop.nix
+
+            ./modules/desktop
+            ./modules/desktop/hyprland.nix
+            ./modules/desktop/audio.nix
           ];
         };
 
@@ -24,6 +27,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/workstation/configuration.nix
+
             ./modules/desktop
             ./modules/desktop/hyprland.nix
             ./modules/desktop/audio.nix
