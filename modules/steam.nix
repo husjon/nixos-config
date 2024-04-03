@@ -1,13 +1,14 @@
 { pkgs, ... }:
 
 {
-  programs.steam.enable = true;
-
-  users.users.husjon = {
-    packages = with pkgs; [
-      gamescope
-      mangohud
-      protontricks
-    ];
+  programs.steam = {
+    enable = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        gamescope
+        mangohud
+        protontricks
+      ];
+    };
   };
 }
