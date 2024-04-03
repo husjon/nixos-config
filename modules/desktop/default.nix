@@ -5,6 +5,7 @@
   users.users.husjon = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
+
     packages = with pkgs; [
       alacritty
       discord
@@ -19,6 +20,7 @@
       mako
 
       obsidian
+      pcmanfm  # file-manager
       playerctl
       rofi-wayland
       spotify
@@ -49,4 +51,9 @@
     openDefaultPorts = true;
   };
 
+  xdg.mime.defaultApplications = {
+    "inode/directory" = [
+      "pcmanfm.desktop"
+    ];
+  };
 }
