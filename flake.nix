@@ -26,6 +26,7 @@
             ./hosts/workstation/configuration.nix
             ./modules/desktop
             ./modules/desktop/hyprland.nix
+            ./modules/desktop/audio.nix
             ./modules/steam.nix
           ];
         };
