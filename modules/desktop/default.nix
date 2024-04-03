@@ -9,6 +9,8 @@
       alacritty
       discord
       brave
+      freecad
+      prusa-slicer
       git
       htop
 
