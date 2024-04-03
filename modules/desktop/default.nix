@@ -50,6 +50,7 @@
     user = "husjon";
     openDefaultPorts = true;
   };
+  services.tailscale.enable = true;
 
   xdg.mime.defaultApplications = {
     "inode/directory" = [
