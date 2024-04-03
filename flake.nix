@@ -25,6 +25,7 @@
           modules = [
             ./hosts/workstation/configuration.nix
             ./modules/desktop
+            ./modules/desktop/hyprland.nix
             ./modules/steam.nix
           ];
         };
