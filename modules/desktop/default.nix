@@ -42,6 +42,7 @@
     pkgs.nerdfonts
   ];
 
+  programs.direnv.enable = true;
   programs.seahorse.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.starship.enable = true;
