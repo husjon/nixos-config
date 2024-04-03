@@ -24,7 +24,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/workstation/configuration.nix
-            ./modules/desktop.nix
+            ./modules/desktop
             ./modules/steam.nix
           ];
         };
