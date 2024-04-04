@@ -31,6 +31,7 @@
             ./modules/desktop
             ./modules/desktop/hyprland.nix
             ./modules/desktop/audio.nix
+            ./modules/docker.nix
             ./modules/steam.nix
           ];
         };
