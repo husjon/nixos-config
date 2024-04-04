@@ -13,6 +13,7 @@
       freecad
       prusa-slicer
       git
+      grim
       htop
 
       libnotify
@@ -24,6 +25,7 @@
       playerctl
       rofi-wayland
       spotify
+      slurp
       trash-cli
       vscode
       waybar
