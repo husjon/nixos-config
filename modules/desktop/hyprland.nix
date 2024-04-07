@@ -8,6 +8,7 @@
       inputs.hyprlock.packages."${pkgs.system}".hyprlock
       hyprpaper
       inputs.hyprpicker.packages."${pkgs.system}".hyprpicker
+      xdg-desktop-portal-hyprland
     ];
   };
 
