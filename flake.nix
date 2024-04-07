@@ -4,8 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    hyprcursor.url = "github:hyprwm/hyprcursor/main";
     hyprlock.url = "github:hyprwm/hyprlock/main";
     hypridle.url = "github:hyprwm/hypridle/main";
+    hyprpicker.url = "github:hyprwm/hyprpicker/main";
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
