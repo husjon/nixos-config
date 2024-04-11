@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, user_settings, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.husjon = {
+  users.users.${user_settings.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
 
@@ -53,10 +53,10 @@
 
   services.syncthing = {
     enable = true;
-    user = "husjon";
+    user = user_settings.username;
     openDefaultPorts = true;
-    dataDir = "/home/husjon";
-    configDir = "/home/husjon/.config/syncthing";
+    dataDir = "/home/" + user_settings.username;
+    configDir = "/home/" + user_settings.username + "/.config/syncthing";
   };
   services.tailscale.enable = true;
 

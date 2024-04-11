@@ -21,12 +21,18 @@
       };
     };
 
+    user_settings = rec {
+      username = "husjon";
+    };
 
   in {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            inherit user_settings;
+          };
           modules = [
             ({ ... }: {
               nixpkgs.overlays = [ overlays-nixpkgs ];
@@ -41,7 +47,10 @@
 
         workstation = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            inherit user_settings;
+          };
           modules = [
             ({ ... }: {
               nixpkgs.overlays = [ overlays-nixpkgs ];

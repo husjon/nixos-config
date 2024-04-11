@@ -1,7 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, user_settings, ... }:
 
 {
-  users.users.husjon = {
+  users.users.${user_settings.username} = {
     packages = with pkgs; [
       inputs.hyprcursor.packages."${pkgs.system}".hyprcursor
       inputs.hypridle.packages."${pkgs.system}".hypridle
@@ -22,7 +22,7 @@
     settings = rec {
       initial_session = {
         command = "dbus-launch ${pkgs.hyprland}/bin/Hyprland";
-        user = "husjon";
+        user = user_settings.username;
       };
       default_session = initial_session;
     };
