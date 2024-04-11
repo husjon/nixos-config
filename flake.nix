@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     hyprcursor.url = "github:hyprwm/hyprcursor/main";
     hyprlock.url = "github:hyprwm/hyprlock/main";
@@ -10,12 +11,26 @@
     hyprpicker.url = "github:hyprwm/hyprpicker/main";
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
+  outputs = inputs@{self, nixpkgs, nixpkgs-unstable, ... }:
+
+  let
+    overlays-nixpkgs = final: prev: {
+      unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    };
+
+
+  in {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
+            ({ ... }: {
+              nixpkgs.overlays = [ overlays-nixpkgs ];
+            })
             ./hosts/laptop/configuration.nix
 
             ./modules/desktop
@@ -28,6 +43,9 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
+            ({ ... }: {
+              nixpkgs.overlays = [ overlays-nixpkgs ];
+            })
             ./hosts/workstation/configuration.nix
 
             ./modules/desktop
