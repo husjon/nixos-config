@@ -22,7 +22,7 @@
       mako
 
       obsidian
-      pcmanfm  # file-manager
+      pcmanfm # file-manager
       playerctl
       rofi-wayland
       spotify
@@ -38,7 +38,7 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"  # for Obsidian
+    "electron-25.9.0" # for Obsidian
   ];
 
   fonts.packages = [
