@@ -14,6 +14,7 @@
       prusa-slicer
       git
       grim
+      unstable.godot_4
       htop
 
       libnotify
