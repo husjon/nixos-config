@@ -49,6 +49,7 @@
   programs.seahorse.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.starship.enable = true;
+  programs.bash.enableCompletion = true;
 
 
   services.syncthing = {
