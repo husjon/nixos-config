@@ -11,23 +11,24 @@
     hyprpicker.url = "github:hyprwm/hyprpicker/main";
   };
 
-  outputs = inputs@{self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
 
-  let
-    system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
 
-    overlays-nixpkgs = final: prev: {
-      unstable = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
+      overlays-nixpkgs = final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
       };
-    };
 
-    user_settings = rec {
-      username = "husjon";
-    };
+      user_settings = rec {
+        username = "husjon";
+      };
 
-  in {
+    in
+    {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
