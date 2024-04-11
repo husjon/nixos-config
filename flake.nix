@@ -14,6 +14,8 @@
   outputs = inputs@{self, nixpkgs, nixpkgs-unstable, ... }:
 
   let
+    system = "x86_64-linux";
+
     overlays-nixpkgs = final: prev: {
       unstable = import nixpkgs-unstable {
         inherit system;
@@ -28,7 +30,7 @@
   in {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit inputs;
             inherit user_settings;
@@ -46,7 +48,7 @@
         };
 
         workstation = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           specialArgs = {
             inherit inputs;
             inherit user_settings;
