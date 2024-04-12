@@ -21,6 +21,8 @@
       lxde.lxsession
       mako
 
+      nixpkgs-fmt
+
       obsidian
       pcmanfm # file-manager
       playerctl
