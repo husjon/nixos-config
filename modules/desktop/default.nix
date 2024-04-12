@@ -6,6 +6,8 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
 
+    shell = pkgs.fish;
+
     packages = with pkgs; [
       alacritty
       discord
@@ -53,7 +55,7 @@
   programs.seahorse.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.starship.enable = true;
-  programs.bash.enableCompletion = true;
+  programs.fish.enable = true;
 
 
   services.syncthing = {
