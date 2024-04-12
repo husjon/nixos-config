@@ -39,6 +39,8 @@
     ];
   };
 
+  services.avahi.enable = true; # for Chromecast
+
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0" # for Obsidian
   ];
