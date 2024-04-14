@@ -9,9 +9,11 @@
     hyprlock.url = "github:hyprwm/hyprlock/main";
     hypridle.url = "github:hyprwm/hypridle/main";
     hyprpicker.url = "github:hyprwm/hyprpicker/main";
+
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, sops-nix, ... }:
 
     let
       system = "x86_64-linux";
@@ -41,6 +43,7 @@
               nixpkgs.overlays = [ overlays-nixpkgs ];
             })
             ./hosts/laptop/configuration.nix
+            sops-nix.nixosModules.sops
 
             ./modules/desktop
             ./modules/desktop/hyprland.nix
@@ -59,6 +62,7 @@
               nixpkgs.overlays = [ overlays-nixpkgs ];
             })
             ./hosts/workstation/configuration.nix
+            sops-nix.nixosModules.sops
 
             ./modules/desktop
             ./modules/desktop/hyprland.nix
