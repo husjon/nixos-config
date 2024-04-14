@@ -1,10 +1,15 @@
-{ pkgs, inputs, user_settings, ... }:
+{ pkgs, inputs, user_settings, config, ... }:
 
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  sops.secrets.password.neededForUsers = true;
+
+  users.mutableUsers = false; # password cannot be changed with `passwd` and will only be set by `hashedPasswordFile` below
+
   users.users.${user_settings.username} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
+
+    hashedPasswordFile = config.sops.secrets.password.path;
 
     shell = pkgs.fish;
 
