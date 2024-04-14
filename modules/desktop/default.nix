@@ -54,6 +54,7 @@
   services.gnome.gnome-keyring.enable = true;
   programs.starship.enable = true;
   programs.fish.enable = true;
+  programs.gnupg.agent.enable = true;
 
 
   services.syncthing = {
