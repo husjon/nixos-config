@@ -5,6 +5,7 @@ pkgs.mkShell {
     # your packages here
     gh
     nixpkgs-fmt
+    nil
     sops
   ];
 }
