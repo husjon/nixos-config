@@ -1,15 +1,24 @@
 keys:
-  - &husjon_workstation b9159d884cf5058c6f88135ba04ddc0c7c45a0b5
-  - &husjon_laptop a7700437742764815153cf00335fb76fbd3b5726
+  # users
+  - &husjon 4e7cfbe78c8f9c9d88d7599711fc4fb86e2f5279
 
-  - &server_workstation b5e61a57a8efa6d02c545ea2ea40c867e87cd548
-  - &server_laptop 09bb80a35e897ec80bfe69fb18b99f71085358c0
+  # hosts
+  - &laptop 09bb80a35e897ec80bfe69fb18b99f71085358c0
+  - &workstation b5e61a57a8efa6d02c545ea2ea40c867e87cd548
 
 creation_rules:
+  - path_regex: ^hosts/workstation/secrets.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *workstation
+  - path_regex: ^hosts/laptop/secrets.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *laptop
+
   - path_regex: secrets\.(yaml|json|env|ini)$
     key_groups:
     - pgp:
-      - *husjon_workstation
-      - *husjon_laptop
-      - *server_workstation
-      - *server_laptop
+      - *husjon
