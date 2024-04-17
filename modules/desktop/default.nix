@@ -42,4 +42,11 @@
   xdg.mime.defaultApplications = {
     "inode/directory" = [ "thunar.desktop" ];
   };
+
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    flake = "github:husjon/nixos-config";
+    dates = "04:00";
+  };
 }
