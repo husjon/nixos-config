@@ -28,6 +28,8 @@
       lxde.lxsession
       mako
 
+      neovim
+
       obsidian
       pcmanfm # file-manager
       playerctl
