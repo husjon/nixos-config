@@ -18,6 +18,7 @@
       discord
       brave
       freecad
+      krita
       prusa-slicer
       git
       grim
