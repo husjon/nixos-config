@@ -31,6 +31,9 @@
 
       neovim
 
+      nil
+      nixpkgs-fmt
+
       obsidian
       pcmanfm # file-manager
       playerctl
