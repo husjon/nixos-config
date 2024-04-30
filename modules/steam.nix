@@ -1,17 +1,23 @@
 { pkgs, ... }:
 
 {
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
+  programs = {
+    gamemode.enable = true;
+    gamescope.enable = true;
 
-    package = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        gamescope
-        gamemode
-        mangohud
-        protontricks
-      ];
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+
+
+      gamescopeSession.enable = true;
+
+      package = pkgs.steam.override {
+        extraPkgs = pkgs: with pkgs; [
+          mangohud
+          protontricks
+        ];
+      };
     };
   };
 }
