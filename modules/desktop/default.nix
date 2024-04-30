@@ -67,6 +67,7 @@
   programs.fish.enable = true;
   programs.gnupg.agent.enable = true;
 
+  services.printing.enable = true;
 
   services.syncthing = {
     enable = true;
