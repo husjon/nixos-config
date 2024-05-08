@@ -16,7 +16,7 @@
     packages = with pkgs; [
       alacritty
       discord
-      brave
+      unstable.brave
       freecad
       krita
       prusa-slicer
