@@ -7,7 +7,7 @@
 
   users.users.${user_settings.username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
 
     hashedPasswordFile = config.sops.secrets.password.path;
 
