@@ -67,7 +67,6 @@
             sops-nix.nixosModules.sops
 
             ./modules/desktop
-            ./modules/desktop/audio.nix
             ./modules/desktop/3d-printing.nix
             ./modules/desktop/blender.nix
             ./modules/desktop/calibre.nix
