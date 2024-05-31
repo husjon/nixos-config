@@ -65,6 +65,7 @@
             sops-nix.nixosModules.sops
 
             ./modules/desktop
+            ./modules/desktop/3d-printing.nix
             ./modules/desktop/hyprland.nix
             ./modules/desktop/audio.nix
             ./modules/blender.nix
