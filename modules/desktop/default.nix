@@ -17,9 +17,7 @@
       alacritty
       discord
       unstable.brave
-      freecad
       krita
-      prusa-slicer
       git
       grim
       unstable.godot_4
