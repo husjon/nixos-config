@@ -76,6 +76,8 @@
             ./modules/desktop/wayland/hyprland.nix
 
             ./modules/docker.nix
+
+            ./modules/tailscale.nix
           ];
         };
       };

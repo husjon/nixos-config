@@ -83,7 +83,6 @@
     dataDir = "/home/" + user_settings.username;
     configDir = "/home/" + user_settings.username + "/.config/syncthing";
   };
-  services.tailscale.enable = true;
 
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
