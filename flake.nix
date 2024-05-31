@@ -66,12 +66,13 @@
 
             ./modules/desktop
             ./modules/desktop/3d-printing.nix
+            ./modules/desktop/blender.nix
+            ./modules/desktop/calibre.nix
+            ./modules/desktop/steam.nix
+
             ./modules/desktop/hyprland.nix
             ./modules/desktop/audio.nix
-            ./modules/blender.nix
-            ./modules/calibre.nix
             ./modules/docker.nix
-            ./modules/steam.nix
           ];
         };
       };
