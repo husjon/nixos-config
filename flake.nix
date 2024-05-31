@@ -70,6 +70,7 @@
             ./modules/desktop/3d-printing.nix
             ./modules/desktop/blender.nix
             ./modules/desktop/calibre.nix
+            ./modules/desktop/godot.nix
             ./modules/desktop/steam.nix
 
             ./modules/desktop/wayland/default.nix
