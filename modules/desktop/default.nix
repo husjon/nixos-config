@@ -17,7 +17,6 @@
       alacritty
       discord
       unstable.brave
-      krita
       git
       htop
 
