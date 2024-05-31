@@ -19,7 +19,6 @@
       unstable.brave
       krita
       git
-      unstable.godot_4
       htop
 
       libnotify
