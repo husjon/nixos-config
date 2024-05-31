@@ -46,8 +46,10 @@
             sops-nix.nixosModules.sops
 
             ./modules/desktop
-            ./modules/desktop/hyprland.nix
-            ./modules/desktop/audio.nix
+
+            ./modules/desktop/wayland/default.nix
+            ./modules/desktop/wayland/hyprland.nix
+
           ];
         };
 
@@ -70,7 +72,8 @@
             ./modules/desktop/calibre.nix
             ./modules/desktop/steam.nix
 
-            ./modules/desktop/hyprland.nix
+            ./modules/desktop/wayland/default.nix
+            ./modules/desktop/wayland/hyprland.nix
             ./modules/desktop/audio.nix
             ./modules/docker.nix
           ];

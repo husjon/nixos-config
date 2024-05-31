@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, user_settings, config, ... }:
+{ pkgs, lib, user_settings, config, ... }:
 
 {
   sops.secrets.password.neededForUsers = true;
@@ -19,13 +19,11 @@
       unstable.brave
       krita
       git
-      grim
       unstable.godot_4
       htop
 
       libnotify
       lxde.lxsession
-      mako
 
       neovim
 
@@ -34,13 +32,9 @@
 
       obsidian
       playerctl
-      rofi-wayland
       spotify
-      slurp
       trash-cli
       vscode
-      waybar
-      wl-clipboard
 
       xdg-user-dirs
       xdg-utils
