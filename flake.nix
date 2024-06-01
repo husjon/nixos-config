@@ -47,6 +47,8 @@
 
             ./modules/desktop
 
+            ./modules/desktop/graphics/intel.nix
+
             ./modules/desktop/wayland/default.nix
             ./modules/desktop/wayland/hyprland.nix
 
