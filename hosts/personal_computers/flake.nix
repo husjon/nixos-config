@@ -25,7 +25,7 @@
         };
       };
 
-      user_settings = rec {
+      user_settings = {
         username = "husjon";
       };
 
@@ -42,15 +42,15 @@
             ({ ... }: {
               nixpkgs.overlays = [ overlays-nixpkgs ];
             })
-            ./hosts/laptop/configuration.nix
+            ./laptop/configuration.nix
             sops-nix.nixosModules.sops
 
-            ./modules/desktop
+            ../../modules/desktop
 
-            ./modules/desktop/graphics/intel.nix
+            ../../modules/desktop/graphics/intel.nix
 
-            ./modules/desktop/wayland/default.nix
-            ./modules/desktop/wayland/hyprland.nix
+            ../../modules/desktop/wayland/default.nix
+            ../../modules/desktop/wayland/hyprland.nix
 
           ];
         };
@@ -65,23 +65,23 @@
             ({ ... }: {
               nixpkgs.overlays = [ overlays-nixpkgs ];
             })
-            ./hosts/workstation/configuration.nix
+            ./workstation/configuration.nix
             sops-nix.nixosModules.sops
 
-            ./modules/desktop
-            ./modules/desktop/3d-printing.nix
-            ./modules/desktop/blender.nix
-            ./modules/desktop/calibre.nix
-            ./modules/desktop/godot.nix
-            ./modules/desktop/krita.nix
-            ./modules/desktop/steam.nix
+            ../../modules/desktop
+            ../../modules/desktop/3d-printing.nix
+            ../../modules/desktop/blender.nix
+            ../../modules/desktop/calibre.nix
+            ../../modules/desktop/godot.nix
+            ../../modules/desktop/krita.nix
+            ../../modules/desktop/steam.nix
 
-            ./modules/desktop/wayland/default.nix
-            ./modules/desktop/wayland/hyprland.nix
+            ../../modules/desktop/wayland/default.nix
+            ../../modules/desktop/wayland/hyprland.nix
 
-            ./modules/docker.nix
+            ../../modules/docker.nix
 
-            ./modules/tailscale.nix
+            ../../modules/tailscale.nix
           ];
         };
       };
