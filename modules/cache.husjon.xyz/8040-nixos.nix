@@ -13,9 +13,9 @@
           proxy_cache_valid 200 4w;
         '';
       };
-      locations."= /nix-cache-info" = {
+      locations."= /nixos/(nix-cache-info)" = {
         extraConfig = ''
-          proxy_pass              http://nixos$1;
+          proxy_pass              http://nixos/$1;
           proxy_cache STATIC;
           proxy_cache_valid  200 302  60d;
           expires max;
