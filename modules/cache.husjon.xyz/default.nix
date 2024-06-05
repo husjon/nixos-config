@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.nginx = {
     enable = true;
 
@@ -27,7 +27,10 @@
     };
 
     virtualHosts."cache" = {
-      listen = [{ addr = "*"; port = 80; }];
+      listen = [
+        { addr = "*"; port = 80; }
+        { addr = "*"; port = 443; }
+      ];
     };
   };
 }
