@@ -19,6 +19,12 @@ creation_rules:
       - *husjon
       - *workstation
 
+  - path_regex: ^hosts/servers/jellyfin.husjon.xyz/secrets.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *jellyfin
+
   - path_regex: secrets\.(yaml|json|env|ini)$
     key_groups:
     - pgp:

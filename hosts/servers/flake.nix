@@ -32,6 +32,19 @@
             ../../modules/cache.husjon.xyz/8040-nixos.nix
           ];
         };
+
+        "jellyfin.husjon.xyz" = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./jellyfin.husjon.xyz/configuration.nix
+            sops-nix.nixosModules.sops
+
+            ../../modules/jellyfin.husjon.xyz
+          ];
+        };
       };
     };
 }
