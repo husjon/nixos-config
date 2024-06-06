@@ -2,7 +2,7 @@
 
 {
   services.nginx = {
-    virtualHosts."cache" = {
+    virtualHosts."cache.husjon.xyz" = {
 
       locations."~ ^/debian/(.*?\.deb)$" = {
         extraConfig = ''

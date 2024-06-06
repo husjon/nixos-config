@@ -2,7 +2,7 @@
 
 {
   services.nginx = {
-    virtualHosts."cache" = {
+    virtualHosts."cache.husjon.xyz" = {
       locations."~ ^/alpine/(.*?\.iso(\.sig)?)$" = {
         extraConfig = ''
           proxy_pass        http://alpine/$1;

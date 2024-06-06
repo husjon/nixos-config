@@ -2,7 +2,7 @@
 
 {
   services.nginx = {
-    virtualHosts."cache" = {
+    virtualHosts."cache.husjon.xyz" = {
       locations."~ ^/archlinux/(.*?\.(iso|qcow2)(\.(sig|SHA256))?)$" = {
         extraConfig = ''
           proxy_pass        http://archlinux/$1;
