@@ -1,9 +1,14 @@
-{ ... }:
+{ config, ... }:
 
 {
+  sops.secrets.acme_env = { };
+
   networking.firewall.allowedTCPPorts = [ 80 443 ];
+
   services.nginx = {
     enable = true;
+
+    recommendedTlsSettings = true;
 
     resolver = {
       addresses = [ "10.0.0.1" ];
@@ -26,11 +31,26 @@
       maxSize = "25G";
     };
 
-    virtualHosts."cache" = {
-      listen = [
-        { addr = "*"; port = 80; }
-        { addr = "*"; port = 443; }
-      ];
+    virtualHosts."cache.husjon.xyz" = {
+      addSSL = true;
+      enableACME = true;
+    };
+  };
+
+  security.acme = {
+    acceptTerms = true;
+
+    defaults = {
+      # server = "https://acme-staging-v02.api.letsencrypt.org/directory"; # for testing
+      email = "jonerling.hustadnes@gmail.com";
+    };
+
+    certs."cache.husjon.xyz" = {
+      dnsProvider = "cloudflare";
+      webroot = null;
+
+      environmentFile = config.sops.secrets.acme_env.path;
+      group = "nginx";
     };
   };
 }

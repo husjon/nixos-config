@@ -22,7 +22,7 @@
           };
           modules = [
             ./cache.husjon.xyz/configuration.nix
-            # sops-nix.nixosModules.sops
+            sops-nix.nixosModules.sops
 
             ../../modules/cache.husjon.xyz
             ../../modules/cache.husjon.xyz/8000-alpine-linux.nix

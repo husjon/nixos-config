@@ -3,6 +3,7 @@ keys:
   - &husjon 4e7cfbe78c8f9c9d88d7599711fc4fb86e2f5279
 
   # hosts
+  - &cache 3f04a2e00f3ee8745c73c3a061581b101cfd02c7
   - &laptop 09bb80a35e897ec80bfe69fb18b99f71085358c0
   - &workstation b5e61a57a8efa6d02c545ea2ea40c867e87cd548
 
@@ -17,6 +18,12 @@ creation_rules:
     - pgp:
       - *husjon
       - *workstation
+
+  - path_regex: ^hosts/servers/cache.husjon.xyz/secrets.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *cache
 
   - path_regex: secrets\.(yaml|json|env|ini)$
     key_groups:

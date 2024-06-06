@@ -4,7 +4,7 @@
   nix.settings.substituters = [ "http://127.0.0.1/nixos" ];
 
   services.nginx = {
-    virtualHosts."cache" = {
+    virtualHosts."cache.husjon.xyz" = {
 
       locations."~ ^/nixos/(.*?)$" = {
         extraConfig = ''
