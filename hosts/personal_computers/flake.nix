@@ -81,7 +81,7 @@
 
             ../../modules/docker.nix
 
-            ../../modules/tailscale.nix
+            ../../modules/tailscale
           ];
         };
       };
