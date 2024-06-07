@@ -2,7 +2,7 @@
   description = "NixOS flake for husjon";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     hyprcursor.url = "github:hyprwm/hyprcursor/main";
