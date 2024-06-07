@@ -82,6 +82,7 @@
             ../../modules/docker.nix
 
             ../../modules/tailscale
+            ../../modules/tailscale/exit-node.nix
           ];
         };
       };
