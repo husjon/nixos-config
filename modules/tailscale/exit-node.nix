@@ -2,7 +2,7 @@
 
 {
   services.tailscale = {
-    extraUpFlags = "--advertise-exit-node";
+    extraUpFlags = [ "--advertise-exit-node" ];
     useRoutingFeatures = "server";
   };
 }
