@@ -22,3 +22,9 @@ esac
 echo "$REMOTE_KEY" | nix-shell \
     -p ssh-to-pgp \
     --run "ssh-to-pgp -name ${REMOTE_USER} -email ${REMOTE_USER}@${REMOTE_HOST} -o ${REMOTE_HOST}.asc"
+
+# Adding key to existing secret
+# sops --rotate \
+#     --in-place \
+#     --add-pgp ${PGP-FINGERPRINT} \
+#     hosts/servers/cache.husjon.xyz/secrets.yaml
