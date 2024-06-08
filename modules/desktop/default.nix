@@ -29,6 +29,8 @@
       nixpkgs-fmt
 
       obsidian
+
+      pavucontrol
       playerctl
       spotify
       trash-cli
