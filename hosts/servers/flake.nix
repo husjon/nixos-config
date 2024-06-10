@@ -33,6 +33,22 @@
           ];
         };
 
+        "docker.husjon.xyz" = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./docker.husjon.xyz/configuration.nix
+            sops-nix.nixosModules.sops
+
+            ../../modules/docker.nix
+            ../../modules/docker.husjon.xyz/traefik.nix
+
+            ../../modules/ups-rack-client.nix
+          ];
+        };
+
         "jellyfin.husjon.xyz" = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
