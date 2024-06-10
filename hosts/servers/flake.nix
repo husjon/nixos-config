@@ -45,6 +45,8 @@
             ../../modules/docker.nix
             ../../modules/docker.husjon.xyz/traefik.nix
 
+            ../../modules/docker.husjon.xyz/jellyfin.nix
+
             ../../modules/ups-rack-client.nix
           ];
         };
