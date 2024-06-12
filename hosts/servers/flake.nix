@@ -42,6 +42,8 @@
             ./docker.husjon.xyz/configuration.nix
             sops-nix.nixosModules.sops
 
+            ../../modules/fstrim.nix
+
             ../../modules/docker.nix
             ../../modules/docker.husjon.xyz/traefik.nix
 
