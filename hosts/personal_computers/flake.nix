@@ -45,6 +45,8 @@
             ./laptop/configuration.nix
             sops-nix.nixosModules.sops
 
+            ../../modules/fstrim.nix
+
             ../../modules/desktop
 
             ../../modules/desktop/graphics/intel.nix
@@ -67,6 +69,8 @@
             })
             ./workstation/configuration.nix
             sops-nix.nixosModules.sops
+
+            ../../modules/fstrim.nix
 
             ../../modules/desktop
             ../../modules/desktop/3d-printing.nix
