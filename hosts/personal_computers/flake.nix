@@ -89,6 +89,36 @@
             ../../modules/tailscale/exit-node.nix
           ];
         };
+
+        workstation-sb = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+            inherit user_settings;
+          };
+          modules = [
+            ({ ... }: {
+              nixpkgs.overlays = [ overlays-nixpkgs ];
+            })
+            ./workstation-sb/configuration.nix
+            sops-nix.nixosModules.sops
+
+            ../../modules/desktop/graphics/nvidia.nix
+
+            ../../modules/desktop
+            ../../modules/desktop/blender.nix
+            ../../modules/desktop/bluetooth.nix
+
+            ../../modules/desktop/krita.nix
+
+            ../../modules/desktop/x11/default.nix
+            ../../modules/desktop/x11/i3.nix
+
+            ../../modules/docker.nix
+
+            ../../modules/tailscale
+          ];
+        };
       };
     };
 }
