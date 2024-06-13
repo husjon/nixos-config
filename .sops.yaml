@@ -1,11 +1,13 @@
 keys:
   # users
   - &husjon 4e7cfbe78c8f9c9d88d7599711fc4fb86e2f5279
+  - &husjon-work 1e115c8a3fcab6570801144406cdac82d9069c3a
 
   # hosts
   - &cache 3f04a2e00f3ee8745c73c3a061581b101cfd02c7
   - &laptop 09bb80a35e897ec80bfe69fb18b99f71085358c0
   - &workstation b5e61a57a8efa6d02c545ea2ea40c867e87cd548
+  - &workstation-sb ede92810862c3271fe57418fe874b4f2de372305
 
 creation_rules:
   - path_regex: ^hosts/personal_computers/laptop/secrets.yaml$
@@ -18,6 +20,12 @@ creation_rules:
     - pgp:
       - *husjon
       - *workstation
+  - path_regex: ^hosts/personal_computers/workstation-sb/secrets.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *husjon-work
+      - *workstation-sb
 
   - path_regex: ^hosts/servers/cache.husjon.xyz/secrets.yaml$
     key_groups:
