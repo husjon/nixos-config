@@ -103,6 +103,8 @@
             ./workstation-sb/configuration.nix
             sops-nix.nixosModules.sops
 
+            ../../modules/fstrim.nix
+
             ../../modules/desktop/graphics/nvidia.nix
 
             ../../modules/desktop
