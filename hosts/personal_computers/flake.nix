@@ -46,6 +46,7 @@
             sops-nix.nixosModules.sops
 
             ../../modules/fstrim.nix
+            ../../modules/locale.nix
 
             ../../modules/desktop
 
@@ -71,6 +72,7 @@
             sops-nix.nixosModules.sops
 
             ../../modules/fstrim.nix
+            ../../modules/locale.nix
 
             ../../modules/desktop
             ../../modules/desktop/3d-printing.nix
@@ -104,6 +106,7 @@
             sops-nix.nixosModules.sops
 
             ../../modules/fstrim.nix
+            ../../modules/locale.nix
 
             ../../modules/desktop/graphics/nvidia.nix
 
