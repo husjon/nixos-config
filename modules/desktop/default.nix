@@ -40,6 +40,13 @@
       xdg-utils
     ];
   };
+
+  environment.sessionVariables = {
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_CACHE_HOME = "$HOME/.cache";
+  };
+
   # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1473408913
   # Helps during rebuild as `NetworkManager-wait-for-online` fails during rebuilds
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
