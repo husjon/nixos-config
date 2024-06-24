@@ -18,6 +18,7 @@
       discord
       unstable.brave
       git
+      git-crypt
       htop
 
       libnotify

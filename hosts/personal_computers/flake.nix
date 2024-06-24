@@ -55,6 +55,8 @@
             ../../modules/desktop/wayland/default.nix
             ../../modules/desktop/wayland/hyprland.nix
 
+            ({ ... }: { services.udev.extraRules = builtins.readFile ./laptop/secrets/99-yubikey.rules; })
+
           ];
         };
 
@@ -81,6 +83,7 @@
             ../../modules/desktop/godot.nix
             ../../modules/desktop/krita.nix
             ../../modules/desktop/steam.nix
+            ({ ... }: { services.udev.extraRules = builtins.readFile ./workstation/secrets/99-yubikey.rules; })
 
             ../../modules/desktop/wayland/default.nix
             ../../modules/desktop/wayland/hyprland.nix
@@ -118,6 +121,8 @@
 
             ../../modules/desktop/x11/default.nix
             ../../modules/desktop/x11/i3.nix
+
+            ({ ... }: { services.udev.extraRules = builtins.readFile ./workstation-sb/secrets/99-yubikey.rules; })
 
             ../../modules/docker.nix
 
