@@ -31,6 +31,8 @@
 
       obsidian
 
+      pqiv # image viewer
+
       pavucontrol
       playerctl
       spotify
