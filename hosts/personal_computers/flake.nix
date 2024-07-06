@@ -53,7 +53,7 @@
             ../../modules/desktop/graphics/intel.nix
 
             ../../modules/desktop/wayland/default.nix
-            ../../modules/desktop/wayland/hyprland.nix
+            ../../modules/desktop/wayland/sway.nix
 
             ({ ... }: { services.udev.extraRules = builtins.readFile ./laptop/secrets/99-yubikey.rules; })
 
@@ -86,7 +86,7 @@
             ({ ... }: { services.udev.extraRules = builtins.readFile ./workstation/secrets/99-yubikey.rules; })
 
             ../../modules/desktop/wayland/default.nix
-            ../../modules/desktop/wayland/hyprland.nix
+            ../../modules/desktop/wayland/sway.nix
 
             ../../modules/docker.nix
 
