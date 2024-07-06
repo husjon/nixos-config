@@ -78,7 +78,7 @@
 
             ../../modules/desktop
             ../../modules/desktop/3d-printing.nix
-            ../../modules/desktop/blender.nix
+            ../../modules/desktop/blender-amd.nix
             ../../modules/desktop/calibre.nix
             ../../modules/desktop/godot.nix
             ../../modules/desktop/krita.nix
