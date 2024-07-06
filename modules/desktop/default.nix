@@ -36,6 +36,8 @@
       pavucontrol
       playerctl
       spotify
+
+      tmux
       trash-cli
       vscode
 
