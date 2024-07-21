@@ -3,10 +3,10 @@
 {
   users.users.${user_settings.username} = {
     packages = with pkgs; [
+      fuzzel
+
       grim
       mako
-
-      rofi-wayland
 
       slurp
       waybar
