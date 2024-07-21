@@ -18,7 +18,7 @@
   # sops.secrets.example_key = { };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [ "https://distrocache.husjon.xyz/nixos" ];
+  nix.settings.substituters = [ "https://cache.husjon.xyz/nixos" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
