@@ -26,6 +26,8 @@
 
       neovim
 
+      networkmanagerapplet
+
       nil
       nixpkgs-fmt
 
