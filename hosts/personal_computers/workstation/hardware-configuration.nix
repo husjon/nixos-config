@@ -34,13 +34,19 @@
 
   fileSystems."/mnt/nvme0" =
     {
-      device = "/dev/disk/by-uuid/d8854e3d-db0e-4f7e-9381-348746378154";
+      device = "/dev/disk/by-uuid/d7fad3da-7ef5-491d-a345-7c724dc80cd1";
       fsType = "ext4";
     };
 
   fileSystems."/mnt/nvme2" =
     {
       device = "/dev/disk/by-uuid/7d534185-18ae-4ac3-b43f-6cbc1903bef5";
+      fsType = "ext4";
+    };
+
+  fileSystems."/mnt/nvme3" =
+    {
+      device = "/dev/disk/by-uuid/d8854e3d-db0e-4f7e-9381-348746378154";
       fsType = "ext4";
     };
 
