@@ -44,6 +44,7 @@
             })
             ./laptop/configuration.nix
             sops-nix.nixosModules.sops
+            ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
             ../../modules/locale.nix
@@ -72,6 +73,7 @@
             })
             ./workstation/configuration.nix
             sops-nix.nixosModules.sops
+            ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
             ../../modules/locale.nix
@@ -107,6 +109,7 @@
             })
             ./workstation-sb/configuration.nix
             sops-nix.nixosModules.sops
+            ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
             ../../modules/locale.nix
