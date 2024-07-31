@@ -4,7 +4,7 @@
 
   users.users.${user_settings.username} = {
     packages = with pkgs; [
-      blender
+      unstable.blender
     ];
   };
 }
