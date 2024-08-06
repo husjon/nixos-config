@@ -58,6 +58,7 @@
 
             ({ ... }: { services.udev.extraRules = builtins.readFile ./laptop/secrets/99-yubikey.rules; })
 
+            ../../modules/tailscale
           ];
         };
 
