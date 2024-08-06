@@ -17,14 +17,17 @@
     xwayland.enable = true;
   };
 
-  services.greetd = {
+  services.displayManager.sddm = {
     enable = true;
-    settings = rec {
-      initial_session = {
-        command = "dbus-launch ${pkgs.hyprland}/bin/Hyprland";
-        user = user_settings.username;
+    wayland.enable = true;
+
+    autoLogin.relogin = true;
+
+    settings = {
+      Autologin = {
+        Session = "hyprland.desktop";
+        User = user_settings.username;
       };
-      default_session = initial_session;
     };
   };
 }
