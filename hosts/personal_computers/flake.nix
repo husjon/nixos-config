@@ -57,7 +57,6 @@
             ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
-            ../../modules/locale.nix
 
             ../../modules/desktop
 
@@ -95,7 +94,6 @@
             ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
-            ../../modules/locale.nix
 
             ../../modules/desktop
             ../../modules/desktop/3d-printing.nix
@@ -140,7 +138,6 @@
             ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
-            ../../modules/locale.nix
 
             ../../modules/desktop/graphics/nvidia.nix
 
