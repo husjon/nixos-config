@@ -7,10 +7,6 @@
 }:
 
 {
-  sops.secrets.password.neededForUsers = true;
-
-  users.mutableUsers = false; # password cannot be changed with `passwd` and will only be set by `hashedPasswordFile` below
-
   users.users.${user_settings.username} = {
     isNormalUser = true;
     extraGroups = [

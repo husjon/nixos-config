@@ -10,17 +10,17 @@ keys:
   - &workstation-sb ede92810862c3271fe57418fe874b4f2de372305
 
 creation_rules:
-  - path_regex: ^hosts/personal_computers/laptop/secrets.yaml$
+  - path_regex: ^configuration/secrets/laptop.sops.yaml$
     key_groups:
     - pgp:
       - *husjon
       - *laptop
-  - path_regex: ^hosts/personal_computers/workstation/secrets.yaml$
+  - path_regex: ^configuration/secrets/workstation.sops.yaml$
     key_groups:
     - pgp:
       - *husjon
       - *workstation
-  - path_regex: ^hosts/personal_computers/workstation-sb/secrets.yaml$
+  - path_regex: ^configuration/secrets/workstation-sb.sops.yaml$
     key_groups:
     - pgp:
       - *husjon
