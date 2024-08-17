@@ -11,6 +11,8 @@
   imports = [
     ./hardware/${hostname}.nix
     ./graphics
+
+    ./nix-store-maintenance.nix
   ];
 
   sops.defaultSopsFile = ./secrets/${hostname}.sops.yaml;
