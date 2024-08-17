@@ -106,7 +106,6 @@
             ../../modules/docker.nix
             ../../modules/desktop/bluetooth.nix
 
-            ../../modules/tailscale
             ../../modules/tailscale/exit-node.nix
           ];
         };
@@ -146,8 +145,6 @@
             )
 
             ../../modules/docker.nix
-
-            ../../modules/tailscale
           ];
         };
       };

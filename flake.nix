@@ -43,6 +43,8 @@
         }
 
         ./modules/window_manager
+
+        ./modules/tailscale
       ];
 
     in
