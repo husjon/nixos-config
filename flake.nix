@@ -6,6 +6,11 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
+    hyprcursor.url = "github:hyprwm/hyprcursor/main";
+    hyprlock.url = "github:hyprwm/hyprlock/main";
+    hypridle.url = "github:hyprwm/hypridle/main";
+    hyprpicker.url = "github:hyprwm/hyprpicker/main";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +41,8 @@
           home-manager.useUserPackages = true;
           home-manager.users."${configuration.user.username}" = import ./modules/home.nix;
         }
+
+        ./modules/window_manager
       ];
 
     in
@@ -44,7 +51,9 @@
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          specialArgs = configuration.laptop;
+          specialArgs = configuration.laptop // {
+            inherit inputs;
+          };
 
           modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.laptop; } ];
         };

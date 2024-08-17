@@ -5,11 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    hyprcursor.url = "github:hyprwm/hyprcursor/main";
-    hyprlock.url = "github:hyprwm/hyprlock/main";
-    hypridle.url = "github:hyprwm/hypridle/main";
-    hyprpicker.url = "github:hyprwm/hyprpicker/main";
-
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
@@ -61,7 +56,6 @@
             ../../modules/desktop
 
             ../../modules/desktop/wayland/default.nix
-            ../../modules/desktop/wayland/hyprland.nix
 
             (
               { ... }:
@@ -108,7 +102,6 @@
             )
 
             ../../modules/desktop/wayland/default.nix
-            ../../modules/desktop/wayland/hyprland.nix
 
             ../../modules/docker.nix
             ../../modules/desktop/bluetooth.nix
@@ -144,7 +137,6 @@
             ../../modules/desktop/krita.nix
 
             ../../modules/desktop/x11/default.nix
-            ../../modules/desktop/x11/i3.nix
 
             (
               { ... }:

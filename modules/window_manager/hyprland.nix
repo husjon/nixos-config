@@ -1,12 +1,12 @@
 {
   pkgs,
   inputs,
-  user_settings,
+  user,
   ...
 }:
 
 {
-  users.users.${user_settings.username} = {
+  users.users.${user.username} = {
     packages = with pkgs; [
       inputs.hyprcursor.packages."${pkgs.system}".hyprcursor
       inputs.hypridle.packages."${pkgs.system}".hypridle
@@ -31,7 +31,7 @@
     settings = {
       Autologin = {
         Session = "hyprland.desktop";
-        User = user_settings.username;
+        User = user.username;
       };
     };
   };
