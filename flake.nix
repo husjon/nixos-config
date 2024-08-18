@@ -93,6 +93,8 @@
             )
 
             { home-manager.extraSpecialArgs = configuration.workstation; }
+
+            ./modules/blender.nix
           ];
         };
 
@@ -103,7 +105,11 @@
             inherit inputs;
           };
 
-          modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.workstation-sb; } ];
+          modules = commonModules ++ [
+            { home-manager.extraSpecialArgs = configuration.workstation-sb; }
+
+            ./modules/blender.nix
+          ];
         };
       };
     };
