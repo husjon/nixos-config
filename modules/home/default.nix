@@ -19,6 +19,7 @@ in
 
   imports = [
     ./alacritty.nix
+    ./fish.nix
     ./git.nix
     ./neovim.nix
     ./tmux.nix
@@ -58,7 +59,6 @@ in
 
   programs.direnv.enable = true;
   programs.starship.enable = true;
-  programs.fish.enable = true;
 
   services.syncthing.enable = true;
 
