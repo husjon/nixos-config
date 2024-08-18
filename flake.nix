@@ -96,6 +96,7 @@
 
             ./modules/3d-printing.nix
             ./modules/blender.nix
+            ./modules/steam.nix
           ];
         };
 
