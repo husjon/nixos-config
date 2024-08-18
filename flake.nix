@@ -57,6 +57,8 @@
           }
         )
 
+        ./modules/system
+
         ./modules/window_manager
 
         ./modules/tailscale
