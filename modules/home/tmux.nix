@@ -11,9 +11,10 @@
 
     prefix = "C-space";
 
-    terminal = "xterm-256color:Tc"; # Allow 24-bit color support
-
     extraConfig = ''
+      set -g default-terminal "xterm-256color"
+      set-option -ga terminal-overrides ",xterm-256color:Tc"  # Allow 24-bit color support
+
       # check if active pane is vim/neovim
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
               | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
