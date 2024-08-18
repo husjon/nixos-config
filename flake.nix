@@ -97,6 +97,7 @@
             ./modules/3d-printing.nix
             ./modules/blender.nix
             ./modules/calibre.nix
+            ./modules/docker.nix
             ./modules/godot.nix
             ./modules/krita.nix
             ./modules/steam.nix
@@ -115,6 +116,7 @@
 
             ./modules/3d-printing.nix
             ./modules/blender.nix
+            ./modules/docker.nix
 
             (
               { pkgs, ... }:
