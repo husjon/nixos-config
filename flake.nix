@@ -94,6 +94,7 @@
 
             { home-manager.extraSpecialArgs = configuration.workstation; }
 
+            ./modules/3d-printing.nix
             ./modules/blender.nix
           ];
         };
@@ -108,6 +109,7 @@
           modules = commonModules ++ [
             { home-manager.extraSpecialArgs = configuration.workstation-sb; }
 
+            ./modules/3d-printing.nix
             ./modules/blender.nix
           ];
         };

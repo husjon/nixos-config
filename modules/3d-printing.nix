@@ -1,8 +1,8 @@
-{ pkgs, user_settings, ... }:
+{ pkgs, user, ... }:
 
 {
 
-  users.users.${user_settings.username} = {
+  users.users.${user.username} = {
 
     packages = with pkgs; [
       freecad
