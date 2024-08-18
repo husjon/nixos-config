@@ -11,7 +11,6 @@
 {
   imports = [
     ./hardware/${hostname}.nix
-    ./graphics
 
     ./fstrim.nix
     ./nix-store-maintenance.nix

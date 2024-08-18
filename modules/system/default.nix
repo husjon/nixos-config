@@ -2,6 +2,8 @@
 {
   imports = [
     ./audio.nix
+    ./graphics
+
     ./filemanager.nix
     ./keyring.nix
   ];
