@@ -115,6 +115,15 @@
 
             ./modules/3d-printing.nix
             ./modules/blender.nix
+
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.config = {
+                  packageOverrides = pkgs: { polybar = pkgs.polybar.override { i3Support = true; }; };
+                };
+              }
+            )
           ];
         };
       };
