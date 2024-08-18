@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.tmux = {
     enable = true;
@@ -10,6 +10,8 @@
     mouse = true;
 
     prefix = "C-space";
+
+    shell = "${pkgs.fish}/bin/fish";
 
     extraConfig = ''
       set -g default-terminal "xterm-256color"

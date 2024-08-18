@@ -14,6 +14,8 @@ in
     settings = {
       import = [ "${catppuccin-alacritty}/catppuccin-mocha.toml" ];
 
+      shell = "${pkgs.fish}/bin/fish";
+
       env = {
         TERM = "xterm-256color";
       };
