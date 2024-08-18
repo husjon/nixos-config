@@ -76,6 +76,35 @@
 
           modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.laptop; } ];
         };
+
+        workstation = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = configuration.workstation // {
+            inherit inputs;
+          };
+
+          modules = commonModules ++ [
+            (
+              { pkgs, ... }:
+              {
+                boot.kernelPackages = pkgs.linuxPackages_latest;
+              }
+            )
+
+            { home-manager.extraSpecialArgs = configuration.workstation; }
+          ];
+        };
+
+        workstation-sb = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = configuration.workstation-sb // {
+            inherit inputs;
+          };
+
+          modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.workstation-sb; } ];
+        };
       };
     };
 }
