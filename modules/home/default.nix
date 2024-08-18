@@ -1,5 +1,14 @@
-{ user, pkgs, ... }:
+{
+  user,
+  graphics,
+  pkgs,
+  ...
+}:
 
+let
+  window_manager_dependent = if graphics != "nvidia" then ./hyprland else ./i3;
+
+in
 {
   # List of options: https://nix-community.github.io/home-manager/options.xhtml
 
@@ -13,6 +22,8 @@
     ./git.nix
     ./neovim.nix
     ./tmux.nix
+
+    window_manager_dependent
   ];
 
   # Packages that should be installed to the user profile.
