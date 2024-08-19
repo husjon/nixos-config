@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  # Nix completion for fish (https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356/4)
+  xdg.configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
+
   programs.fish = {
     enable = true;
 
