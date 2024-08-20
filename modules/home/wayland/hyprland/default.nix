@@ -98,12 +98,12 @@ in
         "hyprctl dispatch dpms on"
         "pkill hyprpaper; sleep 0.1; ${pkgs.hyprpaper}/bin/hyprpaper"
         "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
+        "pgrep -f .Discord-wrapped || ${pkgs.discord}/bin/discord"
       ];
 
       exec-once = [
         #~/bin/pipewire-monitor
         "${pkgs.unstable.brave}/bin/brave"
-        "${pkgs.discord}/bin/discord"
         "pkill gnome-keyring; gnome-keyring-daemon"
         "sleep 0.25; loginctl lock-session"
         "${pkgs.spotify}/bin/spotify; playerctl -i brave volume 0.5"
