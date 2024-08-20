@@ -307,6 +307,17 @@ in
     };
   };
 
+  services.hyprpaper = {
+    enable = true;
+
+    settings = {
+      splash = false;
+
+      preload = [ "${config.home.homeDirectory}/.wallpaper.png" ];
+      wallpaper = [ ", ${config.home.homeDirectory}/.wallpaper.png" ];
+    };
+  };
+
   programs.hyprlock = {
     enable = true;
 
