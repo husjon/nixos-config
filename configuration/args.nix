@@ -22,6 +22,8 @@ rec {
       };
     };
 
+    nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
+
     stateVersion = "23.11";
   };
 
@@ -61,6 +63,8 @@ rec {
       };
     };
 
+    nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
+
     stateVersion = "23.11";
   };
 
@@ -87,6 +91,8 @@ rec {
         rotation = 0;
       };
     };
+
+    nixSubstituters = [ ];
 
     stateVersion = "23.11";
   };

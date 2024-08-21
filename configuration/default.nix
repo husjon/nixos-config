@@ -3,6 +3,7 @@
   pkgs,
   user,
   hostname,
+  nixSubstituters,
   stateVersion,
   config,
   ...
@@ -39,7 +40,7 @@
     "nix-command"
     "flakes"
   ];
-  nix.settings.substituters = [ "https://cache.husjon.xyz/nixos" ];
+  nix.settings.substituters = nixSubstituters;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
