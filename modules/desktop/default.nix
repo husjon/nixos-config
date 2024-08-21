@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   user_settings,
   config,
   ...
@@ -59,11 +58,6 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_CACHE_HOME = "$HOME/.cache";
   };
-
-  # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1473408913
-  # Helps during rebuild as `NetworkManager-wait-for-online` fails during rebuilds
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
-  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
 
   services.avahi.enable = true; # for Chromecast
 
