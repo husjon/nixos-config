@@ -1,8 +1,9 @@
 { ... }:
 
 rec {
-  user = {
+  user = rec {
     username = "husjon";
+    profile_picture = ./${username}.png;
   };
 
   laptop = {

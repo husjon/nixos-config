@@ -27,6 +27,8 @@ in
     window_manager_dependent
   ];
 
+  home.file.".face.png".source = user.profile_picture;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     discord
