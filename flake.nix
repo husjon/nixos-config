@@ -5,6 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     sops-nix.url = "github:Mic92/sops-nix";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -12,6 +17,7 @@
       self,
       nixpkgs,
       sops-nix,
+      home-manager,
       ...
     }:
 
@@ -23,6 +29,13 @@
       commonModules = [
         ./configuration
         sops-nix.nixosModules.sops
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."${configuration.user.username}" = import ./modules/home.nix;
+        }
       ];
 
     in
@@ -33,7 +46,7 @@
 
           specialArgs = configuration.laptop;
 
-          modules = commonModules ++ [ ];
+          modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.laptop; } ];
         };
       };
     };
