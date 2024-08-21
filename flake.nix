@@ -19,9 +19,6 @@
       system = "x86_64-linux";
 
       configuration = import ./configuration/args.nix { inherit inputs; };
-      laptop = configuration.laptop // {
-        inherit inputs;
-      };
 
       commonModules = [
         ./configuration
@@ -34,7 +31,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          specialArgs = laptop;
+          specialArgs = configuration.laptop;
 
           modules = commonModules ++ [ ];
         };

@@ -60,8 +60,6 @@
 
             ../../modules/desktop
 
-            ../../modules/desktop/graphics/intel.nix
-
             ../../modules/desktop/wayland/default.nix
             ../../modules/desktop/wayland/hyprland.nix
 
@@ -138,8 +136,6 @@
             ../../modules/nix-store-maintenance.nix
 
             ../../modules/fstrim.nix
-
-            ../../modules/desktop/graphics/nvidia.nix
 
             ../../modules/desktop
             ../../modules/desktop/blender.nix

@@ -8,7 +8,10 @@
 }:
 
 {
-  imports = [ ./hardware/${hostname}.nix ];
+  imports = [
+    ./hardware/${hostname}.nix
+    ./graphics
+  ];
 
   sops.defaultSopsFile = ./secrets/${hostname}.sops.yaml;
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
