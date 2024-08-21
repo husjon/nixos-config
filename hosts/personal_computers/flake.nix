@@ -122,7 +122,6 @@
 
             ../../modules/desktop
             ../../modules/desktop/blender.nix
-            ../../modules/desktop/bluetooth.nix
 
             ../../modules/desktop/krita.nix
 

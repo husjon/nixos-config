@@ -2,6 +2,9 @@
 {
   imports = [
     ./audio.nix
+
+    ./bluetooth.nix
+
     ./graphics
 
     ./filemanager.nix
