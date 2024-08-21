@@ -9,12 +9,7 @@
 }:
 
 {
-  imports = [
-    ./hardware/${hostname}.nix
-
-    ./fstrim.nix
-    ./nix-store-maintenance.nix
-  ];
+  imports = [ ./hardware/${hostname}.nix ];
 
   sops.defaultSopsFile = ./secrets/${hostname}.sops.yaml;
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];

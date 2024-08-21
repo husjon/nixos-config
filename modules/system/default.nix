@@ -6,6 +6,9 @@
 
     ./filemanager.nix
     ./keyring.nix
+
+    ./fstrim.nix
+    ./nix-store-maintenance.nix
   ];
 
   services.avahi.enable = true; # for Chromecast
