@@ -17,38 +17,6 @@
     hashedPasswordFile = config.sops.secrets.password.path;
 
     shell = pkgs.fish;
-
-    packages = with pkgs; [
-      alacritty
-      discord
-      unstable.brave
-      htop
-
-      libnotify
-      lxde.lxsession
-
-      neovim
-
-      networkmanagerapplet
-
-      nil
-      nixfmt
-
-      obsidian
-
-      pqiv # image viewer
-
-      pavucontrol
-      playerctl
-      spotify
-
-      tmux
-      trash-cli
-      vscode
-
-      xdg-user-dirs
-      xdg-utils
-    ];
   };
 
   environment.sessionVariables = {
@@ -61,11 +29,8 @@
 
   fonts.packages = [ pkgs.nerdfonts ];
 
-  programs.direnv.enable = true;
   programs.seahorse.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  programs.starship.enable = true;
-  programs.fish.enable = true;
   programs.gnupg.agent.enable = true;
 
   services.printing.enable = true;
@@ -80,14 +45,6 @@
     };
     jack.enable = true;
     wireplumber.enable = true;
-  };
-
-  services.syncthing = {
-    enable = true;
-    user = user_settings.username;
-    openDefaultPorts = true;
-    dataDir = "/home/" + user_settings.username;
-    configDir = "/home/" + user_settings.username + "/.config/syncthing";
   };
 
   programs.thunar.enable = true;
