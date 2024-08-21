@@ -39,7 +39,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users."${configuration.user.username}" = import ./modules/home.nix;
+          home-manager.users."${configuration.user.username}" = import ./modules/home;
         }
 
         ./modules/window_manager
