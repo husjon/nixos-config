@@ -3,6 +3,9 @@
   programs.tmux = {
     enable = true;
 
+    secureSocket = false; # disable for now as there is a mismatch between running the command and starting it directly with the terminal
+    # Store tmux socket under /run, which is more secure than /tmp, but as a downside it doesn’t survive user logout.
+
     aggressiveResize = true;
     baseIndex = 1;
     escapeTime = 0;
