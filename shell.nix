@@ -16,5 +16,12 @@ pkgs.mkShell {
     nixfmt-rfc-style
     nil
     sops
+
+    (writeShellScriptBin "rebuild-test" ''
+      sudo nixos-rebuild --flake ".#" test
+    '')
+    (writeShellScriptBin "rebuild-switch" ''
+      sudo nixos-rebuild --flake ".#" switch
+    '')
   ];
 }
