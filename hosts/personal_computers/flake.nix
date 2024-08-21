@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
@@ -19,13 +17,6 @@
 
     let
       system = "x86_64-linux";
-
-      overlays-nixpkgs = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
 
       user_settings = {
         username = "husjon";

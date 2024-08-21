@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -21,6 +22,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       sops-nix,
       home-manager,
       ...
@@ -28,6 +30,13 @@
 
     let
       system = "x86_64-linux";
+
+      overlays-nixpkgs = final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
 
       configuration = import ./configuration/args.nix { inherit inputs; };
 
@@ -41,6 +50,12 @@
           home-manager.useUserPackages = true;
           home-manager.users."${configuration.user.username}" = import ./modules/home;
         }
+        (
+          { ... }:
+          {
+            nixpkgs.overlays = [ overlays-nixpkgs ];
+          }
+        )
 
         ./modules/window_manager
 
