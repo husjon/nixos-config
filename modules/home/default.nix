@@ -6,7 +6,7 @@
 }:
 
 let
-  window_manager_dependent = if graphics != "nvidia" then ./hyprland else ./i3;
+  window_manager_dependent = if graphics != "nvidia" then ./wayland else ./i3;
 
 in
 {
