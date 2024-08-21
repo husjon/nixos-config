@@ -30,7 +30,6 @@
     };
   };
 
-
   fileSystems."/mnt/media" = {
     device = "//diskstation420/multimedia";
     fsType = "cifs";

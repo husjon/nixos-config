@@ -25,11 +25,18 @@
     };
 
     upstreams."nixos" = {
-      servers = { "127.0.0.1:8040" = { }; };
+      servers = {
+        "127.0.0.1:8040" = { };
+      };
     };
     virtualHosts."nixos" = {
-      listen = [{ addr = "127.0.0.1"; port = 8040; }];
-      locations."/" .proxyPass = "http://cache.nixos.org$request_uri";
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 8040;
+        }
+      ];
+      locations."/".proxyPass = "http://cache.nixos.org$request_uri";
     };
   };
 }

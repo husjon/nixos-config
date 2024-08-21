@@ -7,7 +7,13 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, sops-nix, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      sops-nix,
+      ...
+    }:
 
     let
       system = "x86_64-linux";

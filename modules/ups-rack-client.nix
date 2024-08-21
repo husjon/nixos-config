@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   upsschedCmd = pkgs.writeScriptBin "upssched-cmd" ''
@@ -48,8 +53,8 @@ let
 
     AT SHUTDOWN     *       EXECUTE         earlyshutdown
   '';
-in
 
+in
 {
   sops.secrets.nut_pass = { };
 
@@ -75,37 +80,95 @@ in
       FINALDELAY = 5;
 
       NOTIFYFLAG = [
-        [ "ONLINE" "SYSLOG+EXEC" ]
-        [ "ONBATT" "SYSLOG+EXEC" ]
-        [ "LOWBATT" "SYSLOG" ]
-        [ "FSD" "SYSLOG+EXEC" ]
-        [ "COMMOK" "SYSLOG+EXEC" ]
-        [ "COMMBAD" "SYSLOG+EXEC" ]
-        [ "SHUTDOWN" "SYSLOG+EXEC" ]
-        [ "REPLBATT" "SYSLOG" ]
-        [ "NOCOMM" "SYSLOG+EXEC" ]
-        [ "NOPARENT" "SYSLOG" ]
+        [
+          "ONLINE"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "ONBATT"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "LOWBATT"
+          "SYSLOG"
+        ]
+        [
+          "FSD"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "COMMOK"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "COMMBAD"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "SHUTDOWN"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "REPLBATT"
+          "SYSLOG"
+        ]
+        [
+          "NOCOMM"
+          "SYSLOG+EXEC"
+        ]
+        [
+          "NOPARENT"
+          "SYSLOG"
+        ]
       ];
       NOTIFYMSG = [
-        [ "ONLINE" "UPS %s on line power" ]
-        [ "ONBATT" "UPS %s on battery" ]
-        [ "LOWBATT" "UPS %s battery is low" ]
-        [ "FSD" "UPS %s: forced shutdown in progress" ]
-        [ "COMMOK" "Communications with UPS %s established" ]
-        [ "COMMBAD" "Communications with UPS %s lost" ]
-        [ "SHUTDOWN" "Auto logout and shutdown proceeding" ]
-        [ "REPLBATT" "UPS %s battery needs to be replaced" ]
-        [ "NOCOMM" "UPS %s is unavailable" ]
-        [ "NOPARENT" "upsmon parent process died - shutdown impossible" ]
+        [
+          "ONLINE"
+          "UPS %s on line power"
+        ]
+        [
+          "ONBATT"
+          "UPS %s on battery"
+        ]
+        [
+          "LOWBATT"
+          "UPS %s battery is low"
+        ]
+        [
+          "FSD"
+          "UPS %s: forced shutdown in progress"
+        ]
+        [
+          "COMMOK"
+          "Communications with UPS %s established"
+        ]
+        [
+          "COMMBAD"
+          "Communications with UPS %s lost"
+        ]
+        [
+          "SHUTDOWN"
+          "Auto logout and shutdown proceeding"
+        ]
+        [
+          "REPLBATT"
+          "UPS %s battery needs to be replaced"
+        ]
+        [
+          "NOCOMM"
+          "UPS %s is unavailable"
+        ]
+        [
+          "NOPARENT"
+          "upsmon parent process died - shutdown impossible"
+        ]
       ];
 
     };
   };
 
   environment.etc = {
-    "nut/upssched.conf" = lib.mkForce {
-      source = upsschedConf;
-    };
+    "nut/upssched.conf" = lib.mkForce { source = upsschedConf; };
     "nut/upssched-cmd" = {
       source = upsschedCmd;
     };

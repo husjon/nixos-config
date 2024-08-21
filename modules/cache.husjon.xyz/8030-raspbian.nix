@@ -4,7 +4,7 @@
   services.nginx = {
     virtualHosts."cache.husjon.xyz" = {
 
-      locations."~ ^/raspbian/(.*?\.deb)$" = {
+      locations."~ ^/raspbian/(.*?.deb)$" = {
         extraConfig = ''
           proxy_pass        http://raspbian/$1;
           proxy_cache       STATIC;
@@ -28,11 +28,18 @@
     };
 
     upstreams."raspbian" = {
-      servers = { "127.0.0.1:8030" = { }; };
+      servers = {
+        "127.0.0.1:8030" = { };
+      };
     };
     virtualHosts."raspbian" = {
-      listen = [{ addr = "127.0.0.1"; port = 8030; }];
-      locations."/" .proxyPass = "http://archive.raspberrypi.org/debian$request_uri";
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 8030;
+        }
+      ];
+      locations."/".proxyPass = "http://archive.raspberrypi.org/debian$request_uri";
     };
   };
 }

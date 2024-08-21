@@ -8,8 +8,6 @@
 
   nix.optimise = {
     automatic = true;
-    dates = [
-      "03:45"
-    ];
+    dates = [ "03:45" ];
   };
 }

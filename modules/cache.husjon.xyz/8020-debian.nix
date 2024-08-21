@@ -4,7 +4,7 @@
   services.nginx = {
     virtualHosts."cache.husjon.xyz" = {
 
-      locations."~ ^/debian/(.*?\.deb)$" = {
+      locations."~ ^/debian/(.*?.deb)$" = {
         extraConfig = ''
           proxy_pass        http://debian/$1;
           proxy_cache       STATIC;
@@ -25,7 +25,7 @@
           proxy_cache_valid 200 1h;
         '';
       };
-      locations."~ ^/debian-security/(.*?\.deb)$" = {
+      locations."~ ^/debian-security/(.*?.deb)$" = {
         extraConfig = ''
           proxy_pass        http://debian_security/$1;
           proxy_cache       STATIC;
@@ -49,19 +49,33 @@
     };
 
     upstreams."debian" = {
-      servers = { "127.0.0.1:8020" = { }; };
+      servers = {
+        "127.0.0.1:8020" = { };
+      };
     };
     virtualHosts."debian" = {
-      listen = [{ addr = "127.0.0.1"; port = 8020; }];
-      locations."/" .proxyPass = "http://deb.debian.org/debian$request_uri";
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 8020;
+        }
+      ];
+      locations."/".proxyPass = "http://deb.debian.org/debian$request_uri";
     };
 
     upstreams."debian_security" = {
-      servers = { "127.0.0.1:8021" = { }; };
+      servers = {
+        "127.0.0.1:8021" = { };
+      };
     };
     virtualHosts."debian_security" = {
-      listen = [{ addr = "127.0.0.1"; port = 8021; }];
-      locations."/" .proxyPass = "http://security.debian.org/debian-security$request_uri";
+      listen = [
+        {
+          addr = "127.0.0.1";
+          port = 8021;
+        }
+      ];
+      locations."/".proxyPass = "http://security.debian.org/debian-security$request_uri";
     };
   };
 }

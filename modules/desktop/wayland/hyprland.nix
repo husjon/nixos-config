@@ -1,4 +1,9 @@
-{ pkgs, inputs, user_settings, ... }:
+{
+  pkgs,
+  inputs,
+  user_settings,
+  ...
+}:
 
 {
   users.users.${user_settings.username} = {

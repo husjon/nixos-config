@@ -9,7 +9,6 @@
     displayManager.sddm.enable = true;
   };
 
-
   users.users.${user_settings.username} = {
     packages = with pkgs; [
       dunst
@@ -24,10 +23,6 @@
   };
 
   nixpkgs.config = {
-    packageOverrides = pkgs: rec {
-      polybar = pkgs.polybar.override {
-        i3Support = true;
-      };
-    };
+    packageOverrides = pkgs: rec { polybar = pkgs.polybar.override { i3Support = true; }; };
   };
 }

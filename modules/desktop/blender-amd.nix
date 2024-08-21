@@ -3,8 +3,6 @@
 {
 
   users.users.${user_settings.username} = {
-    packages = with pkgs; [
-      unstable.blender-hip
-    ];
+    packages = with pkgs; [ unstable.blender-hip ];
   };
 }

@@ -2,8 +2,6 @@
 
 {
   users.users.${user_settings.username} = {
-    packages = with pkgs; [
-      calibre
-    ];
+    packages = with pkgs; [ calibre ];
   };
 }

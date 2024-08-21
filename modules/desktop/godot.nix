@@ -2,8 +2,6 @@
 
 {
   users.users.${user_settings.username} = {
-    packages = with pkgs; [
-      unstable.godot_4
-    ];
+    packages = with pkgs; [ unstable.godot_4 ];
   };
 }

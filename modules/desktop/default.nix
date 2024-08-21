@@ -1,4 +1,10 @@
-{ pkgs, lib, user_settings, config, ... }:
+{
+  pkgs,
+  lib,
+  user_settings,
+  config,
+  ...
+}:
 
 {
   sops.secrets.password.neededForUsers = true;
@@ -7,7 +13,11 @@
 
   users.users.${user_settings.username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
 
     hashedPasswordFile = config.sops.secrets.password.path;
 
@@ -29,7 +39,7 @@
       networkmanagerapplet
 
       nil
-      nixpkgs-fmt
+      nixfmt
 
       obsidian
 
@@ -61,9 +71,7 @@
 
   services.avahi.enable = true; # for Chromecast
 
-  fonts.packages = [
-    pkgs.nerdfonts
-  ];
+  fonts.packages = [ pkgs.nerdfonts ];
 
   programs.direnv.enable = true;
   programs.seahorse.enable = true;
@@ -105,8 +113,6 @@
   services.tumbler.enable = true; # Thumbnail support for images
 
   xdg.mime.defaultApplications = {
-    "inode/directory" = [
-      "thunar.desktop"
-    ];
+    "inode/directory" = [ "thunar.desktop" ];
   };
 }

@@ -3,18 +3,18 @@
 {
   sops.secrets.traefik_env = { };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
 
   users.users."traefik".extraGroups = [ "docker" ];
-
 
   services.traefik = {
 
     enable = true;
 
-    environmentFiles = [
-      config.sops.secrets.traefik_env.path
-    ];
+    environmentFiles = [ config.sops.secrets.traefik_env.path ];
 
     staticConfigOptions = {
       api.insecure = true;
