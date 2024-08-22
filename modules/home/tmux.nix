@@ -21,7 +21,7 @@
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
               | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 
-      set-option -g               default-terminal "xterm-256color"
+      set-option -g               default-terminal "screen-256color"
       set-option -ga              terminal-overrides ",xterm-256color:Tc"  # Allow 24-bit color support
 
       set-option -g               detach-on-destroy off
