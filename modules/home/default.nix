@@ -26,6 +26,8 @@ in
     ./neovim.nix
     ./tmux.nix
 
+    ./scripts
+
     window_manager_dependent
   ];
 
