@@ -26,6 +26,8 @@
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
               | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 
+      bind-key C-r            source-file ~/.config/tmux/tmux.conf \; display "Reloaded config"
+
       bind-key | split-window -h -c "#{pane_current_path}"
       bind-key - split-window -v -c "#{pane_current_path}"
       bind-key c new-window   -c "#{pane_current_path}"  # create new window in current directory
@@ -60,7 +62,8 @@
       bind-key -r M-C-K       resize-pane -U 10
       bind-key -r M-C-L       resize-pane -R 10
 
-      bind-key C-s             split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+      bind-key C-s            choose-tree -Zs  # Show sessions selector
+
     '';
   };
 }
