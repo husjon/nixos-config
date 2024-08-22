@@ -1,4 +1,5 @@
 {
+  config,
   user,
   graphics,
   pkgs,
@@ -27,6 +28,10 @@ in
 
     window_manager_dependent
   ];
+
+  home.sessionVariables = {
+    PATH = "${config.home.homeDirectory}/.local/bin:\$PATH";
+  };
 
   home.file.".face.png".source = user.profile_picture;
 
