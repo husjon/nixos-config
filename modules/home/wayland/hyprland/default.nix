@@ -91,7 +91,7 @@ in
       source = "${catppuccin-hyprland}/themes/mocha.conf";
 
       "$mod" = "SUPER";
-      "$terminal" = "${pkgs.alacritty}/bin/alacritty";
+      "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$menu" = "${pkgs.fuzzel}/bin/fuzzel";
 
       exec = [
@@ -199,7 +199,7 @@ in
 
       bind = [
         "$mod, Return, exec, $terminal"
-        "$mod Shift, Return, exec, $terminal --command sh -c 'tmux attach || tmux'"
+        "$mod Shift, Return, exec, $terminal sh -c 'tmux attach || tmux'"
         "$mod Shift, Q, killactive,"
         "$mod Ctrl Shift Alt, Escape, exit,"
         "$mod, S, exec, hyprctl --batch 'dispatch togglefloating ; dispatch centerwindow'"

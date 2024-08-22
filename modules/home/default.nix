@@ -19,11 +19,11 @@ in
   home.homeDirectory = "/home/${user.username}";
 
   imports = [
-    ./alacritty.nix
     ./bash.nix
     ./fish.nix
     ./git.nix
     ./neovim.nix
+    ./terminal.nix
     ./tmux.nix
 
     ./scripts
