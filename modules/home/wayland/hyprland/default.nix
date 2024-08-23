@@ -1,5 +1,6 @@
 {
   config,
+  graphics,
   hostname,
   monitors,
   pkgs,
@@ -13,6 +14,16 @@ let
     hash = "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=";
   };
 
+  nvidia_env =
+    if graphics == "nvidia" then
+      [
+        "env = LIBVA_DRIVER_NAME,nvidia"
+        "env = XDG_SESSION_TYPE,wayland"
+        "env = GBM_BACKEND,nvidia-drm"
+        "env = __GLX_VENDOR_LIBRARY_NAME,nvidia"
+      ]
+    else
+      [ ];
   host_specific_config =
     with monitors;
     if hostname == "workstation" then
@@ -54,7 +65,6 @@ let
           "$mod SHIFT, plus,      movetoworkspacesilent, 11"
           "$mod SHIFT, backslash, movetoworkspacesilent, 12"
         ];
-
       }
     else if hostname == "laptop" then
       {
@@ -75,6 +85,32 @@ let
           "8,  monitor:${primary.name}"
           "9,  monitor:${primary.name}"
           "10, monitor:${primary.name}"
+        ];
+
+        bind = [ ];
+      }
+    else if hostname == "workstation-sb" then
+      {
+        monitor = [
+          "${primary.name}, ${primary.resolution}@${toString primary.rate}, ${primary.position}, 1, transform, ${
+            toString (primary.rotation / 90)
+          }"
+          "${secondary.name}, ${secondary.resolution}@${toString secondary.rate}, ${secondary.position}, 1, transform, ${
+            toString (secondary.rotation / 90)
+          }"
+        ];
+
+        workspace = [
+          "1,  monitor:${primary.name}"
+          "2,  monitor:${primary.name}"
+          "3,  monitor:${primary.name}"
+          "4,  monitor:${primary.name}"
+          "5,  monitor:${primary.name}"
+          "6,  monitor:${secondary.name}"
+          "7,  monitor:${secondary.name}"
+          "8,  monitor:${secondary.name}"
+          "9,  monitor:${secondary.name}"
+          "10, monitor:${secondary.name}"
         ];
 
         bind = [ ];
@@ -125,7 +161,7 @@ in
         "QT_QPA_PLATFORM,wayland;xcb"
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
-      ];
+      ] ++ nvidia_env;
 
       monitor = monitor;
       workspace = workspace;

@@ -78,18 +78,18 @@ rec {
 
     monitors = {
       primary = {
-        name = "DP-1";
-        resolution = "2560x1440";
-        rate = 60;
-        position = "0x0";
-        rotation = 0;
-      };
-      secondary = {
         name = "DP-2";
         resolution = "2560x1440";
         rate = 60;
-        position = "0x0";
+        position = "1440x610";
         rotation = 0;
+      };
+      secondary = {
+        name = "DP-3";
+        resolution = "2560x1440";
+        rate = 60;
+        position = "0x0";
+        rotation = 90;
       };
     };
 
