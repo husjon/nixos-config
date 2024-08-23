@@ -59,6 +59,8 @@
     vscode
 
     xdg-utils
+
+    yazi
   ];
 
   programs.direnv.enable = true;
