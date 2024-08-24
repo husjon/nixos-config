@@ -27,6 +27,19 @@
       set-option -g               detach-on-destroy off
 
 
+      bind -n WheelUpPane   if "[[ #{pane_current_command} == fish ]]" {
+          copy-mode
+          send-keys -X -N 5 scroll-up
+      } {
+          select-pane -t = ; send-keys Up
+      }
+      bind -n WheelDownPane if "[[ #{pane_current_command} == fish ]]" {
+          select-pane -t = ; send-keys -X -N 5 scroll-down
+      } {
+          select-pane -t = ; send-keys Down
+      }
+
+
       bind-key C-r                source-file ~/.config/tmux/tmux.conf \; display "Reloaded config"
 
       bind-key |                  split-window -h -c "#{pane_current_path}"
