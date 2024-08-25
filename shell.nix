@@ -17,6 +17,10 @@ pkgs.mkShell {
     nil
     sops
 
+    (writeShellScriptBin "f" ''
+      /usr/bin/env nvim flake.nix
+    '')
+
     (writeShellScriptBin "rebuild-test" ''
       sudo nixos-rebuild --flake ".#" test
     '')
