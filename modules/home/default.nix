@@ -14,6 +14,7 @@
 
   imports = [
     ./bash.nix
+    ./direnv.nix
     ./fish.nix
     ./git.nix
     ./neovim.nix
@@ -63,7 +64,6 @@
     yazi
   ];
 
-  programs.direnv.enable = true;
   programs.starship.enable = true;
 
   services.syncthing.enable = true;
