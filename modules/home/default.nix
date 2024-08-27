@@ -28,6 +28,7 @@
 
   home.sessionVariables = {
     PATH = "${config.home.homeDirectory}/.local/bin:\$PATH";
+    NIL_PATH = "${pkgs.nil}/bin/nil";
   };
 
   home.file.".face.png".source = user.profile_picture;
