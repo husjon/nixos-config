@@ -34,6 +34,10 @@
       vrc = "pushd ~/.config/nvim/; $EDITOR init.lua; popd";
     };
 
+    shellInit = ''
+      fish_vi_key_bindings
+    '';
+
     shellInitLast = ''
       set -gx EDITOR nvim
       set -gx QT_QPA_PLATFORMTHEME qt5ct
