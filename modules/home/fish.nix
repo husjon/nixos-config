@@ -36,6 +36,9 @@
 
     shellInit = ''
       fish_vi_key_bindings
+      bind -M insert \ck up-or-search
+      bind -M insert \cj down-or-search
+      bind -M insert \cr history-pager
     '';
 
     shellInitLast = ''
