@@ -49,6 +49,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users."${configuration.user.username}" = import ./modules/home;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
         }
         (
           { ... }:
