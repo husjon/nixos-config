@@ -132,7 +132,6 @@ in
 
       exec = [
         "hyprctl dispatch dpms on"
-        "pkill hyprpaper; sleep 0.1; ${pkgs.hyprpaper}/bin/hyprpaper"
         "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
         "pgrep -f .Discord-wrapped || ${pkgs.discord}/bin/discord"
       ];
