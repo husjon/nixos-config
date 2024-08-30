@@ -2,6 +2,7 @@
   config,
   graphics,
   hostname,
+  inputs,
   monitors,
   pkgs,
   ...
@@ -247,7 +248,7 @@ in
         "$mod, F12, exec, loginctl lock-session"
 
         "$mod Shift, S, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
-        "$mod Ctrl Shift, S, exec, hyprpicker -a"
+        "$mod Ctrl Shift, S, exec, ${pkgs.hyprpicker}/bin/hyprpicker -a"
         "$mod Ctrl Shift, R, exec, hyprctl reload"
 
         "$mod Ctrl Shift, P, exec, pkill -USR1 waybar"
@@ -366,6 +367,7 @@ in
 
   services.hypridle = {
     enable = true;
+    package = inputs.hypridle.packages."${pkgs.system}".hypridle;
 
     settings = {
       general = {
@@ -399,6 +401,7 @@ in
 
   programs.hyprlock = {
     enable = true;
+    package = inputs.hyprlock.packages."${pkgs.system}".hyprlock;
 
     settings = {
       source = "${catppuccin-hyprland}/themes/mocha.conf";
