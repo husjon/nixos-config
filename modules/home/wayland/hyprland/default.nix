@@ -331,6 +331,23 @@ in
         "workspace 5, initialTitle:^(Sign in to Steam)$,title:^(Steam)$" # when running steam with GameScope
         "workspace 5, class:^(gamescope)$"
         "stayfocused, floating:1,class:^(org.freecad.FreeCAD)$"
+
+        # Games {{{
+        # Path of Exile {{{ 
+        "tag +poe, class:(steam_app_238960)"
+        "float, tag:poe"
+
+        ## Awakened PoE Trade
+        "tag +apt, class:(awakened-poe-trade)"
+        "float, tag:apt "
+        "noblur, tag:apt"
+        "nofocus, tag:apt # Disable auto-focus"
+        "noshadow, tag:apt"
+        "noborder, tag:apt"
+        "size 100% 100%, tag:apt"
+        "center, tag:apt"
+        # }}}
+        # }}}
       ];
 
     };
