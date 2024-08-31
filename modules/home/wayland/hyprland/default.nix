@@ -406,8 +406,6 @@ in
     settings = {
       source = "${catppuccin-hyprland}/themes/mocha.conf";
 
-      hide_cursor = true;
-
       background = {
         path = "${config.home.homeDirectory}/.wallpaper.png";
 
