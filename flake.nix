@@ -2,14 +2,20 @@
   description = "NixOS flake for husjon";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     hyprcursor.url = "github:hyprwm/hyprcursor/main";
     hyprlock.url = "github:hyprwm/hyprlock/main";
+    hyprlock.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hypridle.url = "github:hyprwm/hypridle/main";
+    hypridle.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprpaper.url = "github:hyprwm/hyprpaper/main";
     hyprpicker.url = "github:hyprwm/hyprpicker/main";
 
     home-manager = {
