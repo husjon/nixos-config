@@ -124,6 +124,8 @@ in
   wayland.windowManager.hyprland = with host_specific_config; {
     enable = true;
 
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
     settings = {
       source = "${catppuccin-hyprland}/themes/mocha.conf";
 
@@ -356,6 +358,7 @@ in
 
   services.hyprpaper = {
     enable = true;
+    package = inputs.hyprpaper.packages."${pkgs.system}".hyprpaper;
 
     settings = {
       splash = false;
