@@ -35,13 +35,13 @@ in
           sort-by = "default";
           format = "{icon}";
           format-icons = {
-            "2" = "󰨞";
-            "3" = "󰂫";
-            "4" = "󱞁";
-            "5" = "󰓓";
-            "6" = "";
-            "7" = "";
-            "8" = "󰙯";
+            "2" = "󰨞"; # nf-md-microsoft_visual_studio_code
+            "3" = "󰂫"; # nf-md-blender_software
+            "4" = "󱞁"; # nf-md-note_edit
+            "5" = "󰓓"; # nf-md-steam
+            "6" = "󰈹"; # nf-md-firefox
+            "7" = "󰓇"; # nf-md-spotify
+            "8" = "󰙯"; # nf-md-discord
           };
         };
       };

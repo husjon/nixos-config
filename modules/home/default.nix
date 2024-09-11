@@ -44,7 +44,12 @@
 
     networkmanagerapplet
 
-    nerdfonts
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "NerdFontsSymbolsOnly"
+      ];
+    })
 
     nil
     nixfmt-rfc-style

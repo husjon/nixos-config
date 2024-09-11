@@ -27,8 +27,6 @@
 
   services.avahi.enable = true; # for Chromecast
 
-  fonts.packages = [ pkgs.nerdfonts ];
-
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
