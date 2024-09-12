@@ -84,7 +84,10 @@
             inherit inputs;
           };
 
-          modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.laptop; } ];
+          modules = commonModules ++ [
+            { home-manager.extraSpecialArgs = configuration.laptop; }
+            ./modules/system/tlp.nix
+          ];
         };
 
         workstation = nixpkgs.lib.nixosSystem {
