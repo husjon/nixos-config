@@ -1,6 +1,10 @@
-{
-  pkgs ? import <nixpkgs> { },
-}:
+with import <nixpkgs> { };
+
+let
+  sops-nix = builtins.fetchTarball {
+    url = "https://github.com/Mic92/sops-nix/archive/master.tar.gz";
+  };
+in
 
 pkgs.mkShell {
   shellHook = ''
@@ -8,6 +12,16 @@ pkgs.mkShell {
 
     export NIL_PATH="${pkgs.nil}/bin/nil"
   '';
+
+  sopsPGPKeyDirs = [
+    "${toString ./.}/keys/hosts"
+    "${toString ./.}/keys/users"
+  ];
+  nativeBuildInputs = [
+    (pkgs.callPackage sops-nix { }).sops-import-keys-hook
+  ];
+
+  sopsCreateGPGHome = true;
 
   packages = with pkgs; [
     # your packages here
