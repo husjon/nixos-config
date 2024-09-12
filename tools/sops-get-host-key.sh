@@ -19,8 +19,7 @@ case $REMOTE_HOST in
 esac
 
 
-echo "$REMOTE_KEY" | nix-shell \
-    -p ssh-to-pgp \
+echo "$REMOTE_KEY" | nix-shell -p 'import (fetchTarball "https://github.com/Mic92/ssh-to-pgp/archive/refs/tags/1.1.2.tar.gz") {}' \
     --run "ssh-to-pgp -name ${REMOTE_USER} -email ${REMOTE_USER}@${REMOTE_HOST} -o ${REMOTE_HOST}.asc"
 
 # Adding key to existing secret
