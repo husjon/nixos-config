@@ -1,0 +1,12 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash -p inotify-tools
+
+while :; do
+
+	pushd /tmp
+	pkill waybar
+	nohup waybar &
+	popd
+
+	inotifywait -e modify .
+done

@@ -1,0 +1,45 @@
+# Partition
+parted /dev/sda -- mklabel msdos
+parted /dev/sda -- mkpart primary 1MB -8GB
+parted /dev/sda -- set 1 boot on
+parted /dev/sda -- mkpart primary linux-swap -8GB 100%
+
+# Format disk
+mkfs.ext4 -L nixos /dev/sda1
+
+# Enable Swap
+mkswap -L swap /dev/sda2
+swapon /dev/sda2
+
+# Mount partition
+mount /dev/disk/by-label/nixos /mnt
+
+# Generate configuration
+nixos-generate-config --root /mnt
+
+nixos-install --no-root-passwd
+
+
+# ---------------------------
+
+
+# Swap first
+parted /dev/sda -- mklabel msdos
+parted /dev/sda -- mkpart primary linux-swap 1MB 8GB
+parted /dev/sda -- mkpart primary 8GB 100%
+parted /dev/sda -- set 2 boot on
+
+# Format disk
+mkfs.ext4 -L nixos /dev/sda2
+
+# Enable Swap
+mkswap -L swap /dev/sda1
+swapon /dev/sda1
+
+# Mount partition
+mount /dev/disk/by-label/nixos /mnt
+
+# Generate configuration
+nixos-generate-config --root /mnt
+
+nixos-install --no-root-passwd
