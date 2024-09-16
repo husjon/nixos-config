@@ -117,6 +117,21 @@
           ];
         };
 
+        laptop-sb = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = configuration.laptop-sb // {
+            inherit inputs;
+          };
+
+          modules = commonModules ++ [
+            { home-manager.extraSpecialArgs = configuration.laptop-sb; }
+            ./modules/system/tlp.nix
+
+            ./modules/docker.nix
+          ];
+        };
+
         workstation-sb = nixpkgs.lib.nixosSystem {
           inherit system;
 

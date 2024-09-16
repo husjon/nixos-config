@@ -69,6 +69,27 @@ rec {
     stateVersion = "23.11";
   };
 
+  laptop-sb = {
+    hostname = "laptop-sb";
+
+    graphics = "intel";
+
+    user = user;
+
+    monitors = {
+      primary = {
+        name = "eDP-1";
+        resolution = "1920x1200";
+        rate = 60;
+        position = "0x0";
+        rotation = 0;
+      };
+    };
+
+    nixSubstituters = [ ];
+
+    stateVersion = "24.05";
+  };
   workstation-sb = {
     hostname = "workstation-sb";
 
