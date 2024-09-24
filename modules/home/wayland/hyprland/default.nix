@@ -387,12 +387,6 @@ in
           timeout = 630;
           on-timeout = "hyprctl dispatch dpms off";
         }
-
-        {
-          timeout = 660;
-          on-timeout = "pkill -f '.Discord-wrapped'";
-        }
-
         {
           timeout = 10;
           on-timeout = "pgrep hyprlock && hyprctl dispatch dpms off";
