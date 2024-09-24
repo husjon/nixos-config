@@ -45,7 +45,7 @@
       bind-key |                  split-window -h -c "#{pane_current_path}"
       bind-key -                  split-window -v -c "#{pane_current_path}"
       bind-key c                  new-window   -c "#{pane_current_path}"  # create new window in current directory
-      bind-key -n M-S             new-session
+      bind-key S                  new-session
 
       bind-key m                  select-pane -m  # Marks the pane (same as right click)
       bind-key M                  swap-pane
@@ -75,8 +75,6 @@
       bind-key -r M-C-J           resize-pane -D 10
       bind-key -r M-C-K           resize-pane -U 10
       bind-key -r M-C-L           resize-pane -R 10
-
-      bind-key C-s                choose-tree -Zs  # Show sessions selector
     '';
   };
 }
