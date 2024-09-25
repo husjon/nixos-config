@@ -36,10 +36,10 @@ pkgs.mkShell {
     '')
 
     (writeShellScriptBin "rebuild-test" ''
-      sudo nixos-rebuild --flake ".#" test
+      sudo nixos-rebuild --flake ".#" --no-update-lock-file test
     '')
     (writeShellScriptBin "rebuild-switch" ''
-      sudo nixos-rebuild --flake ".#" switch
+      sudo nixos-rebuild --flake ".#" --no-update-lock-file switch
     '')
 
     (writeShellScriptBin "rebuild-remote" ''
@@ -76,6 +76,7 @@ pkgs.mkShell {
               --build-host "root@''${HOST}" \
               --target-host "root@''${HOST}" \
               --flake ".#''${HOST}" \
+              --no-update-lock-file \
               ''${OPERATION}
       fi
     '')
