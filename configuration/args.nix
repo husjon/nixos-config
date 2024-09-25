@@ -54,7 +54,7 @@ rec {
         name = "HDMI-A-1";
         resolution = "1920x1080";
         rate = 60;
-        position = "1760x1440";
+        position = "1760x2050";
         rotation = 180;
       };
       tv = {
