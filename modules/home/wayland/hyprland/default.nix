@@ -151,8 +151,8 @@ in
         "QT_QPA_PLATFORMTHEME=qt5ct"
         "GTK_THEME=Adwaita:dark"
         "HYPRCURSOR_THEME,'Bibata-Modern-Ice'"
-        "HYPRCURSOR_SIZE,64"
-        "XCURSOR_SIZE,64"
+        "HYPRCURSOR_SIZE,32"
+        "XCURSOR_SIZE,32"
 
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
