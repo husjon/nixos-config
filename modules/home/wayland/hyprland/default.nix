@@ -90,6 +90,29 @@ let
 
         bind = [ ];
       }
+    else if hostname == "laptop-sb" then
+      {
+        monitor = [
+          "${primary.name}, ${primary.resolution}@${toString primary.rate}, ${primary.position}, 1, transform, ${
+            toString (primary.rotation / 90)
+          }"
+        ];
+
+        workspace = [
+          "1,  monitor:${primary.name}"
+          "2,  monitor:${primary.name}"
+          "3,  monitor:${primary.name}"
+          "4,  monitor:${primary.name}"
+          "5,  monitor:${primary.name}"
+          "6,  monitor:${primary.name}"
+          "7,  monitor:${primary.name}"
+          "8,  monitor:${primary.name}"
+          "9,  monitor:${primary.name}"
+          "10, monitor:${primary.name}"
+        ];
+
+        bind = [ ];
+      }
     else if hostname == "workstation-sb" then
       {
         monitor = [

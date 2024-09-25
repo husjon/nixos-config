@@ -7,6 +7,7 @@ keys:
   - &cache 3f04a2e00f3ee8745c73c3a061581b101cfd02c7
   - &laptop ca1a84cac46ce7df44aceb2c6a5c1193c6cfd149
   - &workstation b5e61a57a8efa6d02c545ea2ea40c867e87cd548
+  - &laptop-sb a1e828ae5443623f3119fc6f9d66d90b95cfdc6c
   - &workstation-sb ede92810862c3271fe57418fe874b4f2de372305
 
 creation_rules:
@@ -20,6 +21,12 @@ creation_rules:
     - pgp:
       - *husjon
       - *workstation
+  - path_regex: ^configuration/secrets/laptop-sb.sops.yaml$
+    key_groups:
+    - pgp:
+      - *husjon
+      - *husjon-work
+      - *laptop-sb
   - path_regex: ^configuration/secrets/workstation-sb.sops.yaml$
     key_groups:
     - pgp:

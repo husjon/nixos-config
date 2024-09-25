@@ -84,7 +84,10 @@
             inherit inputs;
           };
 
-          modules = commonModules ++ [ { home-manager.extraSpecialArgs = configuration.laptop; } ];
+          modules = commonModules ++ [
+            { home-manager.extraSpecialArgs = configuration.laptop; }
+            ./modules/system/tlp.nix
+          ];
         };
 
         workstation = nixpkgs.lib.nixosSystem {
@@ -111,6 +114,21 @@
             ./modules/godot.nix
             ./modules/krita.nix
             ./modules/steam.nix
+          ];
+        };
+
+        laptop-sb = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = configuration.laptop-sb // {
+            inherit inputs;
+          };
+
+          modules = commonModules ++ [
+            { home-manager.extraSpecialArgs = configuration.laptop-sb; }
+            ./modules/system/tlp.nix
+
+            ./modules/docker.nix
           ];
         };
 
