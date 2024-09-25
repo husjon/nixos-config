@@ -30,6 +30,12 @@
     fsType = "ext4";
   };
 
+  services.logind.lidSwitchExternalPower = "suspend";
+  services.logind.lidSwitch = "suspend-then-hibernate";
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=1h
+  '';
+
   boot.initrd.luks.devices."luks-a0c6af8e-bb70-4d8e-a51f-823102aa7eaa".device = "/dev/disk/by-uuid/a0c6af8e-bb70-4d8e-a51f-823102aa7eaa"; # root
   boot.initrd.luks.devices."luks-8f3147b4-85ae-4b2c-879a-6777927cf621".device = "/dev/disk/by-uuid/8f3147b4-85ae-4b2c-879a-6777927cf621"; # swap
 
