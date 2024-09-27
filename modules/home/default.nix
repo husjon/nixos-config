@@ -72,6 +72,16 @@
     yazi
   ];
 
+  home.file.".local/share/icons/default/index.theme" = {
+    text = ''
+      [Icon Theme]
+      Name=Default
+      Comment=Default Cursor Theme
+      Inherits=Bibata-Modern-Ice
+    '';
+
+  };
+
   programs.starship.enable = true;
 
   services.syncthing.enable = true;
