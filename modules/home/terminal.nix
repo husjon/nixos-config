@@ -5,6 +5,7 @@
 
     environment = {
       TERM = "xterm-256color";
+      EDITOR = "nvim";
     };
 
     theme = "Catppuccin-Mocha";
