@@ -166,7 +166,7 @@ in
         #~/bin/pipewire-monitor
         "${pkgs.unstable.brave}/bin/brave"
         "pkill gnome-keyring; gnome-keyring-daemon"
-        "sleep 0.25; loginctl lock-session"
+        "hyprlock"
         "${pkgs.spotify}/bin/spotify; playerctl -i brave volume 0.5"
       ];
 
