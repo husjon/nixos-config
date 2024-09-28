@@ -17,9 +17,7 @@ pkgs.mkShell {
     "${toString ./.}/keys/hosts"
     "${toString ./.}/keys/users"
   ];
-  nativeBuildInputs = [
-    (pkgs.callPackage sops-nix { }).sops-import-keys-hook
-  ];
+  nativeBuildInputs = [ (pkgs.callPackage sops-nix { }).sops-import-keys-hook ];
 
   sopsCreateGPGHome = true;
 
