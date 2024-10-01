@@ -160,6 +160,8 @@ in
         "hyprctl dispatch dpms on"
         "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
         "pgrep -f .Discord-wrapped || ${pkgs.discord}/bin/discord"
+        "pgrep -f '^xwaylandvideobridge$' || xwaylandvideobridge"
+
       ];
 
       exec-once = [
@@ -357,6 +359,14 @@ in
         "workspace 5, initialTitle:^(Sign in to Steam)$,title:^(Steam)$" # when running steam with GameScope
         "workspace 5, class:^(gamescope)$"
         "stayfocused, floating:1,class:^(org.freecad.FreeCAD)$"
+
+        # xwaylandvideobridge {{{
+        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+        "noanim, class:^(xwaylandvideobridge)$"
+        "noinitialfocus, class:^(xwaylandvideobridge)$"
+        "maxsize 1 1, class:^(xwaylandvideobridge)$"
+        "noblur, class:^(xwaylandvideobridge)$"
+        # }}}
 
         # Games {{{
         # Path of Exile {{{ 

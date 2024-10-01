@@ -9,7 +9,7 @@
   users.users.${user.username} = {
     packages = with pkgs; [
       inputs.hyprcursor.packages."${pkgs.system}".hyprcursor
-      xdg-desktop-portal-hyprland
+      xwaylandvideobridge
     ];
   };
 
