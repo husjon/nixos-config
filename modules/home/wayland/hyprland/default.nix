@@ -186,7 +186,6 @@ in
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "GDK_BACKEND,wayland,x11,*"
         "QT_QPA_PLATFORM,wayland;xcb"
-        "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
       ] ++ nvidia_env;
 
