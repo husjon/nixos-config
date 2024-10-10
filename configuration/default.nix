@@ -26,9 +26,14 @@
 
   sops.secrets.password.neededForUsers = true;
   users.mutableUsers = false; # password cannot be changed with `passwd` and will only be set by `hashedPasswordFile` below
+
+  users.groups.${user.username} = { };
   users.users.${user.username} = {
     isNormalUser = true;
+
+    group = user.username;
     extraGroups = [
+      user.username
       "networkmanager"
       "wheel"
     ];
