@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix.url = "github:Mic92/sops-nix";
@@ -28,6 +29,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-stable,
       nixpkgs-unstable,
       sops-nix,
       home-manager,
@@ -38,6 +40,10 @@
       system = "x86_64-linux";
 
       overlays-nixpkgs = final: prev: {
+        stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
         unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
