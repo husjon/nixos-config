@@ -2,6 +2,6 @@
 
 {
   users.users.${user.username} = {
-    packages = with pkgs; [ calibre ];
+    packages = with pkgs; [ stable.calibre ];
   };
 }
