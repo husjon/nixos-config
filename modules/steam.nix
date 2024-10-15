@@ -10,12 +10,12 @@
       remotePlay.openFirewall = true;
 
       gamescopeSession.enable = true;
+      protontricks.enable = true;
 
       package = pkgs.steam.override {
         extraPkgs =
           pkgs: with pkgs; [
             mangohud
-            protontricks
           ];
       };
     };
