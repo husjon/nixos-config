@@ -211,7 +211,6 @@ in
         # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
         pseudotile = "yes";
         preserve_split = "yes";
-        no_gaps_when_only = 1;
       };
 
       decoration = {
