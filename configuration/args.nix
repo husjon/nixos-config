@@ -66,7 +66,7 @@ rec {
 
     nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
 
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
 
   laptop-sb = {
