@@ -32,4 +32,11 @@
     21027
     22000
   ];
+
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    flake = "github:husjon/nixos-config";
+    dates = "04:00";
+  };
 }
