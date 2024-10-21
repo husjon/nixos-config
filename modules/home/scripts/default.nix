@@ -1,4 +1,8 @@
 { ... }:
 {
-  imports = [ ./hm-edit-file.nix ];
+  home.file.".local/bin/" = {
+    source = ./bin;
+    recursive = true;
+    executable = true;
+  };
 }
