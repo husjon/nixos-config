@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ ! -f shell.nix ]; then
+    cat <<-EOF > shell.nix
+	{ pkgs ? import <nixpkgs> { } }:
+	
+	pkgs.mkShell {
+	 packages = with pkgs; [
+	   # your packages here (e.g: nodePackages_latest.pnpm)
+	 ];
+	
+	 shellHook = ''
+	   # export MY_VAR=123
+	 '';
+	}
+	EOF
+fi
+
+grep --silent "use nix" .envrc 2>/dev/null || echo "use nix" >> .envrc
