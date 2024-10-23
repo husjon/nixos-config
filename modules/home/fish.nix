@@ -48,6 +48,14 @@
       set fish_greeting  # disables greeting
 
       function gcmsg; git commit -m $argv; end
+
+      function reset
+          if set -q TMUX
+              clear; tmux clear-history
+          else
+              /usr/bin/env reset
+          end
+      end
     '';
   };
 }
