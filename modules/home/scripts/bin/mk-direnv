@@ -2,16 +2,18 @@
 
 if [ ! -f shell.nix ]; then
     cat <<-EOF > shell.nix
-	{ pkgs ? import <nixpkgs> { } }:
+	{
+	  pkgs ? import <nixpkgs> { },
+	}:
 	
 	pkgs.mkShell {
-	 packages = with pkgs; [
-	   # your packages here (e.g: nodePackages_latest.pnpm)
-	 ];
+	  packages = with pkgs; [
+	    # your packages here (e.g: nodePackages_latest.pnpm)
+	  ];
 	
-	 shellHook = ''
-	   # export MY_VAR=123
-	 '';
+	  shellHook = ''
+	    # export MY_VAR=123
+	  '';
 	}
 	EOF
 fi
