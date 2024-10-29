@@ -58,6 +58,8 @@
 
     obsidian
 
+    ripgrep
+
     pqiv # image viewer
     mpv # video player
     zathura # pdf viewer
