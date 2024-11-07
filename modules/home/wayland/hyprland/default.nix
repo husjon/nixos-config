@@ -421,7 +421,7 @@ in
           on-timeout = "hyprctl dispatch dpms off";
         }
         {
-          timeout = 10;
+          timeout = 30;
           on-timeout = "pgrep hyprlock && hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
