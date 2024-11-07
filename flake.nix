@@ -2,6 +2,7 @@
   description = "NixOS flake for husjon";
 
   inputs = {
+    # Nix channel status: https://status.nixos.org/
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
