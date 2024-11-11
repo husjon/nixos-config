@@ -15,6 +15,7 @@
     escapeTime = 0;
     keyMode = "vi";
     mouse = true;
+    historyLimit = 1000000;
 
     prefix = "C-space";
 
