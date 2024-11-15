@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  home.packages = [
+    pkgs.tmux-sessionizer
+  ];
+
   programs.tmux = {
     enable = true;
 
