@@ -45,6 +45,7 @@
     libnotify
     lxde.lxsession
 
+    lutris
     networkmanagerapplet
 
     (nerdfonts.override {
@@ -86,7 +87,6 @@
       Comment=Default Cursor Theme
       Inherits=Bibata-Modern-Ice
     '';
-
   };
 
   programs.starship.enable = true;
