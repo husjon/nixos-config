@@ -38,6 +38,7 @@
     bibata-cursors
 
     discord
+    firefox
     unstable.brave
     htop
 
