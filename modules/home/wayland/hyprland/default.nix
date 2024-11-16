@@ -158,6 +158,8 @@ in
       "$terminal" = "${pkgs.kitty}/bin/kitty";
       "$menu" = "${pkgs.fuzzel}/bin/fuzzel";
 
+      "$playerctl" = "playerctl -i brave,firefox";
+
       exec = [
         "hyprctl dispatch dpms on"
         "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
@@ -171,7 +173,7 @@ in
         "${pkgs.unstable.brave}/bin/brave"
         "pkill gnome-keyring; gnome-keyring-daemon"
         "hyprlock"
-        "${pkgs.spotify}/bin/spotify; playerctl -i brave volume 0.5"
+        "${pkgs.spotify}/bin/spotify; $playerctl volume 0.5"
       ];
 
       env = [
@@ -332,9 +334,9 @@ in
         ",switch:Lid Switch,exec,loginctl lock-session"
 
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioPlay, exec, playerctl -i brave play-pause"
-        ", XF86AudioPrev, exec, playerctl -i brave previous"
-        ", XF86AudioNext, exec, playerctl -i brave next"
+        ", XF86AudioPlay, exec, $playerctl play-pause"
+        ", XF86AudioPrev, exec, $playerctl previous"
+        ", XF86AudioNext, exec, $playerctl next"
         #^ comma is required when using without mod key
       ];
 
