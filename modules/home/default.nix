@@ -24,6 +24,7 @@
     ./scripts
 
     ./wayland
+    ./zsh.nix
   ];
 
   home.sessionVariables = {
