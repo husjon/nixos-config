@@ -19,7 +19,7 @@
 
     prefix = "C-space";
 
-    shell = "${pkgs.fish}/bin/fish";
+    shell = "${pkgs.zsh}/bin/zsh";
 
     extraConfig = ''
       # check if active pane is vim/neovim

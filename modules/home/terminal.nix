@@ -13,7 +13,7 @@
     settings = {
       enable_audio_bell = false;
 
-      shell = "${pkgs.fish}/bin/fish";
+      shell = "${pkgs.zsh}/bin/zsh";
 
     };
 
