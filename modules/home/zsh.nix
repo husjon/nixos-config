@@ -27,6 +27,8 @@
     '';
 
     shellAliases = {
+      ll = "ls -l";
+
       v = "$EDITOR";
       vrc = "pushd ~/.config/nvim/; $EDITOR init.lua; popd";
 
