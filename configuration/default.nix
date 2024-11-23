@@ -96,4 +96,6 @@
   networking.firewall.allowedTCPPorts = [ 22 ];
 
   system.stateVersion = stateVersion;
+
+  programs.zsh.enable = true;
 }
