@@ -9,17 +9,6 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    hyprcursor.url = "github:hyprwm/hyprcursor/main";
-    hyprlock.url = "github:hyprwm/hyprlock/main";
-    hyprlock.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    hypridle.url = "github:hyprwm/hypridle/main";
-    hypridle.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    hyprpaper.url = "github:hyprwm/hyprpaper/main";
-    hyprpicker.url = "github:hyprwm/hyprpicker/main";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };

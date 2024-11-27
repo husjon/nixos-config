@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   user,
   ...
 }:
@@ -8,7 +7,6 @@
 {
   users.users.${user.username} = {
     packages = with pkgs; [
-      inputs.hyprcursor.packages."${pkgs.system}".hyprcursor
       xwaylandvideobridge
     ];
   };
@@ -22,9 +20,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   services.displayManager.sddm = {

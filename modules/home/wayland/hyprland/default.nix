@@ -2,7 +2,6 @@
   config,
   graphics,
   hostname,
-  inputs,
   monitors,
   pkgs,
   ...
@@ -148,8 +147,6 @@ in
 
   wayland.windowManager.hyprland = with host_specific_config; {
     enable = true;
-
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
     settings = {
       source = "${catppuccin-hyprland}/themes/mocha.conf";
@@ -394,7 +391,6 @@ in
 
   services.hyprpaper = {
     enable = true;
-    package = inputs.hyprpaper.packages."${pkgs.system}".hyprpaper;
 
     settings = {
       splash = false;
@@ -406,7 +402,6 @@ in
 
   services.hypridle = {
     enable = true;
-    package = inputs.hypridle.packages."${pkgs.system}".hypridle;
 
     settings = {
       general = {
@@ -434,7 +429,6 @@ in
 
   programs.hyprlock = {
     enable = true;
-    package = inputs.hyprlock.packages."${pkgs.system}".hyprlock;
 
     settings = {
       source = "${catppuccin-hyprland}/themes/mocha.conf";
