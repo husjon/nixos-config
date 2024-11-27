@@ -24,6 +24,9 @@
       zstyle ':completion:*' menu select
 
       function gcmsg { git commit -m "$1"; }
+
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
     '';
 
     shellAliases = {
