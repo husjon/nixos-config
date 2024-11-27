@@ -167,7 +167,6 @@ in
 
       exec-once = [
         #~/bin/pipewire-monitor
-        "${pkgs.unstable.brave}/bin/brave"
         "pkill gnome-keyring; gnome-keyring-daemon"
         "hyprlock"
         "${pkgs.spotify}/bin/spotify; $playerctl volume 0.5"
