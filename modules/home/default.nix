@@ -90,6 +90,8 @@
     '';
   };
 
+  programs.fzf.enable = true;
+
   programs.starship.enable = true;
 
   services.syncthing.enable = true;
