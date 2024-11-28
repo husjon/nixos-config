@@ -265,6 +265,8 @@ in
         "$mod Ctrl Shift Alt, Escape, exit,"
         "$mod, S, exec, hyprctl --batch 'dispatch togglefloating ; dispatch centerwindow'"
         "$mod, C, centerwindow"
+        "$mod Shift, C, exec, hyprctl --batch 'dispatch setfloating ; dispatch resizeactive exact 1280 720 ; dispatch centerwindow'"
+
         "$mod, D, exec, $menu"
         "$mod, P, pseudo, # dwindle"
         "$mod, F, fullscreen"
