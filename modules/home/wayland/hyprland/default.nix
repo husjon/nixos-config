@@ -383,6 +383,24 @@ in
         "center, tag:apt"
         # }}}
         # }}}
+
+        # Godot {{{
+        "tag +godot-settings_windows, class:^(Godot), title:(project.godot)"
+        "tag +godot-settings_windows, class:^(Godot), title:((Editor|Project) Settings)"
+        "tag +godot-settings_windows, class:^(Godot), title:(Create New Node|Change Type of|Dependencies For:|Search Replacement For:)"
+        "size 1080 800, tag:godot-settings_windows"
+        "center, tag:godot-settings_windows"
+
+        "tag +godot-command_palette, class:^(Godot), title:(Command Palette)"
+        "tag +godot-command_palette, class:^(Godot), title:(Search Help)"
+        "tag +godot-command_palette, class:^(Godot), title:(Open.*Scene|Quick Open|Save Scene As)"
+        "size 800 600, tag:godot-command_palette"
+        "center, tag:godot-command_palette"
+
+        "tag +godot-small_window, class:^(Godot), title:(Load Errors)"
+        "size 640 400, tag:godot-small_window"
+        "center, tag:godot-small_window"
+        # }}}
       ];
 
     };
