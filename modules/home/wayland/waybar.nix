@@ -18,7 +18,6 @@ in
         modules-left = [ "tray" ];
         modules-center = [
           "hyprland/workspaces"
-          "sway/resize"
         ];
         modules-right = [ "clock" ];
 
