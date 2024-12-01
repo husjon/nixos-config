@@ -144,6 +144,10 @@ let
       { };
 in
 {
+  home.file.".local/share/icons" = {
+    source = "${pkgs.bibata-cursors}/share/icons/";
+    recursive = true;
+  };
 
   wayland.windowManager.hyprland = with host_specific_config; {
     enable = true;
