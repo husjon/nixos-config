@@ -387,15 +387,17 @@ in
         # }}}
 
         # Godot {{{
+        "tile, class:^(Godot), title:(Godot Engine)$"
         "tag +godot-settings_windows, class:^(Godot), title:(project.godot)"
         "tag +godot-settings_windows, class:^(Godot), title:((Editor|Project) Settings)"
         "tag +godot-settings_windows, class:^(Godot), title:(Create New Node|Change Type of|Dependencies For:|Search Replacement For:)"
+        "tag +godot-settings_windows, class:^(Godot), title:(Configure Asset Before Installing)"
         "size 1080 800, tag:godot-settings_windows"
         "center, tag:godot-settings_windows"
 
         "tag +godot-command_palette, class:^(Godot), title:(Command Palette)"
         "tag +godot-command_palette, class:^(Godot), title:(Search Help)"
-        "tag +godot-command_palette, class:^(Godot), title:(Open.*Scene|Quick Open|Save Scene As)"
+        "tag +godot-command_palette, class:^(Godot), title:(Open.*Scene|Quick Open|Save Scene As|Open a File)"
         "size 800 600, tag:godot-command_palette"
         "center, tag:godot-command_palette"
 
