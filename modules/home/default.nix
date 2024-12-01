@@ -47,12 +47,8 @@
     lutris
     networkmanagerapplet
 
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "NerdFontsSymbolsOnly"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
 
     nil
     nixfmt-rfc-style
