@@ -3,7 +3,8 @@
 
   inputs = {
     # Nix channel status: https://status.nixos.org/
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # https://discourse.nixos.org/t/differences-between-nix-channels/13998
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
