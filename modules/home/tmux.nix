@@ -80,6 +80,8 @@
       bind-key -r M-C-J           resize-pane -D 10
       bind-key -r M-C-K           resize-pane -U 10
       bind-key -r M-C-L           resize-pane -R 10
+
+      bind-key M-C-p              display-popup -E tms
     '';
   };
 }
