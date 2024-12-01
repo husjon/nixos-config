@@ -374,7 +374,7 @@ in
         # }}}
 
         # Games {{{
-        # Path of Exile {{{ 
+        # Path of Exile {{{
         "tag +poe, class:(steam_app_238960)"
         "float, tag:poe"
 
