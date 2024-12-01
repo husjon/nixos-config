@@ -24,6 +24,13 @@
       zstyle ':completion:*' menu select
 
       function gcmsg { git commit -m "$1"; }
+      function reset {
+          if [ ! -z $TMUX ]; then
+              clear; tmux clear-history
+          else
+              /usr/bin/env reset
+          fi
+      }
 
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
