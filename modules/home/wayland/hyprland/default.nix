@@ -194,7 +194,9 @@ in
       ] ++ nvidia_env;
 
       monitor = monitor;
-      workspace = workspace;
+      workspace = [
+        "w[tv1], gapsout:0, bordersize:0,rounding:0"
+      ] ++ workspace;
 
       general = {
         gaps_in = 6;
