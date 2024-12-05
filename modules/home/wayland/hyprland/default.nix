@@ -179,9 +179,9 @@ in
       env = [
         "QT_QPA_PLATFORMTHEME=qt5ct"
         "GTK_THEME=Adwaita:dark"
-        "HYPRCURSOR_THEME,BreezeX-Amber"
-        "HYPRCURSOR_SIZE,48"
-        "XCURSOR_SIZE,48"
+        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+        "HYPRCURSOR_SIZE,32"
+        "XCURSOR_SIZE,32"
 
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
