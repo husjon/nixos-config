@@ -195,7 +195,7 @@ in
 
       monitor = monitor;
       workspace = [
-        "w[tv1], gapsout:0, bordersize:0,rounding:0"
+        "w[tv1], gapsout:0, gapsin:0, bordersize:0" # emulate smart-gaps
       ] ++ workspace;
 
       general = {
@@ -362,6 +362,8 @@ in
         "workspace 8 silent, ^(discord)(.*)$"
       ];
       windowrulev2 = [
+        "bordersize 1, onworkspace:w[tv1], floating:1" # emulate smart-gaps (allow floating windows to retain border"
+
         "workspace 5, initialTitle:^(Sign in to Steam)$,title:^(Steam)$" # when running steam with GameScope
         "workspace 5, class:^(gamescope)$"
         "stayfocused, floating:1,class:^(org.freecad.FreeCAD)$"
