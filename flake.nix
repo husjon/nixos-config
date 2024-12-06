@@ -109,6 +109,7 @@
             ./modules/godot.nix
             ./modules/krita.nix
             ./modules/steam.nix
+            ./modules/tonelib-gfx.nix
           ];
         };
 
