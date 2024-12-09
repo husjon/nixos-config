@@ -102,14 +102,8 @@
 
             { home-manager.extraSpecialArgs = configuration.workstation; }
 
-            ./modules/3d-printing.nix
-            ./modules/blender.nix
-            ./modules/calibre.nix
             ./modules/docker.nix
-            ./modules/godot.nix
-            ./modules/krita.nix
             ./modules/steam.nix
-            ./modules/tonelib-gfx.nix
           ];
         };
 
@@ -138,7 +132,6 @@
           modules = commonModules ++ [
             { home-manager.extraSpecialArgs = configuration.workstation-sb; }
 
-            ./modules/3d-printing.nix
             ./modules/blender.nix
             ./modules/docker.nix
 

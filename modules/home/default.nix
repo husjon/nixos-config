@@ -1,5 +1,6 @@
 {
   config,
+  hostname,
   user,
   pkgs,
   ...
@@ -24,6 +25,7 @@
     ./scripts
 
     ./wayland
+    ./${hostname}.nix
     ./zsh.nix
   ];
 
@@ -44,7 +46,6 @@
     libnotify
     lxde.lxsession
 
-    lutris
     networkmanagerapplet
 
     nerd-fonts.fira-code
