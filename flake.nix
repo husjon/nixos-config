@@ -132,7 +132,6 @@
           modules = commonModules ++ [
             { home-manager.extraSpecialArgs = configuration.workstation-sb; }
 
-            ./modules/blender.nix
             ./modules/docker.nix
 
             (
