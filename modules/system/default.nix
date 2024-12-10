@@ -1,7 +1,7 @@
 { hostname, lib, ... }:
 {
   imports = [
-    ./audio.nix
+    ./audio
 
     ./bluetooth.nix
 
