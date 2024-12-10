@@ -272,6 +272,7 @@ in
         "$mod, S, exec, hyprctl --batch 'dispatch togglefloating ; dispatch centerwindow'"
         "$mod, C, centerwindow"
         "$mod Shift, C, exec, hyprctl --batch 'dispatch setfloating ; dispatch resizeactive exact 1280 720 ; dispatch centerwindow'"
+        "$mod Ctrl Shift, C, exec, hyprctl --batch 'dispatch setfloating ; dispatch resizeactive exact 1920 1080 ; dispatch centerwindow'"
 
         "$mod, D, exec, $menu"
         "$mod, P, pseudo, # dwindle"
