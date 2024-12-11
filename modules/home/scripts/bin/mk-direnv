@@ -2,9 +2,7 @@
 
 if [ ! -f shell.nix ]; then
 	cat <<-EOF >shell.nix
-		{
-		  pkgs ? import <nixpkgs> { },
-		}:
+		with import <nixpkgs> { };
 
 		pkgs.mkShell {
 		  packages = with pkgs; [
