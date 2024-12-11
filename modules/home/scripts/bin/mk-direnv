@@ -7,6 +7,10 @@ if [ ! -f shell.nix ]; then
 		pkgs.mkShell {
 		  packages = with pkgs; [
 		    # your packages here (e.g: nodePackages_latest.pnpm)
+
+		    # (writeShellScriptBin "hello-world" ''
+		    #   echo "Hello, World!
+		    # '')
 		  ];
 
 		  shellHook = ''
