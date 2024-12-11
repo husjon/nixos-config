@@ -27,6 +27,7 @@ pkgs.mkShell {
     git-crypt
     nixfmt-rfc-style
     nil
+    shfmt
     sops
 
     (writeShellScriptBin "f" ''
