@@ -4,9 +4,16 @@ if [ ! -f shell.nix ]; then
 	cat <<-EOF >shell.nix
 		with import <nixpkgs> { };
 
+		let
+		  # extras goes here (e.g: using package from unstable nixpkgs)
+		  # unstableTarball = fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+		  # unstable = import unstableTarball { };
+
+		in
+
 		pkgs.mkShell {
 		  packages = with pkgs; [
-		    # your packages here (e.g: nodePackages_latest.pnpm)
+		    # your packages here (e.g: nodePackages_latest.pnpm, unstable.prisma)
 
 		    # (writeShellScriptBin "hello-world" ''
 		    #   echo "Hello, World!
