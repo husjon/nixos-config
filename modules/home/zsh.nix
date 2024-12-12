@@ -42,6 +42,9 @@
       bindkey "$key[Up]"    up-line-or-beginning-search
       bindkey "$key[Down]"  down-line-or-beginning-search
       # }}}
+
+      # docker completion from zsh-completion isn't complete, we'll source it from docker itself instead
+      type docker >/dev/null && source <(docker completion zsh)
     '';
 
     shellAliases = {
