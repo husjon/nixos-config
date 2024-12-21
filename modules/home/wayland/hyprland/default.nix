@@ -358,7 +358,7 @@ in
 
       windowrule = [
         "workspace 4 silent, ^(obsidian)(.*)$"
-        "workspace 5 silent, class:^(steam)$"
+        "workspace 5 silent, ^(steam)$"
         "workspace 7 silent, ^(Spotify)(.*)$"
         "workspace 8 silent, ^(discord)(.*)$"
       ];
