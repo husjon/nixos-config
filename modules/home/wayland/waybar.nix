@@ -50,6 +50,8 @@ in
       * {
         margin: 0px;
         padding: 0px;
+
+        font-size: 1.1rem;
       }
       window {
         background-color: @background;
