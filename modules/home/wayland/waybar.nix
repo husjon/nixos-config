@@ -25,11 +25,6 @@ in
           format-alt = "{:%a, %d. %b  %H:%M}";
         };
 
-        "sway/workspaces" = {
-          sort-by = "default";
-          format = "{name}";
-        };
-
         "hyprland/workspaces" = {
           sort-by = "default";
           format = "{icon}";
