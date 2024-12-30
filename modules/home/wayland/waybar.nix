@@ -19,8 +19,50 @@ in
         modules-center = [
           "hyprland/workspaces"
         ];
-        modules-right = [ "clock" ];
+        modules-right = [
+          "battery"
+          "clock"
+        ];
 
+        "battery" = {
+          "format-icons" = {
+            "charging" = [
+              "󰢜"
+              "󰂆"
+              "󰂇"
+              "󰂈"
+              "󰢝"
+              "󰂉"
+              "󰢞"
+              "󰂊"
+              "󰂋"
+              "󰂅"
+            ];
+            "discharging" = [
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
+          };
+
+          "format" = "{icon}";
+          "format-charging" = "{icon}";
+
+          "format-warning" = "{capacity}% {icon}";
+          "format-critical" = "{time} remaining @ {capacity}% {icon}";
+          "states" = {
+            "normal" = 50;
+            "warning" = 30;
+            "critical" = 15;
+          };
+        };
         "clock" = {
           format-alt = "{:%a, %d. %b  %H:%M}";
         };
