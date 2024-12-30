@@ -14,5 +14,7 @@
     lutris
     prusa-slicer
     tonelib-gfx
+
+    vcv-rack
   ];
 }
