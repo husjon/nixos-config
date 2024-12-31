@@ -5,7 +5,7 @@
 }:
 
 let
-  blenderPackage = if graphics == "amd" then pkgs.unstable.blender-hip else pkgs.unstable.blender;
+  blenderPackage = if graphics == "amd" then pkgs.stable.blender-hip else pkgs.stable.blender;
 in
 {
   home.packages = [
