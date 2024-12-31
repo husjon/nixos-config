@@ -412,7 +412,7 @@ in
         "size 800 600, tag:godot-command_palette"
         "center, tag:godot-command_palette"
 
-        "tag +godot-small_window, class:^(Godot), title:(Load Errors)"
+        "tag +godot-small_window, class:^(Godot), title:(Load Errors|Select a Node)"
         "size 640 400, tag:godot-small_window"
         "center, tag:godot-small_window"
         # }}}
