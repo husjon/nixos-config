@@ -369,6 +369,8 @@ in
         "workspace 5, class:^(gamescope)$"
         "stayfocused, floating:1,class:^(org.freecad.FreeCAD)$"
 
+        "idleinhibit focus, class:^(steam_app_.*)" # inhibit hypridle from running when a game run from steam is in focus
+
         # xwaylandvideobridge {{{
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
         "noanim, class:^(xwaylandvideobridge)$"
