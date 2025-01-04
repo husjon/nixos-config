@@ -415,6 +415,10 @@ in
         "tag +godot-small_window, class:^(Godot), title:(Load Errors|Select a Node)"
         "size 640 400, tag:godot-small_window"
         "center, tag:godot-small_window"
+
+        "tag +godot-small_vertical_window, class:^(Godot), title:(Pick a node to animate)"
+        "size 400 640, tag:godot-small_vertical_window"
+        "center, tag:godot-small_vertical_window"
         # }}}
       ];
 
