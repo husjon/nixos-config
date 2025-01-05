@@ -408,7 +408,7 @@ in
 
         "tag +godot-command_palette, class:^(Godot), title:(Command Palette)"
         "tag +godot-command_palette, class:^(Godot), title:(Search Help)"
-        "tag +godot-command_palette, class:^(Godot), title:(Open.*Scene|Quick Open|Save Scene As|Open a File)"
+        "tag +godot-command_palette, class:^(Godot), title:(Open.*Scene|Quick Open|Save Scene As|Open a File|Select Property)"
         "size 800 600, tag:godot-command_palette"
         "center, tag:godot-command_palette"
 
