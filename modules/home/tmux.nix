@@ -81,7 +81,8 @@
       bind-key -r M-C-K           resize-pane -U 10
       bind-key -r M-C-L           resize-pane -R 10
 
-      bind-key -n M-C-p           display-popup -E tms
+      bind-key -n M-C-S-p         display-popup -E tms  # switch to existing / create new session based on existing git repos
+      bind-key -n M-C-p           display-popup -E tms switch  # switch between existing sessions
     '';
   };
 }
