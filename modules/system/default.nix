@@ -4,6 +4,7 @@
     ./audio
 
     ./bluetooth.nix
+    ./borgmatic
 
     ./graphics
 
