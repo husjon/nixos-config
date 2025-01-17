@@ -31,6 +31,14 @@
           fi
       }
 
+      function web {
+        docker stop simple-web-server >/dev/null 2>&1
+        CONTAINER=$(docker run -d --rm -ti --volume "`pwd`:/usr/share/nginx/html:ro" --name simple-web-server -p 127.0.0.1:5500:80 nginx)
+        docker exec -tid ''${CONTAINER} bash -c "sleep 3600 && kill 1"
+        echo "Started webserver running at: http://localhost:5500 (for 1 hour)"
+        echo "Sharing current folder: ''${PWD}"
+      }
+
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
 
