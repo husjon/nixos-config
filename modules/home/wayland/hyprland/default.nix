@@ -285,7 +285,7 @@ in
         "$mod Ctrl Shift, S, exec, ${pkgs.hyprpicker}/bin/hyprpicker -a"
         "$mod Ctrl Shift, R, exec, hyprctl reload"
 
-        "$mod Ctrl Shift, P, exec, pkill -USR1 waybar"
+        "$mod Ctrl Alt, P, exec, pkill -USR1 waybar"
 
         "$mod Ctrl Shift, h, exec, makoctl restore"
         "Ctrl Shift, Space, exec, makoctl dismiss"
