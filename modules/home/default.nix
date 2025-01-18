@@ -18,6 +18,7 @@
     ./direnv.nix
     ./fish.nix
     ./git.nix
+    ./home-manager-maintenance.nix
     ./neovim.nix
     ./terminal.nix
     ./tmux.nix
