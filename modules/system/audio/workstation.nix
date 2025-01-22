@@ -28,6 +28,26 @@
           }
         ];
       };
+      "99-stereo_to_mono" = {
+        "context.modules" = [
+          {
+            name = "libpipewire-module-loopback";
+            args = {
+              "node.description" = "Mono Playback Device";
+              "capture.props" = {
+                "node.name" = "mono_output";
+                "media.class" = "Audio/Sink";
+                "audio.position" = [ "MONO" ];
+              };
+              "playback.props" = {
+                "node.name" = "playback.mono_output";
+                "audio.position" = [ "MONO" ];
+                "node.passive" = true;
+              };
+            };
+          }
+        ];
+      };
     };
 
     wireplumber.extraConfig = {
