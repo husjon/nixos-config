@@ -287,6 +287,8 @@ in
 
         "$mod Ctrl Alt, P, exec, pkill -USR1 waybar"
 
+        "$mod Ctrl Shift, V, exec, ${pkgs.wtype}/bin/wtype \"$(${pkgs.wl-clipboard}/bin/wl-paste)\"" # paste from clipboard by typing each character (helpful for certain xwayland apps)
+
         "$mod Ctrl Shift, h, exec, makoctl restore"
         "Ctrl Shift, Space, exec, makoctl dismiss"
 
