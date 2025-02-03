@@ -41,6 +41,7 @@
       "/home/*/.local/share/nvim"
       "/home/*/.local/share/pnpm"
       "/home/*/.npm"
+      "/home/*/.platformio"
       "/home/*/.rustup/toolchains"
 
       # Games etc
