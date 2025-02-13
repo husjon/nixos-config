@@ -104,6 +104,7 @@
 
             ./modules/docker.nix
             ./modules/steam.nix
+            ./modules/tailscale/exit-node.nix
           ];
         };
 
