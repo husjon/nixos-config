@@ -36,6 +36,7 @@
       "/home/*/.arduino*/packages"
       "/home/*/.arduino*/staging"
       "/home/*/.cargo"
+      "/home/*/.docker"
       "/home/*/.local/share/containers"
       "/home/*/.local/share/docker"
       "/home/*/.local/share/godot"
