@@ -59,6 +59,7 @@
       "/home/*/Downloads"
       "/home/*/Dropbox"
       "/home/*/Games"
+      "/home/*/music"
 
       "**/*.log"
     ];
