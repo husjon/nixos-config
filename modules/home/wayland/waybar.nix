@@ -15,11 +15,14 @@ in
       mainBar = {
         position = "bottom";
         layer = "bottom";
-        modules-left = [ "tray" ];
-        modules-center = [
+        modules-left = [
           "hyprland/workspaces"
         ];
+        modules-center = [
+          "hyprland/window"
+        ];
         modules-right = [
+          "tray"
           "battery"
           "clock"
         ];
@@ -67,6 +70,9 @@ in
           format-alt = "{:%a, %d. %b  %H:%M}";
         };
 
+        "hyprland/window" = {
+          "separate-outputs" = true;
+        };
         "hyprland/workspaces" = {
           sort-by = "default";
           format = "{icon}";
