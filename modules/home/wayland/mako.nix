@@ -8,8 +8,6 @@
       width = 500;
 
       borderRadius = 4;
-      padding = "10";
-      margin = "24";
       defaultTimeout = 5000;
       anchor = "bottom-right";
 
@@ -19,6 +17,10 @@
       progressColor = "#313244";
 
       extraConfig = ''
+        padding=16
+        margin=8,0
+        outer-margin=10
+
         [urgency=high]
         border-color=#fab387
 
