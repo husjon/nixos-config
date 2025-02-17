@@ -11,7 +11,7 @@
       defaultTimeout = 5000;
       anchor = "bottom-right";
 
-      backgroundColor = "#1e1e2e";
+      backgroundColor = "#181825dd";
       textColor = "#cdd6f4";
       borderColor = "#89b4fa";
       progressColor = "#313244";
@@ -21,14 +21,18 @@
         margin=8,0
         outer-margin=10
 
+        [urgency=low]
+        border-color=#585b70
+        text-color=#a6adc8
+
         [urgency=high]
-        border-color=#fab387
+        border-color=#f38ba8
+        text-color=#f38ba8
 
         [app-name="Spotify"]
         default-timeout=2000
-        background-color=#1ED760
-        text-color=#1e1e2e
-        border-color=#09682a
+        text-color=#55ce6d
+        border-color=#55ce6d
       '';
     };
   };
