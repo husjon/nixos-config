@@ -18,6 +18,10 @@ if [ ! -f shell.nix ]; then
 		    # (writeShellScriptBin "hello-world" ''
 		    #   echo "Hello, World!
 		    # '')
+
+		    (writeShellScriptBin "f" ''
+		      nvim -c 'lua require("persistence").load()'
+		    '')
 		  ];
 
 		  shellHook = ''
