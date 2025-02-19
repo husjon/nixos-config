@@ -40,21 +40,21 @@ rec {
         name = "DP-1";
         resolution = "2560x1440";
         rate = 144;
-        position = "0x0";
+        position = "1440x610";
         rotation = 0;
       };
       secondary = {
         name = "DP-2";
         resolution = "2560x1440";
         rate = 144;
-        position = "-1440x-610";
+        position = "0x0";
         rotation = 90;
       };
       tablet = {
         name = "HDMI-A-1";
         resolution = "1920x1080";
         rate = 60;
-        position = "320x1440";
+        position = "1760x2050";
         rotation = 180;
       };
       tv = {
