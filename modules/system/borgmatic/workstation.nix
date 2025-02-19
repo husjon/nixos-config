@@ -28,6 +28,10 @@
 
     exclude_caches = true;
     exclude_nodump = true;
+    exclude_if_present = [
+      ".borg-nobackup"
+    ];
+
     exclude_patterns = [
 
       # Development
