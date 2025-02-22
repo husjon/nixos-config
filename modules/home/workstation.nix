@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [
-    stable.calibre
+    calibre
 
     freecad
     godot_4
