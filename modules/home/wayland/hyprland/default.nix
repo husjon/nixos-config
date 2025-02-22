@@ -163,7 +163,7 @@ in
 
       exec = [
         "hyprctl dispatch dpms on"
-        "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
+        # "pkill waybar; sleep 0.1; ${pkgs.waybar}/bin/waybar"
         "pgrep -f .Discord-wrapped || ${pkgs.discord}/bin/discord"
         "pgrep -f '^xwaylandvideobridge$' || xwaylandvideobridge"
 
