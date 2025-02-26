@@ -25,5 +25,7 @@ rm "${FILE}"
 # Read the content of the original file into a new file (makes the file writable)
 cat "${ORIGINAL_FILE}" >"${FILE}"
 
+[[ ${FILE} == *hyprland.conf ]] && hyprctl reload
+
 # Edit the file with the user specified EDITOR
 ${EDITOR} "${FILE}"
