@@ -7,7 +7,7 @@
 {
   users.users.${user.username} = {
     packages = with pkgs; [
-      xwaylandvideobridge
+      kdePackages.xwaylandvideobridge
     ];
   };
 
