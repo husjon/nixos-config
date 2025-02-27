@@ -195,7 +195,7 @@ in
 
       monitor = monitor;
       workspace = [
-        "w[tv1], gapsout:0, gapsin:0, bordersize:0" # emulate smart-gaps
+        # "w[tv1], gapsout:0, gapsin:0, bordersize:0" # emulate smart-gaps
       ] ++ workspace;
 
       general = {
@@ -203,7 +203,7 @@ in
         gaps_out = 10;
         border_size = 1;
         "col.active_border" = "$red $green $blue 45deg";
-        "col.inactive_border" = "rgba(595959ff)";
+        "col.inactive_border" = "$surface2";
 
         layout = "dwindle";
 
