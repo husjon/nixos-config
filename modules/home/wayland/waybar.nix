@@ -17,6 +17,10 @@ in
       mainBar = {
         position = "bottom";
         layer = "bottom";
+        margin-left = 10;
+        margin-right = 10;
+        margin-bottom = 10;
+
         modules-left = [
           "hyprland/workspaces"
         ];
@@ -103,11 +107,11 @@ in
 
         font-size: 1.1rem;
       }
+
       window {
         background-color: @background;
-      }
-      #waybar {
-        padding: 2px;
+        border-radius: 4px;
+        border: 1px solid @surface2;
       }
 
       #workspaces {
