@@ -15,6 +15,6 @@
     prusa-slicer
     tonelib-gfx
 
-    vcv-rack
+    stable.vcv-rack
   ];
 }
