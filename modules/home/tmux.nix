@@ -53,7 +53,7 @@
       bind-key S                  new-session
 
       bind-key m                  select-pane -m  # Marks the pane (same as right click)
-      bind-key M                  swap-pane
+      bind-key M                  "swap-pane -d; select-pane -M"
 
       bind-key -T copy-mode-vi v  send -X begin-selection  # VIM-esque selection and yank (tmux >2.3)
       bind-key -T copy-mode-vi y  send-keys -X copy-pipe-and-cancel 'xsel -i -b'
