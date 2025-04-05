@@ -91,32 +91,6 @@ let
 
         bind = [ ];
       }
-    else if hostname == "workstation-sb" then
-      {
-        monitor = [
-          "${primary.name}, ${primary.resolution}@${toString primary.rate}, ${primary.position}, 1, transform, ${
-            toString (primary.rotation / 90)
-          }"
-          "${secondary.name}, ${secondary.resolution}@${toString secondary.rate}, ${secondary.position}, 1, transform, ${
-            toString (secondary.rotation / 90)
-          }"
-        ];
-
-        workspace = [
-          "1,  monitor:${primary.name}"
-          "2,  monitor:${primary.name}"
-          "3,  monitor:${primary.name}"
-          "4,  monitor:${primary.name}"
-          "5,  monitor:${primary.name}"
-          "6,  monitor:${secondary.name}"
-          "7,  monitor:${secondary.name}"
-          "8,  monitor:${secondary.name}"
-          "9,  monitor:${secondary.name}"
-          "10, monitor:${secondary.name}"
-        ];
-
-        bind = [ ];
-      }
     else
       { };
 in

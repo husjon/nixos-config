@@ -46,7 +46,7 @@ pkgs.mkShell {
 
       case ''$1 in
           # Personal Computers
-          laptop|workstation|workstation-sb)
+          laptop|workstation)
               HOST=''$1
               ;;
           *)

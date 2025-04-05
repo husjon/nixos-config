@@ -108,29 +108,6 @@
             ./modules/tailscale/exit-node.nix
           ];
         };
-
-        workstation-sb = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          specialArgs = configuration.workstation-sb // {
-            inherit inputs;
-          };
-
-          modules = commonModules ++ [
-            { home-manager.extraSpecialArgs = configuration.workstation-sb; }
-
-            ./modules/docker.nix
-
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.config = {
-                  packageOverrides = pkgs: { polybar = pkgs.polybar.override { i3Support = true; }; };
-                };
-              }
-            )
-          ];
-        };
       };
     };
 }

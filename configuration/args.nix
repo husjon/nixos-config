@@ -68,33 +68,4 @@ rec {
 
     stateVersion = "24.05";
   };
-
-  workstation-sb = {
-    hostname = "workstation-sb";
-
-    graphics = "nvidia";
-
-    user = user;
-
-    monitors = {
-      primary = {
-        name = "DP-2";
-        resolution = "2560x1440";
-        rate = 60;
-        position = "1440x610";
-        rotation = 0;
-      };
-      secondary = {
-        name = "DP-3";
-        resolution = "2560x1440";
-        rate = 60;
-        position = "0x0";
-        rotation = 90;
-      };
-    };
-
-    nixSubstituters = [ ];
-
-    stateVersion = "23.11";
-  };
 }
