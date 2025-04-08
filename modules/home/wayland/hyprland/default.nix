@@ -313,12 +313,6 @@ in
         "$mod, mouse:273, resizewindow" # MMB to resize
       ];
 
-      windowrule = [
-        "workspace 4 silent, ^(obsidian)(.*)$"
-        "workspace 5 silent, ^(steam)$"
-        "workspace 7 silent, ^(Spotify)(.*)$"
-        "workspace 8 silent, ^(discord)(.*)$"
-      ];
       windowrulev2 = [
         "bordersize 1, onworkspace:w[tv1], floating:1" # emulate smart-gaps (allow floating windows to retain border"
 
@@ -327,6 +321,11 @@ in
         "stayfocused, floating:1,class:^(org.freecad.FreeCAD)$"
 
         "idleinhibit focus, class:^(steam_app_.*)" # inhibit hypridle from running when a game run from steam is in focus
+
+        "workspace 4 silent, class:^(obsidian)(.*)$"
+        "workspace 5 silent, class:^(steam)$"
+        "workspace 7 silent, class:^(Spotify)(.*)$"
+        "workspace 8 silent, class:^(discord)(.*)$"
 
         # xwaylandvideobridge {{{
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
