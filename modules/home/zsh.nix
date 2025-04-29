@@ -19,7 +19,7 @@
 
     syntaxHighlighting.enable = true;
 
-    initExtra = ''
+    initContent = ''
       zstyle ':completion:*' menu select
 
       function gcmsg { git commit -m "$1"; }
