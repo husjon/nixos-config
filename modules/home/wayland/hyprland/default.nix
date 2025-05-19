@@ -327,6 +327,11 @@ in
         "workspace 7 silent, class:^(Spotify)(.*)$"
         "workspace 8 silent, class:^(discord)(.*)$"
 
+        # Firefox {{{
+        "float, class:^(firefox), title:^()$"
+        "move 100%-w-12 100%-w-12, class:^(firefox), title:^()$"
+        # }}}
+
         # xwaylandvideobridge {{{
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
         "noanim, class:^(xwaylandvideobridge)$"
