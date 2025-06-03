@@ -21,6 +21,8 @@
         margin = "8,0";
         outer-margin = 10;
 
+        layer = "overlay";
+
         "urgency=low" = {
           border-color = "#585b70";
           text-color = "#a6adc8";
