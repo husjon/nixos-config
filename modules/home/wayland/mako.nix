@@ -9,7 +9,8 @@
         width = 500;
 
         border-radius = 4;
-        default-timeout = 5000;
+        default-timeout = 1500;
+        ignore-timeout = 1;
         anchor = "bottom-right";
 
         background-color = "#181825dd";
@@ -31,6 +32,7 @@
         "urgency=high" = {
           border-color = "#f38ba8";
           text-color = "#f38ba8";
+          default-timeout = 0;
         };
 
         "app-name=Spotify" = {
