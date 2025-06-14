@@ -1,11 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland
+    ./sway
 
     ./fuzzel.nix
     ./mako.nix
-    ./waybar.nix
   ];
 
   home.packages = with pkgs; [
