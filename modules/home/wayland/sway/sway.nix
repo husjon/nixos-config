@@ -156,6 +156,17 @@ in
         }
       ];
 
+      gaps = {
+        inner = 12;
+        outer = 0;
+        smartBorders = "on";
+        smartGaps = true;
+      };
+      window = {
+        border = 1;
+        titlebar = false;
+      };
+
       input = {
         "type:keyboard" = {
           xkb_layout = "no";
