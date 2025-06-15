@@ -203,7 +203,7 @@ in
             "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -o)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
 
           "${modifier}+Return" = "exec ${terminal}";
-          "${modifier}+Shift+Return" = "exec ${terminal} tmux || tmux a";
+          "${modifier}+Shift+Return" = "exec ${terminal} tmux a || tmux";
 
           "${modifier}+Ctrl+Shift+H" = "exec makoctl restore";
           "${modifier}+Ctrl+Space" = "exec makoctl dismiss";
