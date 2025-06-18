@@ -19,7 +19,7 @@ in
       {
         timeout = dpms_timeout;
         command = "${pkgs.procps}/bin/pgrep swaylock && ${pkgs.sway}/bin/swaymsg output '*' dpms off";
-        resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on > /dev/null";
       }
       {
         timeout = lock_timeout - 1;
