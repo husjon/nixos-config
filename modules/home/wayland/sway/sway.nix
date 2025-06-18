@@ -6,12 +6,12 @@
   ...
 }:
 let
-  # catppuccin-hyprland = pkgs.fetchFromGitHub {
-  #   owner = "catppuccin";
-  #   repo = "hyprland";
-  #   rev = "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab";
-  #   hash = "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=";
-  # };
+  catppuccin-i3 = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "i3";
+    rev = "c072ada05271eec960dc893affe9ac55af63a745";
+    hash = "sha256-H+ZueiYkCoBfS8JENLKhL/efFK6WFNDsbiMbTpGROUs=";
+  };
 
   host_specific_config =
     with monitors;
@@ -136,6 +136,10 @@ in
 
   wayland.windowManager.sway = with host_specific_config; {
     enable = true;
+
+    extraConfigEarly = ''
+      include ${catppuccin-i3}/themes/catppuccin-mocha
+    '';
 
     config = {
       modifier = "Mod4";
@@ -281,6 +285,45 @@ in
           XF86AudioRaiseVolume = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
         };
 
+      colors = {
+        background = "$base";
+        focused = {
+          childBorder = "$lavender";
+          background = "$base";
+          text = "$text";
+          indicator = "$red";
+          border = "$lavender";
+        };
+        focusedInactive = {
+          childBorder = "$overlay0";
+          background = "$base";
+          text = "$text";
+          indicator = "$rosewater";
+          border = "$overlay0";
+        };
+        unfocused = {
+          childBorder = "$overlay0";
+          background = "$base";
+          text = "$text";
+          indicator = "$rosewater";
+          border = "$overlay0";
+        };
+        urgent = {
+          childBorder = "$peach";
+          background = "$base";
+          text = "$peach";
+          indicator = "$overlay0";
+          border = "$peach";
+        };
+        placeholder = {
+          childBorder = "$overlay0";
+          background = "$base";
+          text = "$text";
+          indicator = "$overlay0";
+          border = "$overlay0";
+        };
+      };
+
       bars = [
         {
           position = "bottom";
@@ -296,13 +339,28 @@ in
           '';
 
           colors = {
-            statusline = "#ffffff";
-            background = "#323232";
+            statusline = "$text";
+            background = "$base";
 
+            focusedWorkspace = {
+              border = "$base";
+              background = "$mauve";
+              text = "$crust";
+            };
+            activeWorkspace = {
+              border = "$base";
+              background = "$surface2";
+              text = "$text";
+            };
             inactiveWorkspace = {
-              background = "#323232";
-              border = "#212121";
-              text = "#5c5c5c";
+              border = "$base";
+              background = "$base";
+              text = "$text";
+            };
+            urgentWorkspace = {
+              border = "$base";
+              background = "$red";
+              text = "$crust";
             };
           };
         }
