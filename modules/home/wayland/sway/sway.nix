@@ -88,23 +88,55 @@ let
       }
     else if hostname == "laptop" then
       {
-        monitor = [
-          "${primary.name}, ${primary.resolution}@${toString primary.rate}, ${primary.position}, 1, transform, ${
-            toString (primary.rotation / 90)
-          }"
-        ];
+        output = {
+          ${primary.name} = {
+            mode = "${primary.resolution}@${toString primary.rate}Hz";
+            pos = "${builtins.replaceStrings [ "x" ] [ " " ] primary.position}";
+            transform = "${toString primary.rotation}";
+          };
+        };
 
-        workspace = [
-          "1,  monitor:${primary.name}"
-          "2,  monitor:${primary.name}"
-          "3,  monitor:${primary.name}"
-          "4,  monitor:${primary.name}"
-          "5,  monitor:${primary.name}"
-          "6,  monitor:${primary.name}"
-          "7,  monitor:${primary.name}"
-          "8,  monitor:${primary.name}"
-          "9,  monitor:${primary.name}"
-          "10, monitor:${primary.name}"
+        workspaceOutputAssign = [
+          {
+            workspace = "1";
+            output = primary.name;
+          }
+          {
+            workspace = "2";
+            output = primary.name;
+          }
+          {
+            workspace = "3";
+            output = primary.name;
+          }
+          {
+            workspace = "4";
+            output = primary.name;
+          }
+          {
+            workspace = "5";
+            output = primary.name;
+          }
+          {
+            workspace = "6";
+            output = primary.name;
+          }
+          {
+            workspace = "7";
+            output = primary.name;
+          }
+          {
+            workspace = "8";
+            output = primary.name;
+          }
+          {
+            workspace = "9";
+            output = primary.name;
+          }
+          {
+            workspace = "10";
+            output = primary.name;
+          }
         ];
       }
     else
