@@ -85,18 +85,6 @@ let
             output = tablet.name;
           }
         ];
-
-        # bind = [
-        #   "$mod Shift, F, exec, hyprctl --batch 'dispatch togglefloating; dispatch setfloating; dispatch resizeactive exact 2560 1440 ; dispatch centerwindow'"
-        #   "$mod Ctrl Shift, F, exec, hyprctl --batch 'keyword monitor ${secondary.name},${secondary.resolution},-200x0,1, transform, 1'"
-
-        #   "$mod Ctrl Shift Alt, R, exec, hyprctl keyword monitor ${secondary.name},disabled && sleep 0.25 && hyprctl keyword monitor ${tv.name},disabled && sleep 0.5 && hyprctl reload" # Reload monitors
-        #   "$mod, plus, workspace, 11"
-        #   "$mod, backslash, workspace, 12"
-
-        #   "$mod SHIFT, plus,      movetoworkspacesilent, 11"
-        #   "$mod SHIFT, backslash, movetoworkspacesilent, 12"
-        # ];
       }
     else if hostname == "laptop" then
       {
@@ -118,8 +106,6 @@ let
           "9,  monitor:${primary.name}"
           "10, monitor:${primary.name}"
         ];
-
-        bind = [ ];
       }
     else
       { };
