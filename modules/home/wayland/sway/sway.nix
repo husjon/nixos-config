@@ -187,6 +187,21 @@ in
       window = {
         border = 1;
         titlebar = false;
+
+        commands = [
+          {
+            command = "inhibit_idle focus";
+            criteria = {
+              class = "steam_app*";
+            };
+          }
+          {
+            command = "inhibit_idle fullscreen";
+            criteria = {
+              class = ".*";
+            };
+          }
+        ];
       };
 
       input = {
