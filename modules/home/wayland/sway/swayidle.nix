@@ -19,7 +19,10 @@ in
       {
         timeout = dpms_timeout;
         command = "${pkgs.procps}/bin/pgrep swaylock && ${pkgs.sway}/bin/swaymsg output '*' dpms off";
-        resumeCommand = "${pkgs.sway}/bin/swaymsg output '*' dpms on > /dev/null";
+        resumeCommand = builtins.concatStringsSep "; " [
+          "${pkgs.sway}/bin/swaymsg output '*' dpms on > /dev/null"
+          "${pkgs.xorg.xrandr}/bin/xrandr --output DP-1 --primary"
+        ];
       }
       {
         timeout = lock_timeout - 1;
