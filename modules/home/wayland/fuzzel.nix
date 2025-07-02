@@ -18,7 +18,7 @@
         # fuzzy=yes
         # show-actions=no
         # terminal=$TERMINAL -e  # Note: you cannot actually use environment variables here
-        terminal = "${pkgs.alacritty} - e";
+        terminal = "${pkgs.kitty}/bin/kitty -";
         # launch-prefix=<not set>
         # list-executables-in-path=no
 
