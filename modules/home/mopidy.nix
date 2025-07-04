@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   services.mopidy = {
     enable = true;
     extensionPackages = with pkgs; [
       mopidy-mpd
       mopidy-mpris
+      mopidy-local
     ];
 
     settings = {
@@ -16,9 +17,7 @@
         restore_state = true;
       };
 
-      file.media_dirs = [
-        "~/music"
-      ];
+      local.media_dir = "~/music";
 
       mpd = {
         enabled = true;
