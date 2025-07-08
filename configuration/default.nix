@@ -98,4 +98,6 @@
   system.stateVersion = stateVersion;
 
   programs.zsh.enable = true;
+
+  programs.command-not-found.enable = true;
 }
