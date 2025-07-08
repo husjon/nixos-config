@@ -9,7 +9,7 @@
         width = 500;
 
         border-radius = 4;
-        default-timeout = 1500;
+        default-timeout = 2000;
         ignore-timeout = 1;
         anchor = "bottom-right";
 
