@@ -13,9 +13,16 @@
 
     enableCompletion = true;
 
-    history.ignorePatterns = [
-      "reboot"
-    ];
+    history = {
+      append = true;
+      expireDuplicatesFirst = true;
+
+      ignorePatterns = [
+        "reboot"
+      ];
+
+    };
+    historySubstringSearch.enable = true;
 
     syntaxHighlighting.enable = true;
 
