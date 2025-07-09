@@ -2,6 +2,10 @@
 {
   programs.ncmpcpp = {
     enable = true;
+
+    settings = {
+      volume_change_step = 1;
+    };
     bindings = [
       {
         key = "j";
