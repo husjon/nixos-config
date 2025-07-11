@@ -31,7 +31,7 @@ pkgs.mkShell {
     sops
 
     (writeShellScriptBin "f" ''
-      /usr/bin/env nvim flake.nix
+      nvim -c 'lua require("persistence").load()'
     '')
 
     (writeShellScriptBin "rebuild-test" ''
