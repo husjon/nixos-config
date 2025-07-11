@@ -13,8 +13,6 @@
 
     ./fstrim.nix
     ./nix-store-maintenance.nix
-
-    ./ups.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
