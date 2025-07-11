@@ -56,12 +56,7 @@
             inherit inputs;
           };
         }
-        (
-          { ... }:
-          {
-            nixpkgs.overlays = [ overlays-nixpkgs ];
-          }
-        )
+        ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
 
         ./modules/system
 
