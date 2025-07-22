@@ -40,6 +40,12 @@
           text-color = "#55ce6d";
           border-color = "#55ce6d";
         };
+
+        "app-name=obsidian summary=\"Obsidian Reminder\"" = {
+          default-timeout = 0;
+          text-color = "#B496F1";
+          border-color = "#B496F1";
+        };
       };
     };
   };
