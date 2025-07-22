@@ -366,6 +366,7 @@ in
           statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
 
           extraConfig = ''
+            separator_symbol " "
             font pango:FiraCode Nerd Font 10
             height 0
             workspace_min_width 24
