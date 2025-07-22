@@ -244,6 +244,7 @@ in
           "${modifier}+Shift+Return" = "exec ${terminal} --hold sh -c 'tmux a || tmux '";
 
           "${modifier}+Ctrl+Shift+H" = "exec makoctl restore";
+          "${modifier}+Ctrl+Shift+Period" = "exec makoctl invoke";
           "${modifier}+Ctrl+Space" = "exec makoctl dismiss";
 
           "${modifier}+F" = "fullscreen";
