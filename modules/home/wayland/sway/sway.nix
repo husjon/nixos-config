@@ -363,7 +363,7 @@ in
         {
           position = "bottom";
 
-          statusCommand = "while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done";
+          statusCommand = "${pkgs.i3blocks}/bin/i3blocks";
 
           extraConfig = ''
             font pango:FiraCode Nerd Font 10
@@ -403,4 +403,6 @@ in
       ];
     };
   };
+
+  imports = [ ./i3blocks.nix ];
 }
