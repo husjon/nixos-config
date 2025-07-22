@@ -93,6 +93,7 @@ let
             mode = "${primary.resolution}@${toString primary.rate}Hz";
             pos = "${builtins.replaceStrings [ "x" ] [ " " ] primary.position}";
             transform = "${toString primary.rotation}";
+            scale = "1.2";
           };
         };
 
