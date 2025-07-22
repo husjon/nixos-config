@@ -366,6 +366,7 @@ in
           statusCommand = "while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done";
 
           extraConfig = ''
+            font pango:FiraCode Nerd Font 10
             height 0
             workspace_min_width 24
 
