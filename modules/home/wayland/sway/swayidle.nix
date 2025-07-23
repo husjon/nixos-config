@@ -1,7 +1,18 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   dpms_timeout = 10;
   lock_timeout = 10 * 60;
+
+  lockScript = pkgs.writeScriptBin "swayidle-lock" ''
+    SHA256_FILE=''${XDG_CACHE_HOME}/wallpaper.png.sha256
+
+    if ! ${pkgs.coreutils}/bin/sha256sum --check ''${SHA256_FILE}; then
+      ${pkgs.coreutils}/bin/sha256sum ~/.wallpaper.png > ''${SHA256_FILE}
+      ${lib.getExe pkgs.imagemagick} ~/.wallpaper.png -scale 20% -modulate 50,20 -scale 500% ~/.cache/wallpaper.lock.png
+    fi
+
+    ${lib.getExe pkgs.swaylock}
+  '';
 
 in
 {
@@ -10,7 +21,7 @@ in
     events = [
       {
         event = "lock";
-        command = "${pkgs.swaylock}/bin/swaylock";
+        command = "${lib.getExe lockScript}";
       }
       {
         event = "before-sleep";
