@@ -5,7 +5,7 @@
     settings = {
 
       color = "000000";
-      image = "~/.wallpaper.lock.png";
+      image = "~/.cache/wallpaper.lock.png";
       daemonize = true;
 
       show-failed-attempts = true;
