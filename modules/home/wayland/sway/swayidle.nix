@@ -12,7 +12,10 @@ in
         event = "lock";
         command = "${pkgs.swaylock}/bin/swaylock";
       }
-
+      {
+        event = "before-sleep";
+        command = "${pkgs.systemd}/bin/loginctl lock-session";
+      }
     ];
 
     timeouts = [
