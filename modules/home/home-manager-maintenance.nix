@@ -21,7 +21,7 @@
       };
 
       Service = {
-        ExecStart = "${pkgs.nix}/bin/nix-env --profile \${HOME}/.local/state/nix/profiles/home-manager --delete-generations +14d";
+        ExecStart = "${pkgs.nix}/bin/nix-env --profile \${HOME}/.local/state/nix/profiles/home-manager --delete-generations +7d";
       };
     };
   };
