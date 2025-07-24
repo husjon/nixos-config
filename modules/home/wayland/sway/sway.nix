@@ -202,6 +202,12 @@ in
               class = ".*";
             };
           }
+          {
+            command = "floating enable";
+            criteria = {
+              app_id = "qemu";
+            };
+          }
         ];
       };
 
