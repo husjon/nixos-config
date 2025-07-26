@@ -1,20 +1,23 @@
 { pkgs, ... }:
+let
+  gtkThemeScript = (
+    mode: ''
+      ${pkgs.dconf}/bin/dconf write \
+          /org/gnome/desktop/interface/color-scheme "'prefer-${mode}'"
+    ''
+  );
+
+in
 {
   services.darkman = {
     enable = true;
 
     darkModeScripts = {
-      gtk-theme = ''
-        ${pkgs.dconf}/bin/dconf write \
-            /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-      '';
+      gtk-theme = gtkThemeScript "dark";
     };
 
     lightModeScripts = {
-      gtk-theme = ''
-        ${pkgs.dconf}/bin/dconf write \
-            /org/gnome/desktop/interface/color-scheme "'prefer-light'"
-      '';
+      gtk-theme = gtkThemeScript "light";
     };
   };
 }
