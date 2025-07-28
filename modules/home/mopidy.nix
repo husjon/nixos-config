@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 {
-  systemd.user.services.mopidy-scan = lib.mkForce { }; # disable mopidy-scan on restart (takes multiple minutes)
+  systemd.user.services.mopidy-scan.Service.Type = lib.mkForce "simple";
+
   services.mopidy = {
     enable = true;
     extensionPackages = with pkgs; [
