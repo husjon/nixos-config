@@ -1,6 +1,9 @@
 { lib, pkgs, ... }:
 {
-  systemd.user.services.mopidy-scan.Service.Type = lib.mkForce "simple";
+  systemd.user.services.mopidy-scan = {
+    Service.Type = lib.mkForce "simple";
+    Install = lib.mkForce { };
+  };
 
   services.mopidy = {
     enable = true;
