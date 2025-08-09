@@ -26,4 +26,6 @@
   documentation.man.generateCaches = true;
 
   environment.pathsToLink = [ "/share/zsh" ];
+
+  networking.firewall.allowedUDPPorts = [ 22000 ];
 }
