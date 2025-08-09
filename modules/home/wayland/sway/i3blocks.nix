@@ -1,8 +1,6 @@
 { lib, pkgs, ... }:
 let
   toggleDarkmode = pkgs.writeScriptBin "toggle" ''
-    #!${pkgs.bash}/bin/bash
-
     CURRENT_MODE=$(${pkgs.darkman}/bin/darkman get)
     ICON_LIGHT=󰌵 # nf-md-lightbulb
     ICON_DARK=󰌶  # nf-md-lightbulb_outline
