@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ git-crypt ];
+  home.packages = with pkgs; [
+    git-crypt
+    git-graph
+  ];
 
   programs.git = {
     enable = true;
