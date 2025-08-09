@@ -14,42 +14,31 @@
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
+    "thunderbolt"
     "nvme"
-    "usb_storage"
-    "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/21a95182-2897-4b0a-8984-6188490685bd";
+    device = "/dev/mapper/luks-9fdb09c9-6cbc-4434-9205-794ec12ddc37";
     fsType = "ext4";
   };
 
-  services.logind.lidSwitchExternalPower = "suspend";
-  services.logind.lidSwitch = "suspend-then-hibernate";
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=1h
-  '';
-
-  boot.initrd.luks.devices."luks-782ca1d2-3479-4036-8481-31461ccc158f".device = "/dev/disk/by-uuid/782ca1d2-3479-4036-8481-31461ccc158f"; # root
-  boot.initrd.luks.devices."luks-f007be40-f448-4e3c-abd9-53ca15d3f895".device = "/dev/disk/by-uuid/f007be40-f448-4e3c-abd9-53ca15d3f895"; # swap
+  boot.initrd.luks.devices."luks-9fdb09c9-6cbc-4434-9205-794ec12ddc37".device = "/dev/disk/by-uuid/9fdb09c9-6cbc-4434-9205-794ec12ddc37"; # root
+  boot.initrd.luks.devices."luks-539c7144-b3ba-4a3d-ac48-a486d27dd8e8".device = "/dev/disk/by-uuid/539c7144-b3ba-4a3d-ac48-a486d27dd8e8"; # swap
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/2F0A-EA0E";
+    device = "/dev/disk/by-uuid/ADF8-E324";
     fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
   };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/1c221f46-59d3-4eb1-813f-dbe7f53b6f05"; } ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s20f0u1u2u1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+  swapDevices = [ { device = "/dev/mapper/luks-539c7144-b3ba-4a3d-ac48-a486d27dd8e8"; } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
