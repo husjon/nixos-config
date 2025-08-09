@@ -4,6 +4,7 @@
     enable = true;
 
     settings = {
+      media_library_primary_tag = "album_artist";
       volume_change_step = 1;
     };
     bindings = [
