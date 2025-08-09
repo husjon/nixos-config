@@ -16,6 +16,8 @@ let
         --mode fill \
         --image ~/.wallpaper.${mode}.png &
 
+      ${pkgs.coreutils-full}/bin/ln -fs ~/.wallpaper.${mode}.png ~/.wallpaper.png
+
       ${pkgs.coreutils-full}/bin/sleep 0.25
       kill ''${PIDS}
     ''
