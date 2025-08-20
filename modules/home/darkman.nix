@@ -9,7 +9,7 @@ let
 
   wallpaper = (
     mode: ''
-      PIDS=$(${pkgs.procps}/bin/pgrep swaybg)
+      PIDS=''$(${pkgs.procps}/bin/pgrep swaybg)
 
       ${lib.getExe pkgs.swaybg} \
         --output '*' \
