@@ -1,13 +1,13 @@
 { lib, pkgs, ... }:
 let
-  gtkThemeScript = (
+  gtkTheme = (
     mode: ''
       ${pkgs.dconf}/bin/dconf write \
           /org/gnome/desktop/interface/color-scheme "'prefer-${mode}'"
     ''
   );
 
-  wallpaperScript = (
+  wallpaper = (
     mode: ''
       PIDS=$(${pkgs.procps}/bin/pgrep swaybg)
 
@@ -29,15 +29,15 @@ in
     enable = true;
 
     darkModeScripts = {
-      gtk-theme = gtkThemeScript "dark";
+      gtk-theme = gtkTheme "dark";
 
-      wallpaper = wallpaperScript "dark";
+      wallpaper = wallpaper "dark";
     };
 
     lightModeScripts = {
-      gtk-theme = gtkThemeScript "light";
+      gtk-theme = gtkTheme "light";
 
-      wallpaper = wallpaperScript "light";
+      wallpaper = wallpaper "light";
     };
   };
 }
