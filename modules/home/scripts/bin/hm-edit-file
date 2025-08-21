@@ -10,22 +10,27 @@ if [ ! "${FILE}" ]; then
 fi
 
 ORIGINAL_FILE=$(readlink "${FILE}" || echo "")
+ORIGINAL_FILE_CANONICALIZED=$(readlink --canonicalize "${FILE}" || echo "")
+TMP_FILE=$(mktemp)
 
 # Once editor or terminal is closed, reinstate the symlink
-trap 'ln -sf "${ORIGINAL_FILE}" "${FILE}"' EXIT TERM INT HUP
+function cleanup() {
+	ln -sf "${ORIGINAL_FILE}" "${FILE}"
+	rm -f "${TMP_FILE}"
+}
+trap cleanup EXIT TERM INT HUP
 
 if ! echo "${ORIGINAL_FILE}" | grep -E '^/nix/store/.*?-home-manager-files/' >/dev/null; then
 	echo "File \"${FILE}\" is not managed by home-manager"
 	exit 1
 fi
 
-# Remove the symlink
-rm "${FILE}"
+# Copy the canonicalized file to tmp for editing and make it writable
+cp --preserve=mode "${ORIGINAL_FILE_CANONICALIZED}" "${TMP_FILE}"
+chmod +w "${TMP_FILE}"
 
-# Read the content of the original file into a new file (makes the file writable)
-cat "${ORIGINAL_FILE}" >"${FILE}"
-
-[[ ${FILE} == *hyprland.conf ]] && hyprctl reload
+# Replace the link to the file we're editing
+ln -fs "${TMP_FILE}" "${FILE}"
 
 # Edit the file with the user specified EDITOR
 ${EDITOR} "${FILE}"
