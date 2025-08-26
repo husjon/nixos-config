@@ -1,12 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 let
-  gtkTheme = (
-    mode: ''
-      ${pkgs.dconf}/bin/dconf write \
-          /org/gnome/desktop/interface/color-scheme "'prefer-${mode}'"
-    ''
-  );
-
   wallpaper = (
     mode: ''
       PIDS=''$(${pkgs.procps}/bin/pgrep swaybg)
@@ -26,18 +23,7 @@ let
 in
 {
   services.darkman = {
-    enable = true;
-
-    darkModeScripts = {
-      gtk-theme = gtkTheme "dark";
-
-      wallpaper = wallpaper "dark";
-    };
-
-    lightModeScripts = {
-      gtk-theme = gtkTheme "light";
-
-      wallpaper = wallpaper "light";
-    };
+    darkModeScripts.wallpaper = wallpaper "dark";
+    lightModeScripts.wallpaper = wallpaper "light";
   };
 }

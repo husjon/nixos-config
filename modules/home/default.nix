@@ -15,7 +15,7 @@
 
   imports = [
     ./bash.nix
-    ./darkman.nix
+    ./darkman
     ./direnv.nix
     ./fish.nix
     ./git.nix
