@@ -13,6 +13,7 @@ in
 {
   imports = [
     ./sway.nix
+    ./tmux.nix
     ./wallpaper.nix
   ];
 
