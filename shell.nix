@@ -41,6 +41,14 @@ pkgs.mkShell {
       sudo nixos-rebuild --flake ".#" --no-update-lock-file switch
     '')
 
+    (writeShellScriptBin "rebuild-vm" ''
+      nixos-rebuild --flake ".#" --no-update-lock-file build-vm
+
+      QEMU_OPTS="-display gtk,grab-on-hover=on" \
+        ./result/bin/run-*-vm
+      rm ./result ./*.qcow2
+    '')
+
     (writeShellScriptBin "rebuild-remote" ''
       #!/usr/bin/env bash
 

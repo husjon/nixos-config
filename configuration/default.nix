@@ -100,4 +100,10 @@
   programs.zsh.enable = true;
 
   programs.command-not-found.enable = true;
+
+  virtualisation.vmVariant = {
+    # following configuration is added only when building VM with build-vm
+    virtualisation.memorySize = 8 * 1024;
+    virtualisation.cores = 4;
+  };
 }
