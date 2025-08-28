@@ -44,7 +44,7 @@ in
           null
         else
           config.sops.secrets.password.path;
-      # initialPassword = "test";  # used when building vm to test
+      initialPassword = "test"; # used when building vm to test
     };
 
     home-manager.users = {
@@ -52,7 +52,9 @@ in
         home.username = cfg.username;
         home.homeDirectory = "/home/${cfg.username}";
 
-        home.packages = with pkgs; [ ];
+        home.packages = with pkgs; [
+          kitty
+        ];
       };
     };
   };
