@@ -8,6 +8,7 @@ in
     ./bluetooth.nix
     ./development
     ./filemanager
+    ./keyring.nix
     ./syncthing.nix
     ./tailscale
     ./user
