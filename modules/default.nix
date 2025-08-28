@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./audio
     ./development
     ./syncthing.nix
     ./tailscale
