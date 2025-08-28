@@ -10,6 +10,7 @@ in
     ./development
     ./filemanager
     ./keyring.nix
+    ./maintenance
     ./syncthing.nix
     ./tailscale
     ./user

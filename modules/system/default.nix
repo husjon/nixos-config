@@ -7,8 +7,6 @@
     ./nix-store-maintenance.nix
   ];
 
-  boot.tmp.cleanOnBoot = true;
-
   services.avahi.enable = true; # for Chromecast
   services.printing.enable = true;
   services.speechd.enable = lib.mkForce false; # speechd is enabled by default
