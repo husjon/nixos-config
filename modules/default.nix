@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./audio
+    ./bluetooth.nix
     ./development
     ./syncthing.nix
     ./tailscale

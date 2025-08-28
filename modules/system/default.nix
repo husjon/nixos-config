@@ -1,7 +1,6 @@
 { hostname, lib, ... }:
 {
   imports = [
-    ./bluetooth.nix
     ./borgmatic
 
     ./graphics
