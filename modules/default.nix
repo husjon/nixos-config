@@ -6,6 +6,7 @@ in
   imports = [
     ./development
     ./syncthing.nix
+    ./tailscale
     ./user
   ];
 
