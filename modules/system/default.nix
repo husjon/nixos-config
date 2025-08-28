@@ -3,7 +3,6 @@
   imports = [
     ./graphics
 
-    ./fstrim.nix
     ./nix-store-maintenance.nix
   ];
 
