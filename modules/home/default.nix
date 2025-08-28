@@ -86,8 +86,6 @@
 
   programs.starship.enable = true;
 
-  services.syncthing.enable = true;
-
   xdg = {
     enable = true;
     userDirs.enable = true;
