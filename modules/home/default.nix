@@ -11,7 +11,6 @@
   imports = [
     ./bash.nix
     ./darkman
-    ./direnv.nix
     ./fish.nix
     ./home-manager-maintenance.nix
     ./neovim.nix
