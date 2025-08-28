@@ -8,11 +8,6 @@
 {
   # List of options: https://nix-community.github.io/home-manager/options.xhtml
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = user.username;
-  home.homeDirectory = "/home/${user.username}";
-
   imports = [
     ./bash.nix
     ./darkman
