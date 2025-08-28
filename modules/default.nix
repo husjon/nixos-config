@@ -12,6 +12,7 @@ in
     ./graphics
     ./keyring.nix
     ./maintenance
+    ./steam.nix
     ./syncthing.nix
     ./tailscale
     ./user
