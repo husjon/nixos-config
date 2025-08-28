@@ -48,7 +48,7 @@ rec {
         resolution = "2560x1440";
         rate = 144;
         position = "0x0";
-        rotation = 270;
+        rotation = 90;
       };
       tablet = {
         name = "HDMI-A-1";

@@ -128,7 +128,6 @@ in
         #~/bin/pipewire-monitor
         "pkill gnome-keyring; gnome-keyring-daemon"
         "hyprlock"
-        "${pkgs.spotify}/bin/spotify; $playerctl volume 0.5"
       ];
 
       env = [
@@ -146,12 +145,14 @@ in
         "GDK_BACKEND,wayland,x11,*"
         "QT_QPA_PLATFORM,wayland;xcb"
         "CLUTTER_BACKEND,wayland"
-      ] ++ nvidia_env;
+      ]
+      ++ nvidia_env;
 
       monitor = monitor;
       workspace = [
         # "w[tv1], gapsout:0, gapsin:0, bordersize:0" # emulate smart-gaps
-      ] ++ workspace;
+      ]
+      ++ workspace;
 
       general = {
         gaps_in = 6;
@@ -245,7 +246,8 @@ in
         "$mod Ctrl Shift, V, exec, ${pkgs.wtype}/bin/wtype -d 100 -s 250 \"$(${pkgs.wl-clipboard}/bin/wl-paste)\"" # paste from clipboard by typing each character (helpful for certain xwayland apps)
 
         "$mod Ctrl Shift, h, exec, makoctl restore"
-        "Ctrl Shift, Space, exec, makoctl dismiss"
+        "$mod Ctrl Shift, Space, exec, makoctl dismiss"
+        "$mod Ctrl Shift, Period, exec, makoctl invoke"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
@@ -283,7 +285,8 @@ in
         "$mod SHIFT, 8, movetoworkspacesilent, 8"
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
         "$mod SHIFT, 0, movetoworkspacesilent, 10"
-      ] ++ bind;
+      ]
+      ++ bind;
 
       binde = [
         "$mod Alt, h, resizeactive, -10 0"
