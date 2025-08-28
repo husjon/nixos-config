@@ -8,6 +8,7 @@ in
     ./bluetooth.nix
     ./borgmatic
     ./development
+    ./docker.nix
     ./filemanager
     ./graphics
     ./keyring.nix
