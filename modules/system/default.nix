@@ -5,7 +5,6 @@
 
     ./graphics
 
-    ./filemanager.nix
     ./keyring.nix
 
     ./fstrim.nix
