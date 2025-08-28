@@ -69,6 +69,10 @@
           modules = commonModules ++ [
             { home-manager.extraSpecialArgs = configuration.laptop; }
             ./modules/system/tlp.nix
+
+            {
+              husjon.graphics.manufacturer = "intel";
+            }
           ];
         };
 
@@ -92,7 +96,10 @@
             ./modules/docker.nix
             ./modules/steam.nix
 
-            { husjon.services.tailscale.exitNode = true; }
+            {
+              husjon.graphics.manufacturer = "amd";
+              husjon.services.tailscale.exitNode = true;
+            }
 
             ./modules/system/ups.nix
           ];
