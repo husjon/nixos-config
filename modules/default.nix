@@ -19,6 +19,7 @@ in
     ./tlp.nix
     ./ups.nix
     ./user
+    ./window_manager
   ];
 
   options.husjon.stateVersion = lib.mkOption {

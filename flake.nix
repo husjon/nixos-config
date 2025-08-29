@@ -50,8 +50,6 @@
         ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
 
         ./modules
-
-        ./modules/window_manager
       ];
 
     in

@@ -1,0 +1,14 @@
+{ config, lib, ... }:
+let
+  cfg = config.husjon;
+in
+{
+  imports = [
+    ./sway.nix
+    ./swayidle.nix
+    ./swaylock.nix
+  ];
+
+  config = lib.mkIf (cfg.graphics.window_manager == "sway") {
+  };
+}
