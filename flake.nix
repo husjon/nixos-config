@@ -80,13 +80,6 @@
           };
 
           modules = commonModules ++ [
-            (
-              { pkgs, ... }:
-              {
-                boot.kernelPackages = pkgs.linuxPackages_latest;
-              }
-            )
-
             { home-manager.extraSpecialArgs = configuration.workstation; }
 
             {
@@ -94,6 +87,7 @@
               husjon.graphics.manufacturer = "amd";
               husjon.programs.steam.enable = true;
               husjon.services.tailscale.exitNode = true;
+              husjon.system.kernel = "latest";
               husjon.system.ups.enable = true;
             }
           ];
