@@ -16,6 +16,7 @@ in
     ./steam.nix
     ./syncthing.nix
     ./tailscale
+    ./tlp.nix
     ./ups.nix
     ./user
   ];
