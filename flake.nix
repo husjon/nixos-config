@@ -81,6 +81,7 @@
             {
               husjon.docker.enable = true;
               husjon.graphics.manufacturer = "amd";
+              husjon.programs.blender.enable = true;
               husjon.programs.steam.enable = true;
               husjon.services.tailscale.exitNode = true;
               husjon.system.kernel = "latest";
