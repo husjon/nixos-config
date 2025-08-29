@@ -18,6 +18,7 @@ in
     ./syncthing.nix
     ./tailscale
     ./tlp.nix
+    ./tmux.nix
     ./ups.nix
     ./user
     ./window_manager
