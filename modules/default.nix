@@ -14,6 +14,7 @@ in
     ./graphics
     ./keyring.nix
     ./maintenance
+    ./shell
     ./steam.nix
     ./syncthing.nix
     ./tailscale
