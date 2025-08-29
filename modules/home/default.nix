@@ -12,7 +12,6 @@
     ./bash.nix
     ./darkman
     ./fish.nix
-    ./home-manager-maintenance.nix
     ./neovim.nix
     ./terminal.nix
     ./tmux.nix
