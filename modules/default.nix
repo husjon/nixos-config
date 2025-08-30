@@ -8,6 +8,7 @@ in
     ./blender.nix
     ./bluetooth.nix
     ./borgmatic
+    ./darkman
     ./development
     ./docker.nix
     ./filemanager
