@@ -301,6 +301,10 @@ in
 
           bindl = [
             ",switch:Lid Switch,exec,loginctl lock-session"
+            ", XF86MonBrightnessDown, exec, /nix/store/32n9z5g4zbmqrl9ksks16111p27ghjmj-brightnessctl-0.5.1/bin/brightnessctl --min-value=1 set 1%-"
+            "SHIFT , XF86MonBrightnessDown, exec, /nix/store/32n9z5g4zbmqrl9ksks16111p27ghjmj-brightnessctl-0.5.1/bin/brightnessctl --min-value=1 set 10%-"
+            ", XF86MonBrightnessUp, exec, /nix/store/32n9z5g4zbmqrl9ksks16111p27ghjmj-brightnessctl-0.5.1/bin/brightnessctl set +1%"
+            "SHIFT , XF86MonBrightnessUp, exec, /nix/store/32n9z5g4zbmqrl9ksks16111p27ghjmj-brightnessctl-0.5.1/bin/brightnessctl set +10%"
 
             ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
             ", XF86AudioPlay, exec, $playerctl play-pause"
