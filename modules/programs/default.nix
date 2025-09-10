@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./fuzzel.nix
   ];
 
   config = {
