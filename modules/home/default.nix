@@ -12,7 +12,6 @@
     ./darkman
     ./neovim.nix
     ./terminal.nix
-    ./tmux.nix
 
     ./scripts
 
