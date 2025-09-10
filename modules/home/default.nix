@@ -13,7 +13,6 @@
     ./darkman
     ./direnv.nix
     ./fish.nix
-    ./git.nix
     ./home-manager-maintenance.nix
     ./neovim.nix
     ./terminal.nix
