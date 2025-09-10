@@ -9,9 +9,7 @@
   # List of options: https://nix-community.github.io/home-manager/options.xhtml
 
   imports = [
-    ./bash.nix
     ./darkman
-    ./fish.nix
     ./neovim.nix
     ./terminal.nix
     ./tmux.nix
@@ -19,7 +17,6 @@
     ./scripts
 
     ./${hostname}.nix
-    ./zsh.nix
   ];
 
   home.sessionVariables = {
