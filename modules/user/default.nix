@@ -19,6 +19,12 @@ in
       default = "husjon";
     };
 
+    userId = lib.mkOption {
+      description = "The id for the given user";
+      type = lib.types.number;
+      default = 1000;
+    };
+
     profilePicture = lib.mkOption {
       description = "Path to profile picture used for the user";
       default = null;
@@ -36,6 +42,8 @@ in
     };
 
     users.users.${cfg.username} = {
+      uid = cfg.userId;
+
       isNormalUser = true;
 
       group = cfg.username;
