@@ -29,6 +29,21 @@ in
       ];
     };
 
+    home-manager.users."${cfg.user.username}" = {
+      home.file.".local/share/icons" = {
+        source = "${pkgs.bibata-cursors}/share/icons/";
+        recursive = true;
+      };
+      home.file.".local/share/icons/default/index.theme" = {
+        text = ''
+          [Icon Theme]
+          Name=Default
+          Comment=Default Cursor Theme
+          Inherits=Bibata-Modern-Ice
+        '';
+      };
+    };
+
     programs.${cfg.graphics.window_manager} = {
       enable = true;
       xwayland.enable = true;

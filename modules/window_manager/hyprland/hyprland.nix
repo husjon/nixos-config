@@ -104,11 +104,6 @@ in
 {
   config = lib.mkIf (cfg.graphics.window_manager == "hyprland") {
     home-manager.users."${cfg.user.username}" = {
-      home.file.".local/share/icons" = {
-        source = "${pkgs.bibata-cursors}/share/icons/";
-        recursive = true;
-      };
-
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk
       ];

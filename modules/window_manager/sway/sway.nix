@@ -149,11 +149,6 @@ in
 
   config = lib.mkIf (config.husjon.graphics.window_manager == "sway") {
     home-manager.users."${config.husjon.user.username}" = {
-      home.file.".local/share/icons" = {
-        source = "${pkgs.bibata-cursors}/share/icons/";
-        recursive = true;
-      };
-
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk
       ];
