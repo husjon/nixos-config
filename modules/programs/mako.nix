@@ -1,50 +1,63 @@
-{ ... }:
 {
-  services = {
-    mako = {
-      enable = true;
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.husjon;
+in
+{
+  options.husjon.programs.fuzzel.enable = (lib.mkEnableOption "mako" // { default = true; });
 
-      settings = {
-        height = 200;
-        width = 500;
+  config = lib.mkIf cfg.programs.tmux.enable {
+    home-manager.users."${cfg.user.username}" = {
+      services = {
+        mako = {
+          enable = true;
 
-        border-radius = 4;
-        default-timeout = 2000;
-        ignore-timeout = 1;
-        anchor = "bottom-right";
+          settings = {
+            height = 200;
+            width = 500;
 
-        background-color = "#181825dd";
-        text-color = "#cdd6f4";
-        border-color = "#89b4fa";
-        progress-color = "#313244";
+            border-radius = 4;
+            default-timeout = 2000;
+            ignore-timeout = 1;
+            anchor = "bottom-right";
 
-        padding = 16;
-        margin = "8,0";
-        outer-margin = 10;
+            background-color = "#181825dd";
+            text-color = "#cdd6f4";
+            border-color = "#89b4fa";
+            progress-color = "#313244";
 
-        layer = "overlay";
+            padding = 16;
+            margin = "8,0";
+            outer-margin = 10;
 
-        "urgency=low" = {
-          border-color = "#585b70";
-          text-color = "#a6adc8";
-        };
+            layer = "overlay";
 
-        "urgency=high" = {
-          border-color = "#f38ba8";
-          text-color = "#f38ba8";
-          default-timeout = 0;
-        };
+            "urgency=low" = {
+              border-color = "#585b70";
+              text-color = "#a6adc8";
+            };
 
-        "app-name=Spotify" = {
-          default-timeout = 2000;
-          text-color = "#55ce6d";
-          border-color = "#55ce6d";
-        };
+            "urgency=high" = {
+              border-color = "#f38ba8";
+              text-color = "#f38ba8";
+              default-timeout = 0;
+            };
 
-        "app-name=obsidian summary=\"Obsidian Reminder\"" = {
-          default-timeout = 0;
-          text-color = "#B496F1";
-          border-color = "#B496F1";
+            "app-name=Spotify" = {
+              default-timeout = 2000;
+              text-color = "#55ce6d";
+              border-color = "#55ce6d";
+            };
+
+            "app-name=obsidian summary=\"Obsidian Reminder\"" = {
+              default-timeout = 0;
+              text-color = "#B496F1";
+              border-color = "#B496F1";
+            };
+          };
         };
       };
     };

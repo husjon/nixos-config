@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./fuzzel.nix
+    ./mako.nix
   ];
 
   config = {
