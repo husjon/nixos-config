@@ -5,8 +5,6 @@
 
     ./graphics
 
-    ./keyring.nix
-
     ./fstrim.nix
     ./nix-store-maintenance.nix
   ];
