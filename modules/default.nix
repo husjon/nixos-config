@@ -14,6 +14,7 @@ in
     ./graphics
     ./keyring.nix
     ./maintenance
+    ./programs
     ./services
     ./shell
     ./steam.nix
