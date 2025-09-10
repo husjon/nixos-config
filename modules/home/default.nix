@@ -11,7 +11,6 @@
   imports = [
     ./darkman
     ./neovim.nix
-    ./terminal.nix
 
     ./scripts
 
