@@ -6,6 +6,7 @@ in
   imports = [
     ./fuzzel.nix
     ./mako.nix
+    ./waybar.nix
   ];
 
   config = {
