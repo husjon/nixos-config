@@ -58,7 +58,10 @@ in
           null
         else
           config.sops.secrets.password.path;
-      # initialPassword = "test";  # used when building vm to test
+    };
+
+    virtualisation.vmVariant = {
+      users.users.${cfg.user.username}.initialPassword = "test";
     };
 
     # adds ~/.local/bin to the users PATH
