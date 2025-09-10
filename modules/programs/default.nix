@@ -11,6 +11,7 @@ in
   imports = [
     ./fuzzel.nix
     ./mako.nix
+    ./neovim.nix
     ./waybar.nix
   ];
 
