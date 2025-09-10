@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.husjon;
 in
@@ -9,37 +14,46 @@ in
     ./waybar.nix
   ];
 
+  options.husjon.programs.extraPrograms = lib.mkOption {
+    description = "A list of extra programs to install for the user";
+    default = [ ];
+    type = lib.types.listOf lib.types.package;
+  };
+
   config = {
     home-manager.users."${cfg.user.username}" = {
-      home.packages = with pkgs; [
-        # TODO: look into cleaning up / moving these packages
-        discord
-        firefox
-        grim
-        htop
-        libnotify
-        lxde.lxsession
-        mpv # video player
-        nerd-fonts.fira-code
-        nerd-fonts.symbols-only
-        networkmanagerapplet
-        nil
-        nixfmt-rfc-style
-        obsidian
-        pavucontrol
-        playerctl
-        pqiv # image viewer
-        pureref
-        ripgrep
-        slurp
-        spotify
-        trash-cli
-        unstable.brave
-        vscode
-        wl-clipboard
-        yazi
-        zathura # pdf viewer
-      ];
+      home.packages =
+        with pkgs;
+        [
+          # TODO: look into cleaning up / moving these packages
+          discord
+          firefox
+          grim
+          htop
+          libnotify
+          lxde.lxsession
+          mpv # video player
+          nerd-fonts.fira-code
+          nerd-fonts.symbols-only
+          networkmanagerapplet
+          nil
+          nixfmt-rfc-style
+          obsidian
+          pavucontrol
+          playerctl
+          pqiv # image viewer
+          pureref
+          ripgrep
+          slurp
+          spotify
+          trash-cli
+          unstable.brave
+          vscode
+          wl-clipboard
+          yazi
+          zathura # pdf viewer
+        ]
+        ++ cfg.programs.extraPrograms;
 
       home.sessionVariables = {
         NIL_PATH = "${pkgs.nil}/bin/nil";

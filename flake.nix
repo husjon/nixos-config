@@ -79,15 +79,19 @@
           };
 
           modules = commonModules ++ [
-            {
-              husjon.docker.enable = true;
-              husjon.graphics.manufacturer = "amd";
-              husjon.programs.blender.enable = true;
-              husjon.programs.steam.enable = true;
-              husjon.services.tailscale.exitNode = true;
-              husjon.system.kernel = "latest";
-              husjon.system.ups.enable = true;
-            }
+            (
+              { pkgs, ... }:
+              {
+                husjon.docker.enable = true;
+                husjon.graphics.manufacturer = "amd";
+                husjon.programs.blender.enable = true;
+                husjon.programs.steam.enable = true;
+                husjon.programs.extraPrograms = [ ];
+                husjon.services.tailscale.exitNode = true;
+                husjon.system.kernel = "latest";
+                husjon.system.ups.enable = true;
+              }
+            )
           ];
         };
       };
