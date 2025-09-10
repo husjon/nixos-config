@@ -37,7 +37,6 @@ in
         unstable.brave
         vscode
         wl-clipboard
-        xdg-utils
         yazi
         zathura # pdf viewer
       ];

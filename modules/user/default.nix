@@ -63,9 +63,14 @@ in
         home.file.".face.png".source = cfg.profilePicture;
 
         home.packages = with pkgs; [
+          xdg-utils
         ];
-      };
 
+        xdg = {
+          enable = true;
+          userDirs.enable = true;
+        };
+      };
     };
   };
 }
