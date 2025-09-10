@@ -3,7 +3,10 @@ let
   cfg = config.husjon;
 in
 {
-  imports = [ ./user ];
+  imports = [
+    ./services
+    ./user
+  ];
 
   options.husjon.stateVersion = lib.mkOption {
     description = "The state version to use for the system and home-manager";
