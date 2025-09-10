@@ -98,6 +98,7 @@
 
                   stable.vcv-rack
                 ];
+                husjon.services.mopidy.enable = true;
                 husjon.services.tailscale.exitNode = true;
                 husjon.system.kernel = "latest";
                 husjon.system.ups.enable = true;
