@@ -50,6 +50,7 @@ in
           spotify
           trash-cli
           unstable.brave
+          vivaldi
           vscode
           wl-clipboard
           yazi
