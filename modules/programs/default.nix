@@ -13,11 +13,42 @@ in
     home-manager.users."${cfg.user.username}" = {
       home.packages = with pkgs; [
         # TODO: look into cleaning up / moving these packages
+        discord
+        firefox
         grim
+        htop
+        libnotify
+        lxde.lxsession
+        mpv # video player
+        nerd-fonts.fira-code
+        nerd-fonts.symbols-only
+        networkmanagerapplet
+        nil
+        nixfmt-rfc-style
+        obsidian
+        pavucontrol
+        playerctl
+        pqiv # image viewer
+        pureref
+        ripgrep
         slurp
-
+        spotify
+        trash-cli
+        unstable.brave
+        vscode
         wl-clipboard
+        xdg-utils
+        yazi
+        zathura # pdf viewer
       ];
+
+      home.sessionVariables = {
+        NIL_PATH = "${pkgs.nil}/bin/nil";
+      };
+
+      programs.fzf.enable = true;
+
+      programs.starship.enable = true;
     };
   };
 }
