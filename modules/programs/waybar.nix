@@ -17,7 +17,7 @@ in
 {
   options.husjon.programs.fuzzel.enable = (lib.mkEnableOption "waybar" // { default = true; });
 
-  config = lib.mkIf cfg.programs.tmux.enable {
+  config = lib.mkIf (cfg.user.enable && cfg.programs.tmux.enable) {
     home-manager.users."${cfg.user.username}" = {
       programs.waybar = {
         enable = true;

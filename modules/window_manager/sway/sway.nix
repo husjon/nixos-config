@@ -7,6 +7,8 @@
   ...
 }:
 let
+  cfg = config.husjon;
+
   catppuccin-i3 = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "i3";
@@ -147,7 +149,7 @@ in
 {
   imports = [ ./i3blocks.nix ];
 
-  config = lib.mkIf (config.husjon.graphics.window_manager == "sway") {
+  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager == "sway")) {
     home-manager.users."${config.husjon.user.username}" = {
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk

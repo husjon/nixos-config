@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 
   gtkTheme = (
     mode: ''
@@ -26,8 +26,8 @@ in
 
   options.husjon.user.services.darkman.enable = (lib.mkEnableOption "darkman" // { default = true; });
 
-  config = lib.mkIf cfg.services.darkman.enable {
-    home-manager.users."${cfg.username}" = {
+  config = lib.mkIf (cfg.user.enable && cfg.user.services.darkman.enable) {
+    home-manager.users."${cfg.user.username}" = {
       services.darkman = {
         enable = true;
 

@@ -9,7 +9,7 @@ in
     example = false;
   };
 
-  config = lib.mkIf cfg.services.syncthing.enable {
+  config = lib.mkIf (cfg.user.enable && cfg.services.syncthing.enable) {
     home-manager.users."${cfg.user.username}" = {
       services.syncthing.enable = true;
     };

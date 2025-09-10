@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = lib.mkIf (builtins.elem pkgs.fish cfg.shells) {
-    home-manager.users."${cfg.username}" = {
+  config = lib.mkIf (cfg.user.enable && (builtins.elem pkgs.fish cfg.user.shells)) {
+    home-manager.users."${cfg.user.username}" = {
       # Nix completion for fish (https://discourse.nixos.org/t/how-to-use-completion-fish-with-home-manager/23356/4)
       xdg.configFile."fish/completions/nix.fish".source =
         "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";

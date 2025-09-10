@@ -7,7 +7,7 @@ in
     ./hyprland.nix
   ];
 
-  config = lib.mkIf (cfg.graphics.window_manager == "hyprland") {
+  config = lib.mkIf (cfg.user.enable && (cfg.graphics.window_manager == "hyprland")) {
     # https://wiki.hyprland.org/Nix/Cachix/
     nix.settings = {
       substituters = [ "https://hyprland.cachix.org" ];

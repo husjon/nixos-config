@@ -5,15 +5,15 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = lib.mkIf (builtins.elem pkgs.zsh cfg.shells) {
+  config = lib.mkIf (cfg.user.enable && (builtins.elem pkgs.zsh cfg.user.shells)) {
     environment.pathsToLink = [ "/share/zsh" ];
 
     programs.zsh.enable = true;
 
-    home-manager.users."${cfg.username}" = {
+    home-manager.users."${cfg.user.username}" = {
       programs.zsh = {
         enable = true;
 

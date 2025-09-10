@@ -1,10 +1,10 @@
 { config, lib, ... }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = {
-    home-manager.users."${cfg.username}" = {
+  config = lib.mkIf cfg.user.enable {
+    home-manager.users."${cfg.user.username}" = {
       home.file.".local/bin/" = {
         source = ./bin;
         recursive = true;

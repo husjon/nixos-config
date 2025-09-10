@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = lib.mkIf (cfg.terminal == "kitty") {
-    home-manager.users."${cfg.username}" = {
+  config = lib.mkIf (cfg.user.enable && (cfg.user.terminal == "kitty")) {
+    home-manager.users."${cfg.user.username}" = {
       programs.kitty = {
         enable = true;
 
@@ -22,7 +22,7 @@ in
         settings = {
           enable_audio_bell = false;
 
-          shell = lib.getExe cfg.defaultShell;
+          shell = lib.getExe cfg.user.defaultShell;
 
         };
 

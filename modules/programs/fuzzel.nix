@@ -10,7 +10,7 @@ in
 {
   options.husjon.programs.fuzzel.enable = (lib.mkEnableOption "fuzzel" // { default = true; });
 
-  config = lib.mkIf cfg.programs.tmux.enable {
+  config = lib.mkIf (cfg.user.enable && cfg.programs.tmux.enable) {
     home-manager.users."${cfg.user.username}" = {
       programs.fuzzel = {
         enable = true;

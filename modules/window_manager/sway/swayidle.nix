@@ -5,6 +5,8 @@
   ...
 }:
 let
+  cfg = config.husjon;
+
   dpms_timeout = 10;
   lock_timeout = 10 * 60;
 
@@ -21,8 +23,8 @@ let
 
 in
 {
-  config = lib.mkIf (config.husjon.graphics.window_manager == "sway") {
-    home-manager.users."${config.husjon.user.username}" = {
+  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager == "sway")) {
+    home-manager.users."${cfg.user.username}" = {
       services.swayidle = {
         enable = true;
         events = [

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.user.enable {
     home-manager.users = lib.mkIf cfg.user.enable {
       "${cfg.user.username}" = {
         systemd.user.timers = {

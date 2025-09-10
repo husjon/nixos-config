@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
   options.husjon.user = {
@@ -32,29 +32,29 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = {
     sops.secrets = {
       password.neededForUsers = true;
     };
 
     users.groups = {
-      ${cfg.username} = { };
+      ${cfg.user.username} = { };
     };
 
-    users.users.${cfg.username} = {
-      uid = cfg.userId;
+    users.users.${cfg.user.username} = {
+      uid = cfg.user.userId;
 
       isNormalUser = true;
 
-      group = cfg.username;
+      group = cfg.user.username;
       extraGroups = [
-        cfg.username
+        cfg.user.username
         "networkmanager"
         "wheel"
       ];
 
       hashedPasswordFile =
-        if config.users.users.${cfg.username}.initialPassword != null then
+        if config.users.users.${cfg.user.username}.initialPassword != null then
           null
         else
           config.sops.secrets.password.path;
@@ -62,13 +62,13 @@ in
     };
 
     # adds ~/.local/bin to the users PATH
-    environment.localBinInPath = cfg.enable;
+    environment.localBinInPath = cfg.user.enable;
 
     home-manager.users = {
-      "${cfg.username}" = {
-        home.username = cfg.username;
-        home.homeDirectory = "/home/${cfg.username}";
-        home.file.".face.png".source = cfg.profilePicture;
+      "${cfg.user.username}" = {
+        home.username = cfg.user.username;
+        home.homeDirectory = "/home/${cfg.user.username}";
+        home.file.".face.png".source = cfg.user.profilePicture;
 
         home.packages = with pkgs; [
           xdg-utils

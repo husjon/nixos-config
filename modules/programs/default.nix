@@ -21,7 +21,7 @@ in
     type = lib.types.listOf lib.types.package;
   };
 
-  config = {
+  config = lib.mkIf cfg.user.enable {
     home-manager.users."${cfg.user.username}" = {
       home.packages =
         with pkgs;

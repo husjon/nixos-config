@@ -1,7 +1,10 @@
 { config, lib, ... }:
+let
+  cfg = config.husjon;
+in
 {
-  config = lib.mkIf (config.husjon.graphics.window_manager == "sway") {
-    home-manager.users."${config.husjon.user.username}" = {
+  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager == "sway")) {
+    home-manager.users."${cfg.user.username}" = {
       programs.swaylock = {
         enable = true;
         settings = {

@@ -22,7 +22,7 @@ in
     ];
   };
 
-  config = {
+  config = lib.mkIf cfg.user.enable {
     users.users.${cfg.user.username} = {
       packages = with pkgs; [
         kdePackages.xwaylandvideobridge

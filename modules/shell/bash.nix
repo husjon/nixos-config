@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.husjon.user;
+  cfg = config.husjon;
 in
 {
-  config = lib.mkIf (builtins.elem pkgs.bash cfg.shells) {
-    home-manager.users."${cfg.username}" = {
+  config = lib.mkIf (cfg.user.enable && (builtins.elem pkgs.bash cfg.user.shells)) {
+    home-manager.users."${cfg.user.username}" = {
       programs.bash = {
         enable = true;
 

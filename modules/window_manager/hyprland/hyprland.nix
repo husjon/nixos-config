@@ -102,7 +102,7 @@ let
       { };
 in
 {
-  config = lib.mkIf (cfg.graphics.window_manager == "hyprland") {
+  config = lib.mkIf (cfg.user.enable && (cfg.graphics.window_manager == "hyprland")) {
     home-manager.users."${cfg.user.username}" = {
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk

@@ -10,7 +10,7 @@ in
 {
   options.husjon.services.mopidy.enable = lib.mkEnableOption "mopidy";
 
-  config = lib.mkIf cfg.services.mopidy.enable {
+  config = lib.mkIf (cfg.user.enable && cfg.services.mopidy.enable) {
     home-manager.users."${cfg.user.username}" = {
       systemd.user.services.mopidy-scan = {
         Service.Type = lib.mkForce "simple";
