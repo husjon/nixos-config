@@ -6,6 +6,7 @@ in
   imports = [
     ./audio
     ./bluetooth.nix
+    ./borgmatic
     ./development
     ./filemanager
     ./keyring.nix

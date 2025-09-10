@@ -1,9 +1,11 @@
 {
   config,
   pkgs,
-  user,
   ...
 }:
+let
+  cfg = config.husjon;
+in
 {
   # 1. initialize with (borg 1.x): sudo borgmatic init --encryption repokey --repository <location_for_backup>
   # 2. back up keys (one or more of):
@@ -16,7 +18,7 @@
   services.borgmatic.enable = true;
   services.borgmatic.configurations.user_home = {
     source_directories = [
-      "/home/${user.username}"
+      "/home/${cfg.user.username}"
     ];
 
     repositories = [

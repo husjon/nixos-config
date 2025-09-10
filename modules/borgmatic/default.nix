@@ -1,5 +1,7 @@
 { hostname, lib, ... }:
 {
+  # TODO: Finalize module
+
   imports = lib.optional (builtins.pathExists ./${hostname}.nix) ./${hostname}.nix;
 
   systemd.timers.borgmatic = {

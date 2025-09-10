@@ -1,8 +1,6 @@
 { hostname, lib, ... }:
 {
   imports = [
-    ./borgmatic
-
     ./graphics
 
     ./fstrim.nix
