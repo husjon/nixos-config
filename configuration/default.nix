@@ -70,9 +70,14 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  system.stateVersion = stateVersion;
+  services.avahi.enable = true; # for Chromecast
+  services.printing.enable = true;
 
-  programs.zsh.enable = true;
+  services.udev.extraRules = builtins.readFile ./secrets/${hostname}/99-yubikey.rules;
+
+  documentation.man.generateCaches = true;
+
+  system.stateVersion = stateVersion;
 
   programs.command-not-found.enable = true;
 

@@ -52,8 +52,6 @@
 
         ./modules
 
-        ./modules/system
-
         ./modules/window_manager
       ];
 
