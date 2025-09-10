@@ -13,6 +13,14 @@ in
   };
 
   config = {
+    users.mutableUsers = false; # password cannot be changed with `passwd` and will only be set by `hashedPasswordFile` below
+
+    users.users."root" = {
+      openssh.authorizedKeys.keys = [
+        "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFEdno52H8w6cv8J2asTDD3++DZBMZ63UncLznBJWULUAAAABHNzaDo="
+      ];
+    };
+
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.backupFileExtension = "backup";

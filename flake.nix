@@ -48,6 +48,7 @@
 
         home-manager.nixosModules.home-manager
         ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
+        { husjon.user.profilePicture = ./configuration/husjon.png; }
 
         ./modules
 
