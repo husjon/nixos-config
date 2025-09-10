@@ -53,6 +53,9 @@ in
       # initialPassword = "test";  # used when building vm to test
     };
 
+    # adds ~/.local/bin to the users PATH
+    environment.localBinInPath = cfg.enable;
+
     home-manager.users = {
       "${cfg.username}" = {
         home.username = cfg.username;
