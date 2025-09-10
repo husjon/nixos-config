@@ -15,6 +15,7 @@ in
     ./keyring.nix
     ./maintenance
     ./programs
+    ./scripts
     ./services
     ./shell
     ./steam.nix

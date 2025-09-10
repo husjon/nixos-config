@@ -8,8 +8,6 @@
   imports = [
     ./neovim.nix
 
-    ./scripts
-
     ./${hostname}.nix
   ];
 
