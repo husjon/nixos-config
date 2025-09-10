@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland
-
     ./fuzzel.nix
     ./mako.nix
     ./waybar.nix

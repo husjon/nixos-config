@@ -19,7 +19,6 @@
 
     ./scripts
 
-    ./wayland
     ./${hostname}.nix
     ./zsh.nix
   ];

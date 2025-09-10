@@ -51,8 +51,6 @@
         { husjon.user.profilePicture = ./configuration/husjon.png; }
 
         ./modules
-
-        ./modules/window_manager
       ];
 
     in
