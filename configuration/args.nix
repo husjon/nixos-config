@@ -15,8 +15,6 @@
     };
 
     nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
-
-    stateVersion = "23.11";
   };
 
   workstation = {
@@ -52,7 +50,5 @@
     };
 
     nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
-
-    stateVersion = "24.05";
   };
 }

@@ -67,6 +67,7 @@
             {
               husjon.graphics.manufacturer = "intel";
               husjon.system.tlp.enable = true;
+              husjon.stateVersion = "23.11";
             }
           ];
         };
@@ -102,6 +103,7 @@
                 husjon.services.tailscale.exitNode = true;
                 husjon.system.kernel = "latest";
                 husjon.system.ups.enable = true;
+                husjon.stateVersion = "24.05";
               }
             )
           ];

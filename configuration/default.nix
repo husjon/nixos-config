@@ -4,7 +4,6 @@
   pkgs,
   hostname,
   nixSubstituters,
-  stateVersion,
   ...
 }:
 
@@ -91,7 +90,7 @@
 
     documentation.man.generateCaches = true;
 
-    system.stateVersion = stateVersion;
+    system.stateVersion = config.husjon.stateVersion;
 
     programs.command-not-found.enable = true;
 
