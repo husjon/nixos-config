@@ -55,8 +55,6 @@
         ./modules/system
 
         ./modules/window_manager
-
-        ./modules/tailscale
       ];
 
     in
@@ -94,7 +92,8 @@
 
             ./modules/docker.nix
             ./modules/steam.nix
-            ./modules/tailscale/exit-node.nix
+
+            { husjon.services.tailscale.exitNode = true; }
 
             ./modules/system/ups.nix
           ];
