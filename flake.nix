@@ -95,10 +95,10 @@
             { home-manager.extraSpecialArgs = configuration.workstation; }
 
             ./modules/docker.nix
-            ./modules/steam.nix
 
             {
               husjon.graphics.manufacturer = "amd";
+              husjon.programs.steam.enable = true;
               husjon.services.tailscale.exitNode = true;
             }
 

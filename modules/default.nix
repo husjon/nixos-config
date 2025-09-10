@@ -13,6 +13,7 @@ in
     ./keyring.nix
     ./maintenance
     ./services
+    ./steam.nix
     ./user
   ];
 
