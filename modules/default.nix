@@ -7,6 +7,7 @@ in
     ./audio
     ./bluetooth.nix
     ./development
+    ./filemanager
     ./services
     ./user
   ];
