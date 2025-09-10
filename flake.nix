@@ -99,9 +99,8 @@
               husjon.graphics.manufacturer = "amd";
               husjon.programs.steam.enable = true;
               husjon.services.tailscale.exitNode = true;
+              husjon.system.ups.enable = true;
             }
-
-            ./modules/system/ups.nix
           ];
         };
       };

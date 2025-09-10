@@ -15,6 +15,7 @@ in
     ./maintenance
     ./services
     ./steam.nix
+    ./ups.nix
     ./user
   ];
 
