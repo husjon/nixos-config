@@ -64,8 +64,6 @@
           };
 
           modules = commonModules ++ [
-            { home-manager.extraSpecialArgs = configuration.laptop; }
-
             {
               husjon.graphics.manufacturer = "intel";
               husjon.system.tlp.enable = true;
@@ -81,8 +79,6 @@
           };
 
           modules = commonModules ++ [
-            { home-manager.extraSpecialArgs = configuration.workstation; }
-
             {
               husjon.docker.enable = true;
               husjon.graphics.manufacturer = "amd";
