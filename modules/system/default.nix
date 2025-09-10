@@ -2,8 +2,6 @@
 {
   imports = [
     ./graphics
-
-    ./nix-store-maintenance.nix
   ];
 
   services.avahi.enable = true; # for Chromecast
