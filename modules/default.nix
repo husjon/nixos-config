@@ -23,6 +23,9 @@ in
   };
 
   config = {
+    # https://discourse.nixos.org/t/how-to-remove-speech-dispatcher/49957
+    services.speechd.enable = lib.mkForce false; # speechd is enabled by default in graphical environments
+
     users.mutableUsers = false; # password cannot be changed with `passwd` and will only be set by `hashedPasswordFile` below
 
     users.users."root" = {
