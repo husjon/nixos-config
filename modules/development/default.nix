@@ -1,4 +1,7 @@
 { ... }:
 {
-  imports = [ ./git.nix ];
+  imports = [
+    ./direnv.nix
+    ./git.nix
+  ];
 }
