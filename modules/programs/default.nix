@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./fuzzel.nix
+    ./ncmpcpp.nix
     ./mako.nix
     ./neovim.nix
     ./waybar.nix

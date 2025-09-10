@@ -86,6 +86,7 @@
                 husjon.docker.enable = true;
                 husjon.graphics.manufacturer = "amd";
                 husjon.programs.blender.enable = true;
+                husjon.programs.ncmpcpp.enable = true;
                 husjon.programs.steam.enable = true;
                 husjon.programs.extraPrograms = with pkgs; [
                   calibre
