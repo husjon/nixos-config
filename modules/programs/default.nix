@@ -33,7 +33,7 @@ in
           grim
           htop
           libnotify
-          lxde.lxsession
+          lxsession
           mpv # video player
           nerd-fonts.fira-code
           nerd-fonts.symbols-only
