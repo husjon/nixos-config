@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   hostname,
@@ -10,80 +11,94 @@
 {
   imports = [ ./hardware/${hostname}.nix ];
 
-  sops.defaultSopsFile = ./secrets/${hostname}.sops.yaml;
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-  # This will generate a new key if the key specified above does not exist
-  sops.age.generateKey = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.settings.substituters = nixSubstituters;
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  # Set your time zone.
-  time.timeZone = "Europe/Oslo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nb_NO.UTF-8";
-    LC_IDENTIFICATION = "nb_NO.UTF-8";
-    LC_MEASUREMENT = "nb_NO.UTF-8";
-    LC_MONETARY = "nb_NO.UTF-8";
-    LC_NAME = "nb_NO.UTF-8";
-    LC_NUMERIC = "nb_NO.UTF-8";
-    LC_PAPER = "nb_NO.UTF-8";
-    LC_TELEPHONE = "nb_NO.UTF-8";
-    LC_TIME = "nb_NO.UTF-8";
+  options.husjon.system.kernel = lib.mkOption {
+    description = "Which kernel to use";
+    default = "stable";
+    type = lib.types.enum [
+      "stable"
+      "latest"
+    ];
   };
 
-  # Configure console keymap
-  console.keyMap = "no";
+  config = {
+    sops.defaultSopsFile = ./secrets/${hostname}.sops.yaml;
+    sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+    # This will generate a new key if the key specified above does not exist
+    sops.age.generateKey = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    nix.settings.substituters = nixSubstituters;
 
-  # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [ vim ];
+    # Bootloader.
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.supportedFilesystems = [ "ntfs" ];
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+    boot.kernelPackages =
+      if (config.husjon.system.kernel == "latest") then pkgs.linuxPackages_latest else pkgs.linuxPackages;
 
-  networking.hostName = hostname; # Define your hostname.
+    # Set your time zone.
+    time.timeZone = "Europe/Oslo";
 
-  # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1473408913
-  # Helps during rebuild as `NetworkManager-wait-for-online` fails during rebuilds
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
-  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
+    # Select internationalisation properties.
+    i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+    i18n.extraLocaleSettings = {
+      LC_ADDRESS = "nb_NO.UTF-8";
+      LC_IDENTIFICATION = "nb_NO.UTF-8";
+      LC_MEASUREMENT = "nb_NO.UTF-8";
+      LC_MONETARY = "nb_NO.UTF-8";
+      LC_NAME = "nb_NO.UTF-8";
+      LC_NUMERIC = "nb_NO.UTF-8";
+      LC_PAPER = "nb_NO.UTF-8";
+      LC_TELEPHONE = "nb_NO.UTF-8";
+      LC_TIME = "nb_NO.UTF-8";
+    };
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+    # Configure console keymap
+    console.keyMap = "no";
 
-  services.avahi.enable = true; # for Chromecast
-  services.printing.enable = true;
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
 
-  services.udev.extraRules = builtins.readFile ./secrets/${hostname}/99-yubikey.rules;
+    # List packages installed in system profile. To search, run:
+    environment.systemPackages = with pkgs; [ vim ];
 
-  documentation.man.generateCaches = true;
+    # Enable networking
+    networking.networkmanager.enable = true;
 
-  system.stateVersion = stateVersion;
+    networking.hostName = hostname; # Define your hostname.
 
-  programs.command-not-found.enable = true;
+    # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1473408913
+    # Helps during rebuild as `NetworkManager-wait-for-online` fails during rebuilds
+    systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
+    systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
 
-  virtualisation.vmVariant = {
-    # following configuration is added only when building VM with build-vm
-    virtualisation.memorySize = 8 * 1024;
-    virtualisation.cores = 4;
+    # Enable the OpenSSH daemon.
+    services.openssh.enable = true;
+
+    # Open ports in the firewall.
+    networking.firewall.allowedTCPPorts = [ 22 ];
+
+    services.avahi.enable = true; # for Chromecast
+    services.printing.enable = true;
+
+    services.udev.extraRules = builtins.readFile ./secrets/${hostname}/99-yubikey.rules;
+
+    documentation.man.generateCaches = true;
+
+    system.stateVersion = stateVersion;
+
+    programs.command-not-found.enable = true;
+
+    virtualisation.vmVariant = {
+      # following configuration is added only when building VM with build-vm
+      virtualisation.memorySize = 8 * 1024;
+      virtualisation.cores = 4;
+    };
   };
 }
