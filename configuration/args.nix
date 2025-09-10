@@ -1,14 +1,8 @@
 { ... }:
 
-rec {
-  user = {
-    username = "husjon";
-  };
-
+{
   laptop = {
     hostname = "laptop";
-
-    user = user;
 
     monitors = {
       primary = {
@@ -27,8 +21,6 @@ rec {
 
   workstation = {
     hostname = "workstation";
-
-    user = user;
 
     monitors = {
       primary = {
