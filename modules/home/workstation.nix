@@ -2,8 +2,6 @@
 {
   # List of options: https://nix-community.github.io/home-manager/options.xhtml
   imports = [
-    ./blender.nix
-
     ./mopidy.nix
     ./ncmpcpp.nix
   ];
