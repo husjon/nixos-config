@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
+  cfg = config.husjon;
   catppuccin-latte = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/i3/refs/heads/main/themes/catppuccin-latte";
     sha256 = "sha256-akEmLZxEGQ0+3mAFZBX166ySfMZD2OETBQdgTu+SXSs=";
@@ -36,8 +42,12 @@ let
   );
 in
 {
-  services.darkman = {
-    darkModeScripts.sway = sway "dark";
-    lightModeScripts.sway = sway "light";
+  config = lib.mkIf (cfg.graphics.window_manager == "sway") {
+    home-manager.users."${cfg.user.username}" = {
+      services.darkman = {
+        darkModeScripts.sway = sway "dark";
+        lightModeScripts.sway = sway "light";
+      };
+    };
   };
 }

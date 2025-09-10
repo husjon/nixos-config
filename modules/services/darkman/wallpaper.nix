@@ -1,9 +1,12 @@
 {
+  config,
   lib,
   pkgs,
   ...
 }:
 let
+  cfg = config.husjon.user;
+
   wallpaper = (
     mode: ''
       PIDS=''$(${pkgs.procps}/bin/pgrep swaybg)
@@ -22,8 +25,12 @@ let
 
 in
 {
-  services.darkman = {
-    darkModeScripts.wallpaper = wallpaper "dark";
-    lightModeScripts.wallpaper = wallpaper "light";
+  config = {
+    home-manager.users."${cfg.username}" = {
+      services.darkman = {
+        darkModeScripts.wallpaper = wallpaper "dark";
+        lightModeScripts.wallpaper = wallpaper "light";
+      };
+    };
   };
 }

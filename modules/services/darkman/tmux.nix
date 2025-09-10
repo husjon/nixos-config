@@ -1,5 +1,12 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
+  cfg = config.husjon;
+
   catppuccin-latte = pkgs.stdenv.mkDerivation (finalAttrs: {
     name = "catppuccin-tmux-latte";
 
@@ -62,8 +69,12 @@ let
 
 in
 {
-  services.darkman = {
-    darkModeScripts.tmux = tmux "dark";
-    lightModeScripts.tmux = tmux "light";
+  config = lib.mkIf cfg.programs.tmux.enable {
+    home-manager.users."${cfg.user.username}" = {
+      services.darkman = {
+        darkModeScripts.tmux = tmux "dark";
+        lightModeScripts.tmux = tmux "light";
+      };
+    };
   };
 }
