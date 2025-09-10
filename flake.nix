@@ -47,22 +47,10 @@
         sops-nix.nixosModules.sops
 
         home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.users."${configuration.user.username}" = import ./modules/home;
-          home-manager.extraSpecialArgs = {
-            inherit inputs;
-          };
-        }
         ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
+        { husjon.user.profilePicture = ./configuration/husjon.png; }
 
-        ./modules/system
-
-        ./modules/window_manager
-
-        ./modules/tailscale
+        ./modules
       ];
 
     in
@@ -76,8 +64,11 @@
           };
 
           modules = commonModules ++ [
-            { home-manager.extraSpecialArgs = configuration.laptop; }
-            ./modules/system/tlp.nix
+            {
+              husjon.graphics.manufacturer = "intel";
+              husjon.system.tlp.enable = true;
+              husjon.stateVersion = "23.11";
+            }
           ];
         };
 
@@ -92,17 +83,30 @@
             (
               { pkgs, ... }:
               {
-                boot.kernelPackages = pkgs.linuxPackages_latest;
+                husjon.docker.enable = true;
+                husjon.graphics.manufacturer = "amd";
+                husjon.programs.blender.enable = true;
+                husjon.programs.ncmpcpp.enable = true;
+                husjon.programs.steam.enable = true;
+                husjon.programs.extraPrograms = with pkgs; [
+                  calibre
+
+                  freecad
+                  godot_4
+                  krita
+                  lutris
+                  prusa-slicer
+                  tonelib-gfx
+
+                  stable.vcv-rack
+                ];
+                husjon.services.mopidy.enable = true;
+                husjon.services.tailscale.exitNode = true;
+                husjon.system.kernel = "latest";
+                husjon.system.ups.enable = true;
+                husjon.stateVersion = "24.05";
               }
             )
-
-            { home-manager.extraSpecialArgs = configuration.workstation; }
-
-            ./modules/docker.nix
-            ./modules/steam.nix
-            ./modules/tailscale/exit-node.nix
-
-            ./modules/system/ups.nix
           ];
         };
       };

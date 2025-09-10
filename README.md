@@ -9,5 +9,6 @@ I am still very new to the Nix language and still learning hence there could be 
 The entire declarative approach to linux is also something to get used to after many years of the "normal" imperative approach, although tools like terraform and ansible have been a nice steppingstone.
 
 Inspirations for my config
+* https://github.com/etu/nixconfig
 * https://github.com/cameron1024/system
 * https://git.pleshevski.ru/mynix/system

@@ -1,17 +1,8 @@
 { ... }:
 
-rec {
-  user = rec {
-    username = "husjon";
-    profile_picture = ./${username}.png;
-  };
-
+{
   laptop = {
     hostname = "laptop";
-
-    graphics = "intel";
-
-    user = user;
 
     monitors = {
       primary = {
@@ -24,16 +15,10 @@ rec {
     };
 
     nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
-
-    stateVersion = "23.11";
   };
 
   workstation = {
     hostname = "workstation";
-
-    graphics = "amd";
-
-    user = user;
 
     monitors = {
       primary = {
@@ -65,7 +50,5 @@ rec {
     };
 
     nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
-
-    stateVersion = "24.05";
   };
 }
