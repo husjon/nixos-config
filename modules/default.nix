@@ -15,6 +15,7 @@ in
     ./maintenance
     ./services
     ./steam.nix
+    ./tlp.nix
     ./ups.nix
     ./user
   ];

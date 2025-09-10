@@ -69,10 +69,10 @@
 
           modules = commonModules ++ [
             { home-manager.extraSpecialArgs = configuration.laptop; }
-            ./modules/system/tlp.nix
 
             {
               husjon.graphics.manufacturer = "intel";
+              husjon.system.tlp.enable = true;
             }
           ];
         };
