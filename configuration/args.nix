@@ -8,8 +8,6 @@ rec {
   laptop = {
     hostname = "laptop";
 
-    graphics = "intel";
-
     user = user;
 
     monitors = {
@@ -29,8 +27,6 @@ rec {
 
   workstation = {
     hostname = "workstation";
-
-    graphics = "amd";
 
     user = user;
 

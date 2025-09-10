@@ -1,9 +1,5 @@
 { hostname, ... }:
 {
-  imports = [
-    ./graphics
-  ];
-
   services.avahi.enable = true; # for Chromecast
   services.printing.enable = true;
 

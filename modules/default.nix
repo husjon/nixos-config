@@ -9,6 +9,7 @@ in
     ./borgmatic
     ./development
     ./filemanager
+    ./graphics
     ./keyring.nix
     ./maintenance
     ./services
