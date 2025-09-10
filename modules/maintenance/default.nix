@@ -2,6 +2,7 @@
 {
   imports = [
     ./fstrim.nix
+    ./home-manager.nix
     ./nix-store.nix
   ];
 
