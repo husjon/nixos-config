@@ -86,7 +86,18 @@
                 husjon.graphics.manufacturer = "amd";
                 husjon.programs.blender.enable = true;
                 husjon.programs.steam.enable = true;
-                husjon.programs.extraPrograms = [ ];
+                husjon.programs.extraPrograms = with pkgs; [
+                  calibre
+
+                  freecad
+                  godot_4
+                  krita
+                  lutris
+                  prusa-slicer
+                  tonelib-gfx
+
+                  stable.vcv-rack
+                ];
                 husjon.services.tailscale.exitNode = true;
                 husjon.system.kernel = "latest";
                 husjon.system.ups.enable = true;
