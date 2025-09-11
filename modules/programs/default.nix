@@ -15,6 +15,7 @@ in
     ./ncmpcpp.nix
     ./neovim.nix
     ./steam.nix
+    ./tmux.nix
     ./waybar.nix
   ];
 

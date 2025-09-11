@@ -19,7 +19,6 @@ in
     ./shell
     ./terminal
     ./tlp.nix
-    ./tmux.nix
     ./ups.nix
     ./user
     ./window_manager
