@@ -17,6 +17,7 @@ in
     ./scripts
     ./services
     ./shell
+    ./system
     ./terminal
     ./tlp.nix
     ./ups.nix
