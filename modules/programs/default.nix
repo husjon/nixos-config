@@ -9,6 +9,7 @@ let
 in
 {
   imports = [
+    ./blender.nix
     ./fuzzel.nix
     ./mako.nix
     ./ncmpcpp.nix

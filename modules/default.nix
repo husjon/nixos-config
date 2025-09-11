@@ -5,7 +5,6 @@ in
 {
   imports = [
     ./audio
-    ./blender.nix
     ./bluetooth.nix
     ./borgmatic
     ./development
