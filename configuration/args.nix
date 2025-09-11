@@ -13,8 +13,6 @@
         rotation = 0;
       };
     };
-
-    nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
   };
 
   workstation = {
@@ -48,7 +46,5 @@
         rate = 60;
       };
     };
-
-    nixSubstituters = [ "https://cache.husjon.xyz/nixos" ];
   };
 }

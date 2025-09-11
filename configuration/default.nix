@@ -3,10 +3,12 @@
   lib,
   pkgs,
   hostname,
-  nixSubstituters,
   ...
 }:
+let
+  cfg = config.husjon;
 
+in
 {
   imports = [ ./hardware/${hostname}.nix ];
 
@@ -16,6 +18,13 @@
     type = lib.types.enum [
       "stable"
       "latest"
+    ];
+  };
+  options.husjon.system.nix.substituters = lib.mkOption {
+    description = "List of URLs to use as substituters";
+
+    default = [
+      "https://cache.husjon.xyz/nixos"
     ];
   };
 
@@ -30,7 +39,7 @@
       "nix-command"
       "flakes"
     ];
-    nix.settings.substituters = nixSubstituters;
+    nix.settings.substituters = cfg.system.nix.substituters;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
