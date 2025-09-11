@@ -17,7 +17,6 @@ in
     ./scripts
     ./services
     ./shell
-    ./steam.nix
     ./terminal
     ./tlp.nix
     ./tmux.nix

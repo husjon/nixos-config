@@ -14,6 +14,7 @@ in
     ./mako.nix
     ./ncmpcpp.nix
     ./neovim.nix
+    ./steam.nix
     ./waybar.nix
   ];
 
