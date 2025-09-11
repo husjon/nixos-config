@@ -18,7 +18,6 @@ in
     ./shell
     ./system
     ./terminal
-    ./tlp.nix
     ./ups.nix
     ./user
     ./window_manager
