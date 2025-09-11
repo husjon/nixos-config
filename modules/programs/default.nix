@@ -10,8 +10,8 @@ in
 {
   imports = [
     ./fuzzel.nix
-    ./ncmpcpp.nix
     ./mako.nix
+    ./ncmpcpp.nix
     ./neovim.nix
     ./waybar.nix
   ];
