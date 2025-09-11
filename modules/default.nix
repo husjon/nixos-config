@@ -18,7 +18,6 @@ in
     ./shell
     ./system
     ./terminal
-    ./ups.nix
     ./user
     ./window_manager
   ];
