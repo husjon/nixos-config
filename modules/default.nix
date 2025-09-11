@@ -5,7 +5,6 @@ in
 {
   imports = [
     ./audio
-    ./bluetooth.nix
     ./borgmatic
     ./development
     ./docker.nix
