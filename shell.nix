@@ -44,9 +44,10 @@ pkgs.mkShell {
     (writeShellScriptBin "rebuild-vm" ''
       nixos-rebuild --flake ".#" --no-update-lock-file build-vm
 
+      NIX_DISK_IMAGE=/tmp/nixos-rebuild-image.qcow2 \
       QEMU_OPTS="-display gtk,grab-on-hover=on" \
         ./result/bin/run-*-vm
-      rm ./result ./*.qcow2
+      rm ./result "$NIX_DISK_IMAGE"
     '')
 
     (writeShellScriptBin "rebuild-remote" ''
