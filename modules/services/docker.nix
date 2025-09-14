@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.husjon.docker;
+  cfg = config.husjon.services.docker;
 in
 {
-  options.husjon.docker.enable = lib.mkEnableOption "docker on the system";
+  options.husjon.services.docker.enable = lib.mkEnableOption "docker on the system";
 
   config = lib.mkIf cfg.enable {
     virtualisation.docker.rootless = {

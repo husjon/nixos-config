@@ -7,7 +7,6 @@ in
     ./audio
     ./borgmatic
     ./development
-    ./docker.nix
     ./filemanager
     ./graphics
     ./keyring.nix

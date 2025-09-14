@@ -83,7 +83,6 @@
             (
               { pkgs, ... }:
               {
-                husjon.docker.enable = true;
                 husjon.graphics.manufacturer = "amd";
                 husjon.programs.blender.enable = true;
                 husjon.programs.ncmpcpp.enable = true;
@@ -100,6 +99,7 @@
 
                   stable.vcv-rack
                 ];
+                husjon.services.docker.enable = true;
                 husjon.services.mopidy.enable = true;
                 husjon.services.tailscale.exitNode = true;
                 husjon.system.kernel = "latest";
