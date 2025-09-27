@@ -5,7 +5,6 @@ in
 {
   imports = [
     ./audio
-    ./borgmatic
     ./development
     ./filemanager
     ./graphics
