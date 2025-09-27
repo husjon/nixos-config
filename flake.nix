@@ -99,6 +99,13 @@
 
                   stable.vcv-rack
                 ];
+                husjon.services.borgmatic.enable = true;
+                husjon.services.borgmatic.repositories = [
+                  {
+                    label = "local";
+                    path = "/mnt/nvme0/borgmatic/";
+                  }
+                ];
                 husjon.services.docker.enable = true;
                 husjon.services.mopidy.enable = true;
                 husjon.services.tailscale.exitNode = true;
