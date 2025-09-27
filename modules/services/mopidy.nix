@@ -14,7 +14,6 @@ in
     home-manager.users."${cfg.user.username}" = {
       systemd.user.services.mopidy-scan = {
         Service.Type = lib.mkForce "simple";
-        Install = lib.mkForce { };
       };
 
       services.mopidy = {
