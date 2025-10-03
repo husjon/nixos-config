@@ -12,6 +12,15 @@ in
 
         musicDirectory = "~/music";
       };
+
+      services.mpd-mpris = {
+        enable = true;
+
+        mpd = {
+          host = "127.0.0.1";
+          useLocal = false;
+        };
+      };
     };
   };
 }
