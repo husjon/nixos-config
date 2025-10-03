@@ -9,6 +9,13 @@ in
     home-manager.users."${cfg.user.username}" = {
       programs.rmpc = {
         enable = true;
+
+        config = ''
+          (
+              volume_step: 1,
+              max_fps: 120,
+          )
+        '';
       };
     };
   };
