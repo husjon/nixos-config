@@ -11,6 +11,13 @@ in
         enable = true;
 
         musicDirectory = "~/music";
+
+        extraConfig = ''
+          audio_output {
+              type "pipewire"
+              name "output"
+          }
+        '';
       };
 
       services.mpd-mpris = {
