@@ -111,7 +111,7 @@
                 husjon.services.tailscale.exitNode = true;
                 husjon.system.kernel = "latest";
                 husjon.system.ups.enable = true;
-                husjon.stateVersion = "24.05";
+                husjon.stateVersion = "25.05";
               }
             )
           ];

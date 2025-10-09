@@ -25,12 +25,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ca3bc1e7-8d4e-4458-9799-c62ebc631ac1";
+    device = "/dev/disk/by-id/nvme-KINGSTON_SKC3000S1024G_50026B7687568893-part2";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/C55B-387F";
+    device = "/dev/disk/by-id/nvme-KINGSTON_SKC3000S1024G_50026B7687568893-part1";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -39,21 +39,21 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/41717b78-6097-45f4-85d9-dd95582cbc28"; }
+    { device = "/dev/disk/by-id/nvme-KINGSTON_SKC3000S1024G_50026B7687568893-part3"; }
   ];
 
   fileSystems."/mnt/sda" = {
-    device = "/dev/disk/by-uuid/8e513ed9-04ec-4857-bfd8-a49528178c9b";
+    device = "/dev/disk/by-id/ata-ST4000DM004-2CV104_ZFN1W3GK-part1";
     fsType = "ext4";
   };
 
   fileSystems."/mnt/nvme0" = {
-    device = "/dev/disk/by-uuid/d7fad3da-7ef5-491d-a345-7c724dc80cd1";
+    device = "/dev/disk/by-id/nvme-KINGSTON_SKC3000D2048G_50026B7686B50120-part1";
     fsType = "ext4";
   };
 
   fileSystems."/mnt/nvme3" = {
-    device = "/dev/disk/by-uuid/d8854e3d-db0e-4f7e-9381-348746378154";
+    device = "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S4J4NX0W508216M-part1";
     fsType = "ext4";
   };
 
