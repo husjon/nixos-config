@@ -178,6 +178,9 @@ in
             pseudotile = "yes";
             preserve_split = "yes";
           };
+          cursor = {
+            inactive_timeout = 5;
+          };
 
           decoration = {
             rounding = 4;
