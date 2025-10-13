@@ -17,45 +17,32 @@ in
 
         settings = {
           main = {
-            ##
-            # output=<not set>
-            # font=monospace
-            # dpi-aware=auto
-            # prompt="> "
-            # icon-theme=hicolor
-            # icons-enabled=yes
+            # anchor = "center";
+            # dpi-aware = "auto";
+            # exit-on-keyboard-focus-loss = " yes";
             fields = "name";
-            # password-character=*
-            # filter-desktop=no
-            # fuzzy=yes
-            # show-actions=no
-            # terminal=$TERMINAL -e  # Note: you cannot actually use environment variables here
-
-            # TODO: update terminal to point to configured terminal
-            terminal = "${pkgs.kitty}/bin/kitty -";
-            # launch-prefix=<not set>
-            # list-executables-in-path=no
-
-            # anchor=center
-            # lines=15
-            lines = 8;
-            # width=30
-            width = 40;
-            # tabs=8
-            # horizontal-pad=40
+            # filter-desktop = "no";
+            # font = "monospace";
+            # fuzzy = "yes";
             horizontal-pad = 20;
-            # vertical-pad=8
-            vertical-pad = 10;
-            # inner-pad=0
-
-            # image-size-ratio=0.5
-
-            # line-height=<use font metrics>
+            # icon-theme = "hicolor";
+            # icons-enabled = "yes";
+            # image-size-ratio = "0.5";
+            # inner-pad = "0";
+            # launch-prefix = "<not set>";
+            # layer = " top";
+            # letter-spacing = "0";
             line-height = 24;
-            # letter-spacing=0
-
-            # layer = top
-            # exit-on-keyboard-focus-loss = yes
+            lines = 8;
+            # list-executables-in-path = "no";
+            # output = "<not set>";
+            # password-character = "*";
+            # prompt = "" > "";
+            # show-actions = "no";
+            # tabs = "8";
+            terminal = "${pkgs.kitty}/bin/kitty -"; # TODO: update terminal to point to configured terminal
+            vertical-pad = 10;
+            width = 40;
           };
 
           colors = {
@@ -69,9 +56,7 @@ in
           };
 
           border = {
-            # width=1
             width = 2;
-            # radius=10
             radius = 5;
           };
 
@@ -82,29 +67,27 @@ in
 
           key-bindings = {
             # cancel=Escape Control+g
-            # execute=Return KP_Enter Control+y
-            # execute-or-next=Tab
-            # execute-input=Shift+Return Shift+KP_Enter
-            # cursor-left=Left Control+b
-            # cursor-left-word=Control+Left Mod1+b
-            # cursor-right=Right Control+f
-            # cursor-right-word=Control+Right Mod1+f
-            # cursor-home=Home Control+a
             # cursor-end=End Control+e
-            # delete-prev=BackSpace
-            # delete-prev-word=Mod1+BackSpace Control+BackSpace
+            # cursor-home=Home Control+a
+            # cursor-left-word=Control+Left Mod1+b
+            # cursor-left=Left Control+b
+            # cursor-right-word=Control+Right Mod1+f
+            # cursor-right=Right Control+f
             # delete-line-backward=Control+u
-            # delete-next=Delete KP_Delete Control+d
-            # delete-next-word=Mod1+d Control+Delete Control+KP_Delete
             # delete-line-forward=Control+k
-            # prev=Up Control+p
-            prev = "Mod1+k";
-            # prev-with-wrap=ISO_Left_Tab
-            # prev-page=Page_Up KP_Page_Up
-            # next=Down Control+n
+            # delete-next-word=Mod1+d Control+Delete Control+KP_Delete
+            # delete-next=Delete KP_Delete Control+d
+            # delete-prev-word=Mod1+BackSpace Control+BackSpace
+            # delete-prev=BackSpace
+            # execute-input=Shift+Return Shift+KP_Enter
+            # execute-or-next=Tab
+            # execute=Return KP_Enter Control+y
             next = "Mod1+j";
-            # next-with-wrap=none
             # next-page=Page_Down KP_Page_Down
+            # next-with-wrap=none
+            prev = "Mod1+k";
+            # prev-page=Page_Up KP_Page_Up
+            # prev-with-wrap=ISO_Left_Tab
 
             # custom-N: *dmenu mode only*. Like execute, but with a non-zero
             # exit-code; custom-1 exits with code 10, custom-2 with 11, custom-3
