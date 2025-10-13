@@ -23,7 +23,7 @@ let
 
 in
 {
-  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager == "sway")) {
+  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager.default == "sway")) {
     home-manager.users."${cfg.user.username}" = {
       services.swayidle = {
         enable = true;

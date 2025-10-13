@@ -37,7 +37,7 @@ let
 
 in
 {
-  config = lib.mkIf (config.husjon.graphics.window_manager == "sway") {
+  config = lib.mkIf (config.husjon.graphics.window_manager.default == "sway") {
     home-manager.users."${config.husjon.user.username}" = {
       programs.i3blocks = {
         # https://vivien.github.io/i3blocks

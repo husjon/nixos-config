@@ -42,7 +42,7 @@ let
   );
 in
 {
-  config = lib.mkIf (cfg.graphics.window_manager == "sway") {
+  config = lib.mkIf (cfg.graphics.window_manager.default == "sway") {
     home-manager.users."${cfg.user.username}" = {
       services.darkman = {
         darkModeScripts.sway = sway "dark";
