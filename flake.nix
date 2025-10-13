@@ -38,6 +38,30 @@
           inherit system;
           config.allowUnfree = true;
         };
+
+        # Temporary while waiting for v0.10.0 (fix for adding albums: https://github.com/mierak/rmpc/issues/669)
+        rmpc = prev.rmpc.override {
+          # override based on https://discourse.nixos.org/t/is-it-possible-to-override-cargosha256-in-buildrustpackage/4393/10
+
+          rustPlatform = final.rustPlatform // {
+            buildRustPackage =
+              args:
+              final.rustPlatform.buildRustPackage (
+                args
+                // {
+                  src = prev.fetchFromGitHub {
+                    owner = "mierak";
+                    repo = "rmpc";
+                    rev = "cbe94e6d4dbb1e96c032e483aedf2a976f9c4756";
+                    hash = "sha256-Ey8t2RhEc0YRNBIuakXNvsnPwuAfPLBAmjofUD36ry4=";
+                  };
+
+                  cargoHash = "sha256-d2/4q2s/11HNE18D8d8Y2yWidhT+XsUS4J9ahnxToI0=";
+                }
+              );
+          };
+        };
+
       };
 
       configuration = import ./configuration/args.nix { inherit inputs; };
