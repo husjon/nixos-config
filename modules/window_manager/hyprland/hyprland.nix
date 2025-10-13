@@ -396,17 +396,6 @@ in
         };
       };
 
-      services.hyprpaper = {
-        enable = true;
-
-        settings = {
-          splash = false;
-
-          preload = [ "${homeDirectory}/.wallpaper.png" ];
-          wallpaper = [ ", ${homeDirectory}/.wallpaper.png" ];
-        };
-      };
-
       services.hypridle = {
         enable = true;
 
