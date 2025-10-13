@@ -1,13 +1,14 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
   cfg = config.husjon;
 in
 {
-  config = lib.mkIf (cfg.user.enable && (cfg.user.terminal == "kitty")) {
+  config = lib.mkIf (cfg.user.enable && (cfg.user.terminal == pkgs.kitty)) {
     home-manager.users."${cfg.user.username}" = {
       programs.kitty = {
         enable = true;

@@ -1,13 +1,13 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [ ./kitty.nix ];
 
   options.husjon.user.terminal = lib.mkOption {
     description = "Which terminal should be used for the user";
 
-    default = "kitty";
+    default = pkgs.kitty;
     type = lib.types.enum [
-      "kitty"
+      pkgs.kitty
     ];
   };
 }
