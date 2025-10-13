@@ -40,7 +40,7 @@ in
             # prompt = "" > "";
             # show-actions = "no";
             # tabs = "8";
-            terminal = "${pkgs.kitty}/bin/kitty -"; # TODO: update terminal to point to configured terminal
+            terminal = "${lib.getExe cfg.user.terminal} -";
             vertical-pad = 10;
             width = 40;
           };
