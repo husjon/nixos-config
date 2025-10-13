@@ -7,6 +7,7 @@ in
     ./hyprland.nix
     ./hyprpaper.nix
     ./hypridle.nix
+    ./hyprlock.nix
   ];
 
   config = lib.mkIf (cfg.user.enable && (cfg.graphics.window_manager == "hyprland")) {
