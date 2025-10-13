@@ -396,33 +396,6 @@ in
         };
       };
 
-      services.hypridle = {
-        enable = true;
-
-        settings = {
-          general = {
-            lock_cmd = "pidof hyprlock || hyprlock"; # dbus/sysd lock command (loginctl lock-session)
-            ignore_dbus_inhibit = false; # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
-          };
-
-          listener = [
-            {
-              timeout = 600;
-              on-timeout = "loginctl lock-session";
-            }
-            {
-              timeout = 630;
-              on-timeout = "hyprctl dispatch dpms off";
-            }
-            {
-              timeout = 30;
-              on-timeout = "pgrep hyprlock && hyprctl dispatch dpms off";
-              on-resume = "hyprctl dispatch dpms on";
-            }
-          ];
-        };
-      };
-
       programs.hyprlock = {
         enable = true;
 
