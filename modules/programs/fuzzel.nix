@@ -24,7 +24,7 @@ in
             # prompt="> "
             # icon-theme=hicolor
             # icons-enabled=yes
-            # fields=filename,name,generic
+            fields = "name";
             # password-character=*
             # filter-desktop=no
             # fuzzy=yes
