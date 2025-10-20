@@ -149,7 +149,7 @@ in
 {
   imports = [ ./i3blocks.nix ];
 
-  config = lib.mkIf (cfg.user.enable && (config.husjon.graphics.window_manager.default == "sway")) {
+  config = lib.mkIf (cfg.user.enable && (config.husjon.windowManager.default == "sway")) {
     home-manager.users."${config.husjon.user.username}" = {
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk
