@@ -3,7 +3,7 @@ let
   cfg = config.husjon;
 in
 {
-  config = lib.mkIf (cfg.user.enable && (cfg.graphics.window_manager.default == "hyprland")) {
+  config = lib.mkIf (cfg.user.enable && (cfg.windowManager.default == "hyprland")) {
     home-manager.users."${cfg.user.username}" = {
       services.hypridle = {
         enable = true;

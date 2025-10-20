@@ -19,7 +19,7 @@ let
   };
 
   nvidia_env =
-    if cfg.graphics.manufacturer == "nvidia" then
+    if cfg.manufacturer == "nvidia" then
       [
         "env = LIBVA_DRIVER_NAME,nvidia"
         "env = XDG_SESSION_TYPE,wayland"
@@ -99,7 +99,7 @@ let
       { };
 in
 {
-  config = lib.mkIf (cfg.user.enable && (cfg.graphics.window_manager.default == "hyprland")) {
+  config = lib.mkIf (cfg.user.enable && (cfg.windowManager.default == "hyprland")) {
     home-manager.users."${cfg.user.username}" = {
       xdg.portal.extraPortals = [
         pkgs.xdg-desktop-portal-gtk

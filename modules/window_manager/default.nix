@@ -13,7 +13,7 @@ in
     ./sway
   ];
 
-  options.husjon.graphics.window_manager.default = lib.mkOption {
+  options.husjon.windowManager.default = lib.mkOption {
     description = "Which window manager / wayland compositor to use";
     default = "hyprland";
     type = lib.types.enum [
@@ -44,7 +44,7 @@ in
       };
     };
 
-    programs.${cfg.graphics.window_manager.default} = {
+    programs.${cfg.windowManager.default} = {
       enable = true;
       xwayland.enable = true;
     };
@@ -57,7 +57,7 @@ in
 
       settings = {
         Autologin = {
-          Session = "${cfg.graphics.window_manager.default}.desktop";
+          Session = "${cfg.windowManager.default}.desktop";
           User = cfg.user.username;
         };
       };
