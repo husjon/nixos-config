@@ -10,7 +10,7 @@ let
 
 in
 {
-  imports = [ ./hardware/${hostname}.nix ];
+  imports = [ ./${hostname}/hardware-configuration.nix ];
 
   options.husjon.system.kernel = lib.mkOption {
     description = "Which kernel to use";
