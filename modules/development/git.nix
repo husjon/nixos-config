@@ -12,8 +12,14 @@ in
     "${cfg.user.username}" = {
       home.packages = with pkgs; [
         git-crypt
-        git-graph
       ];
+
+      home.file.".local/bin/git-graph" = {
+        executable = true;
+        text = ''
+          ${pkgs.git-graph}/bin/git-graph --color=always | less --use-color
+        '';
+      };
 
       programs.gh.enable = true;
       programs.git = {
