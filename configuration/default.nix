@@ -88,6 +88,7 @@ in
 
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
+    programs.ssh.package = pkgs.openssh_hpn; # FIXME: temporary while waiting for 10.2p1 (https://github.com/NixOS/nixpkgs/issues/456221)
 
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [ 22 ];
