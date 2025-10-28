@@ -23,12 +23,6 @@ in
   };
 
   config = lib.mkIf cfg.user.enable {
-    users.users.${cfg.user.username} = {
-      packages = with pkgs; [
-        kdePackages.xwaylandvideobridge
-      ];
-    };
-
     home-manager.users."${cfg.user.username}" = {
       home.file.".local/share/icons" = {
         source = "${pkgs.bibata-cursors}/share/icons/";
