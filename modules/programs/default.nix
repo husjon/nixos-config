@@ -32,6 +32,7 @@ in
         with pkgs;
         [
           # TODO: look into cleaning up / moving these packages
+          brave
           discord
           firefox
           grim
@@ -53,7 +54,6 @@ in
           slurp
           spotify
           trash-cli
-          unstable.brave
           vivaldi
           vscode
           wl-clipboard
