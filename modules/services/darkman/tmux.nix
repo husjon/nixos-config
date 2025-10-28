@@ -11,8 +11,8 @@ let
     name = "catppuccin-tmux-latte";
 
     src = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_latte_tmux.conf";
-      sha256 = "sha256-NdvYc2EamXzMfC64pSjVYSW5y09X5LkskoG6VHgd8LU=";
+      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/heads/main/themes/catppuccin_latte_tmux.conf";
+      sha256 = "sha256-a8iyOfZGxmLsc84hqKPnS2KEyCClT1bC7jjmN//MVK0=";
     };
 
     phases = [ "installPhase" ];
@@ -23,8 +23,8 @@ let
     name = "catppuccin-tmux-latte";
 
     src = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_mocha_tmux.conf";
-      sha256 = "sha256-2VggVvGywx3+q90OF2tC9dpagBZ14DXjRqHXhtvsRkw=";
+      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/heads/main/themes/catppuccin_mocha_tmux.conf";
+      sha256 = "sha256-0L7vWV+P04KqP+pHHaCI11YWQsYBZe0rATWVT8t8714=";
     };
 
     phases = [ "installPhase" ];
