@@ -26,10 +26,6 @@ in
 
     repositories = lib.mkOption {
       description = "List of repositories that will be used for storing the backups";
-
-      # type = lib.listOf (lib.types.str);
-      # TODO: figure out how to define the type for this
-      # listOf attrsets (containing the keys "label" and "path", each with value type of string)
     };
   };
 
