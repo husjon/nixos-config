@@ -3,6 +3,7 @@
 
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.polarity = "dark";
 
   # NixOS options goes here (example: chromium.enable)
   # https://nix-community.github.io/stylix/options/platforms/nixos.html
