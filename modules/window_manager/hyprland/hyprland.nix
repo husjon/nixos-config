@@ -157,8 +157,6 @@ in
             gaps_in = 6;
             gaps_out = 10;
             border_size = 1;
-            "col.active_border" = "$red $green $blue 45deg";
-            "col.inactive_border" = "$surface2";
 
             layout = "dwindle";
 
