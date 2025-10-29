@@ -13,6 +13,9 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:nix-community/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -22,6 +25,7 @@
       nixpkgs-stable,
       nixpkgs-unstable,
       sops-nix,
+      stylix,
       home-manager,
       ...
     }:
@@ -69,6 +73,7 @@
       commonModules = [
         ./configuration
         sops-nix.nixosModules.sops
+        stylix.nixosModules.stylix
 
         home-manager.nixosModules.home-manager
         ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
