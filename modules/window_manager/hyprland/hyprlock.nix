@@ -42,7 +42,6 @@ in
             monitor = monitors.primary.name;
             path = "${homeDirectory}/.face.png";
             size = 200;
-            border_color = "$overlay0";
             position = "0, 125";
             halign = "center";
             valign = "center";
@@ -56,9 +55,6 @@ in
             dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
             dots_spacing = 0.15; # Scale of dots' absolute size, 0.0 - 1.0
             dots_center = true;
-            outer_color = "$overlay0";
-            inner_color = "$base";
-            font_color = "$text";
             fade_on_empty = true;
             placeholder_text = "<i>Input Password...</i>"; # Text rendered in the input box when it's empty.
             hide_input = false;
