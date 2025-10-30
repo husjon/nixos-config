@@ -133,22 +133,10 @@ in
         };
 
         style = ''
-          @import "${catppuccin-waybar}/themes/mocha.css";
-
-          @define-color background shade(@base, 0.9);
-          @define-color foreground @text;
-
-          * {
-            margin: 0px;
-            padding: 0px;
-
-            font-size: 1.1rem;
-          }
-
           window {
-            background-color: @background;
+            background-color: @base00;
             border-radius: 4px;
-            border: 1px solid @surface2;
+            border: 1px solid @base03;
           }
 
           #workspaces {
@@ -156,18 +144,16 @@ in
           }
 
           #workspaces button {
-            background-color: @background;
             padding: 0px 6px 0px 4.5px;
             border-radius: 0;
             margin-right: 1px;
-            color: @surface2;
           }
           #workspaces button.active {
-            color: @foreground;
+            background-color: @base02;
+            color: @base0D;
           }
 
           #clock, #tray {
-            color: @foreground;
             margin: 0 8px;
           }
 
@@ -178,22 +164,20 @@ in
 
           #privacy-item.audio-in,
           #privacy-item.screenshare {
-            color: @red;
+            color: @base08;
           }
 
           #tray menu {
-            border: 1px solid #524f4f;
-            background-color: @background;
-            color: @foreground;
+            background-color: @base00;
+            border: 1px solid @base03;
             border-radius: 4px;
-            padding: 4px;
           }
-          #tray menu > * {
-            padding: 2px;
+          #tray menu * {
+            border-radius: 2px;
+            padding: 2px 0px;
           }
-          #tray > .needs-attention {
-            color: @crust;
-            background-color: @red;
+          #tray menu *:hover {
+            color: @base0D;
           }
         '';
       };
