@@ -14,6 +14,7 @@
   # https://nix-community.github.io/stylix/options/platforms/home_manager.html
   home-manager.sharedModules = lib.singleton {
     stylix.targets = {
+      waybar.addCss = false;
     };
   };
 }
