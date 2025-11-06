@@ -7,7 +7,7 @@ let
   cfg = config.husjon;
 in
 {
-  options.husjon.programs.fuzzel.enable = (lib.mkEnableOption "mako" // { default = true; });
+  options.husjon.programs.mako.enable = (lib.mkEnableOption "mako" // { default = true; });
 
   config = lib.mkIf (cfg.user.enable && cfg.programs.tmux.enable) {
     home-manager.users."${cfg.user.username}" = {
