@@ -7,29 +7,30 @@
 let
   cfg = config.husjon;
 
-  catppuccin-latte = pkgs.stdenv.mkDerivation (finalAttrs: {
+  mkConfig =
+    {
+      name,
+      url,
+      sha256,
+    }:
+    pkgs.stdenv.mkDerivation (finalAttrs: {
+      inherit name;
+      src = pkgs.fetchurl { inherit url sha256; };
+      phases = [ "installPhase" ];
+      installPhase = "sed 's/set -o/set -/g' $src > $out";
+    });
+
+  catppuccin-latte = mkConfig {
     name = "catppuccin-tmux-latte";
+    url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_latte_tmux.conf";
+    sha256 = "sha256-a8iyOfZGxmLsc84hqKPnS2KEyCClT1bC7jjmN//MVK0=";
+  };
 
-    src = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_latte_tmux.conf";
-      sha256 = "sha256-a8iyOfZGxmLsc84hqKPnS2KEyCClT1bC7jjmN//MVK0=";
-    };
-
-    phases = [ "installPhase" ];
-    installPhase = "sed 's/set -o/set -/g' $src > $out";
-  });
-
-  catppuccin-mocha = pkgs.stdenv.mkDerivation (finalAttrs: {
+  catppuccin-mocha = mkConfig {
     name = "catppuccin-tmux-latte";
-
-    src = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_mocha_tmux.conf";
-      sha256 = "sha256-0L7vWV+P04KqP+pHHaCI11YWQsYBZe0rATWVT8t8714=";
-    };
-
-    phases = [ "installPhase" ];
-    installPhase = "sed 's/set -o/set -/g' $src > $out";
-  });
+    url = "https://raw.githubusercontent.com/catppuccin/tmux/refs/tags/v2.1.3/themes/catppuccin_mocha_tmux.conf";
+    sha256 = "sha256-0L7vWV+P04KqP+pHHaCI11YWQsYBZe0rATWVT8t8714=";
+  };
 
   background = "@thm_crust";
   foreground = "@thm_mauve";
