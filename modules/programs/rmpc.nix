@@ -13,7 +13,7 @@ in
         config = ''
           (
               volume_step: 1,
-              max_fps: 120,
+              max_fps: 60,
           )
         '';
       };
