@@ -25,7 +25,7 @@ in
       programs.git = {
         enable = true;
 
-        extraConfig = {
+        settings = {
           core.excludesfile = "~/.gitignore";
         };
       };
