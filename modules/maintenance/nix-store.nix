@@ -3,10 +3,11 @@
 {
   nix.gc = {
     automatic = true;
-    dates = "weekly";
-    options = ''
-      --delete-older-than 14d
-    '';
+    dates = "daily";
+    options = builtins.concatStringsSep " " [
+      "--delete-old"
+      "--delete-older-than 7d"
+    ];
   };
 
   # Prevent all Flake inputs from being garbage collected
