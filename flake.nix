@@ -93,6 +93,8 @@
               husjon.system.tlp.enable = true;
               husjon.system.hibernation.enable = true;
               husjon.stateVersion = "24.11";
+
+              services.fprintd.enable = true;
             }
           ];
         };
