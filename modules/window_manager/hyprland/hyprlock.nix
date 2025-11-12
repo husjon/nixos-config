@@ -50,7 +50,7 @@ in
 
           input-field = {
             monitor = monitors.primary.name;
-            size = "200, 50";
+            size = "250, 50";
 
             outline_thickness = 2;
             dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
@@ -66,6 +66,14 @@ in
             position = "0, -20";
             halign = "center";
             valign = "center";
+            zindex = 1;
+          };
+
+          label = lib.mkIf config.services.fprintd.enable {
+            monitor = monitors.primary.name;
+            text = "Press Enter to use fingerprint";
+            position = "0, -20";
+            font_size = "10";
           };
         };
       };
