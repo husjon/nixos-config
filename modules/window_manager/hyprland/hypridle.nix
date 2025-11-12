@@ -26,7 +26,9 @@ in
               on-timeout = "hyprctl dispatch dpms off";
             }
             {
-              timeout = 30;
+              # used for when system is awoken (mouse movement / keyboard input),
+              #   but user is not intending on unlocking
+              timeout = 10;
               on-timeout = "pgrep hyprlock && hyprctl dispatch dpms off";
               on-resume = "hyprctl dispatch dpms on";
             }
