@@ -12,6 +12,8 @@ in
           general = {
             lock_cmd = "pidof hyprlock || hyprlock"; # dbus/sysd lock command (loginctl lock-session)
             ignore_dbus_inhibit = false; # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
+
+            after_sleep_cmd = "hyprctl dispatch dpms on";
           };
 
           listener = [
