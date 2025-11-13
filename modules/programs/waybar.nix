@@ -73,10 +73,13 @@ in
               };
 
               "format" = "{icon}";
-              "format-charging" = "{icon}";
 
               "format-warning" = "{capacity}% {icon}";
               "format-critical" = "{time} remaining @ {capacity}% {icon}";
+
+              "tooltip-format" = "Empty in {time} ({capacity}%)";
+              "tooltip-format-charging" = "Full in {time} ({capacity}%)";
+
               "states" = {
                 "normal" = 50;
                 "warning" = 30;
