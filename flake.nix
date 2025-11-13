@@ -139,6 +139,8 @@
                 husjon.system.kernel = "latest";
                 husjon.system.ups.enable = true;
                 husjon.stateVersion = "25.05";
+
+                networking.interfaces."eno1".wakeOnLan.enable = true;
               }
             )
           ];
