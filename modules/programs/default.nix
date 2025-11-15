@@ -48,7 +48,7 @@ in
           obsidian
           pavucontrol
           playerctl
-          pqiv # image viewer
+          stable.pqiv # image viewer
           pureref
           ripgrep
           slurp
