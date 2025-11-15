@@ -39,6 +39,7 @@ in
               "hyprland/window"
             ];
             modules-right = [
+              "privacy"
               "tray"
               "battery"
               "clock"
@@ -106,6 +107,28 @@ in
                 "8" = "󰙯"; # nf-md-discord
               };
             };
+
+            privacy = {
+              icon-size = 16;
+              icon-spacing = 4;
+              ignore = [
+                {
+                  type = "screenshare";
+                  name = ".obs-wrapped";
+                }
+                {
+                  type = "audio-in";
+                  name = "OBS";
+                }
+              ];
+              ignore-monitor = true;
+              modules = [
+                { type = "screenshare"; }
+                { type = "audio-in"; }
+              ];
+              transition-duration = 250;
+            };
+
           };
         };
 
@@ -151,6 +174,11 @@ in
           #clock > * {
             margin: 0px;
             padding: 0px;
+          }
+
+          #privacy-item.audio-in,
+          #privacy-item.screenshare {
+            color: @red;
           }
 
           #tray menu {
