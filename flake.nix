@@ -42,85 +42,31 @@
 
       configuration = import ./configuration/args.nix { inherit inputs; };
 
-      commonModules = [
-        ./configuration
-        sops-nix.nixosModules.sops
+      mkSystem =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
 
-        home-manager.nixosModules.home-manager
-        ({ nixpkgs.overlays = [ overlays-nixpkgs ]; })
-        { husjon.user.profilePicture = ./configuration/husjon.png; }
+          specialArgs = configuration.${hostname} // {
+            inherit inputs hostname;
+          };
 
-        ./modules
-      ];
+          modules = [
+            home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops
+
+            { nixpkgs.overlays = [ overlays-nixpkgs ]; }
+
+            ./configuration
+            ./modules
+          ];
+        };
 
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          specialArgs = configuration.laptop // {
-            inherit inputs;
-          };
-
-          modules = commonModules ++ [
-            {
-              husjon.graphics.manufacturer = "intel";
-              husjon.system.tlp.enable = true;
-              husjon.system.hibernation.enable = true;
-              husjon.stateVersion = "24.11";
-
-              services.fprintd.enable = true;
-            }
-          ];
-        };
-
-        workstation = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          specialArgs = configuration.workstation // {
-            inherit inputs;
-          };
-
-          modules = commonModules ++ [
-            (
-              { pkgs, ... }:
-              {
-                husjon.graphics.manufacturer = "amd";
-                husjon.programs.blender.enable = true;
-                husjon.programs.rmpc.enable = true;
-                husjon.programs.steam.enable = true;
-                husjon.programs.extraPrograms = with pkgs; [
-                  calibre
-
-                  freecad
-                  godot_4
-                  krita
-                  lutris
-                  prusa-slicer
-                  tonelib-gfx
-
-                  stable.vcv-rack
-                ];
-                husjon.services.borgmatic.enable = true;
-                husjon.services.borgmatic.repositories = [
-                  {
-                    label = "local";
-                    path = "/mnt/nvme0/borgmatic/";
-                  }
-                ];
-                husjon.services.docker.enable = true;
-                husjon.services.mpd.enable = true;
-                husjon.services.tailscale.exitNode = true;
-                husjon.system.kernel = "latest";
-                husjon.system.ups.enable = true;
-                husjon.stateVersion = "25.05";
-
-                networking.interfaces."eno1".wakeOnLan.enable = true;
-              }
-            )
-          ];
-        };
+        laptop = mkSystem "laptop";
+        workstation = mkSystem "workstation";
       };
     };
 }

@@ -2,8 +2,6 @@
 
 {
   laptop = {
-    hostname = "laptop";
-
     monitors = {
       primary = {
         name = "eDP-1";
@@ -16,8 +14,6 @@
   };
 
   workstation = {
-    hostname = "workstation";
-
     monitors = {
       primary = {
         name = "DP-1";
