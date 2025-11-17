@@ -241,6 +241,7 @@ in
 
             "$mod Shift, S, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
             "$mod Ctrl Shift, S, exec, ${pkgs.hyprpicker}/bin/hyprpicker -a"
+            "$mod Alt Shift, S, exec, ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.swappy}/bin/swappy -f -"
             "$mod Ctrl Shift, R, exec, hyprctl reload"
 
             "$mod Ctrl Alt, P, exec, pkill -USR1 waybar"
