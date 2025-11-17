@@ -121,8 +121,6 @@ in
             "hyprctl dispatch dpms on"
             "systemctl --user restart waybar"
             "pgrep -f .Discord-wrapped || ${pkgs.discord}/bin/discord"
-            "pgrep -f '^xwaylandvideobridge$' || xwaylandvideobridge"
-
           ];
 
           exec-once = [
@@ -341,15 +339,6 @@ in
             # Firefox {{{
             "float, class:^(firefox), title:^()$"
             "move 100%-w-12 100%-w-12, class:^(firefox), title:^()$"
-            # }}}
-
-            # xwaylandvideobridge {{{
-            "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-            "noanim, class:^(xwaylandvideobridge)$"
-            "nofocus, class:^(xwaylandvideobridge)$"
-            "maxsize 1 1, class:^(xwaylandvideobridge)$"
-            "noblur, class:^(xwaylandvideobridge)$"
-            "float, class:^(xwaylandvideobridge)$"
             # }}}
 
             # Games {{{
