@@ -14,6 +14,7 @@ in
     ./scripts
     ./services
     ./shell
+    ./stylix.nix
     ./system
     ./terminal
     ./user
