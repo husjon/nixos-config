@@ -41,6 +41,20 @@ in
           neovim = neovim "light";
         };
       };
+
+      home.activation = {
+        updateDarkman = lib.mkIf (builtins.hasAttr "stylix" config) ''
+          CURRENT="$(${pkgs.darkman}/bin/darkman get)"
+          POLARITY=${config.stylix.polarity}
+
+          # When using "dark" polarity in stylix, the system goes into dark-mode on activation during the day.
+          # We can cycle darkman twice so that we go back to light-mode with the help the helper scripts.
+          if [[ $CURRENT != $POLARITY ]]; then
+            ${pkgs.darkman}/bin/darkman toggle
+            ${pkgs.darkman}/bin/darkman toggle
+          fi
+        '';
+      };
     };
   };
 }
